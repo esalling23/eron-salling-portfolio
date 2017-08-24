@@ -1,0 +1,8 @@
+<div class="col-md-6 project-item{{#each project.tags}} {{key}}{{/each}}">
+	<img src="{{{cloudinaryUrl project.icon}}}" alt="{{project.name}}">
+	<div class="project-info">
+		<h3 class="styled-title">{{project.name}}</h3>
+		<p>{{{project.intro.html}}}</p>
+		<button class="btn btn-default">Details</button>
+	</div>
+</div>

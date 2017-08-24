@@ -3,19 +3,34 @@
 @import "core/functions";
 @import "core/fonts";
 
-
-@include font-face(Font-Name, 'https://path/to/cdn/font', null, null, eot woff ttf);
-
 // Use for any elements hidden initilly
 .hidden {
 	visibility: hidden;
 }
 
 // Body
-.body {
-  background-color: #000;
-  color: #fff;
-  font-family: "HalisLight";
+.body, html {
+	height:100%;
+	width: 100%;
+	color: $theme-text;
+	font-family: 'Bree Serif', serif;
+	overflow: auto;
+}
+
+.page-wrapper, .home, .porfolio, .about {
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+}
+
+.home, .porfolio, .about {
+	padding: 40px;
+	padding-top: 80px;
+
+}
+
+.container-fluid {
+
 }
 
 .desktop-only {
@@ -34,14 +49,228 @@
 		margin-top: 5%;	
 }
 
-.main {
+// Navigation
+.menu-icon {
+
+	&.light {
+		div {
+		    background-color: $theme-creme;
+		    @include transition(all, 0.5s);
+		}
+		&:hover, &:focus {
+			div {
+			    background-color: $theme-red;
+			}
+		}
+	}
+	&.dark {
+		div {
+		    background-color: $theme-red;
+		    @include transition(all, 0.5s);
+		}
+		&:hover, &:focus {
+			div {
+			    background-color: $theme-black;
+			}
+		}
+	}
+	div {
+	    width: 35px;
+	    height: 5px;
+	    margin: 6px 0;
+	}
+	
+
+	
+}
+
+#menu-toggle {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	padding-left: 15px;
+	padding-top: 10px;
+	z-index: 100000;
+
+	&.solid {
+		background-color: $theme-black;
+	}
+}
+
+#sidebar-wrapper {
+	display:none;
+	position: absolute;
+	right: 100%;
+	height:100%;
+	width:100%;
+	z-index: 10000;
+	background-color: $theme-black;
+
+	.sidebar-nav {
+		list-style-type: none;
+		padding: 0px;
+		width: 100%;
+
+		li {
+			text-align: center;
+			width: 100%;
+			
+
+			a {
+				display: block;
+				color: $theme-creme;
+				font-size: 26px;
+				margin: 20px auto;
+				@include transition(all, 0.5s);
+
+				&:hover, &:focus {
+					color: $theme-red;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+// Home Page
+.home {
+	padding: 40px;
+	height:100%;
+	width:100%;
+	background-size: auto 100%;
+	background-position: center;
+
+
+	.intro {
+
+		margin: 80px;
+
+	}
 
 }
 
-.home {
+// About Page
+.about {
+	background-color: $theme-creme;
+	color: $theme-black;
 
-	#title {
+	h3 {
 
+	}
+
+}
+
+// Portfolio 
+
+.porfolio {
+	background-color: $theme-black;
+	color: $theme-creme;
+
+	.tag-row {
+		margin: 20px 0px;
+	}
+
+	.tag {
+		height: 40px;
+		width: auto;
+		padding: 2px 16px;
+		margin: 4px;
+		line-height: 26px;
+		border-radius: 0px;
+		background: $theme-creme;
+		color: $theme-black;
+
+		&:hover, &:focus, &:active {
+			box-shadow: none;
+			border: 0px;
+			outline: 0px;
+		}
+
+		&:hover, &.is-checked {
+			background: $theme-creme;
+			color: $theme-red;
+			line-height: 24px;
+			border: 1px solid $theme-red;
+		}
+	}
+
+	#project-grid {
+		height: 100%;
+		width: 100%;
+		position: relative;
+		margin: 0px;
+	}
+
+	.project-item {
+		height: 300px;
+		width: 300px;
+		max-width: 100%;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		padding: 0px; 
+
+	    background-color: $theme-black;
+	    border: 1px solid $theme-red;
+	    color: $theme-red;
+	    position: relative;
+	    @include transition(all, 0.5s);
+
+	    img {
+	    	height: 300px;
+	    	width: 300px;
+	    	max-width: 100%;
+	    	margin: 0 auto;
+	    }
+
+	    .project-info {
+	    	height: 300px;
+	    	position: absolute;
+	    	padding: 40px;
+	    	opacity:0;
+	    	bottom: -1px;
+	    	left: -1px;
+	    	width: 300px;
+	    	background-color: $theme-creme;
+	    	border: 1px solid $theme-red;
+	    	@include transition(all, 0.2s);
+	    }
+
+	    &:hover, &:focus {
+	    	.project-info {
+	    		opacity: 1;
+	    	}
+	    }
+	}
+}
+
+
+// Media 
+
+@media(max-width: 768px) {
+
+	.home {
+		padding: 40px 0px;
+
+		.intro {
+			margin: 80px 40px;
+		}
+	}
+
+}
+
+@media(max-width: 380px) {
+
+	.project-item {
+		height: auto;
+		
+		img {
+			height: auto;
+		}
+
+		.project-info {
+
+		}
 	}
 
 }

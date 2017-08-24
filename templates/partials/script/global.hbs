@@ -12,89 +12,130 @@
 
 <script type="text/javascript">
 
-	var socket,
-	socketEvents;
-
-	eventIds = [
-		'connect',
-		'disconnect'
-	];
-
-	var registerEvents = function() {
-
-    {{#ifnoteq environment "production"}}
-        
-        socket.on('connect_timeout', function() {
-           console.warn('Client timed out when connecting.');
-           {{!-- debugger; --}}
-        });
-        socket.on('disconnect', function() {
-           console.warn('Client was disconnected!');
-           {{!-- debugger; --}}
-        });
-        socket.on('reconnecting', function() {
-           console.log('Reconnecting.');
-           {{!-- debugger; --}}
-        });
-        socket.on('reconnect_attempt', function() {
-           console.log('Trying to reconnect!');
-           {{!-- debugger; --}}
-        });
-        socket.on('reconnect_error', function(err) {
-           console.error('Reconnect error: %s', err);
-           {{!-- debugger; --}}
-        });
-
-        console.log('Connecting to game "' + gameCode + '".');
-
-    {{/ifnoteq}}
-
-    $.each(eventIds, function(index, id) {
-      
-      socket.on(id, function(eventData) {
-
-            {{#ifnoteq environment "production"}}
-
-                $('#last-event').text('last event: ' + id);
-
-                console.log("EVENT ID: ", id);
-
-            {{/ifnoteq}}
-            
-            socketEvents(id, eventData);
-
-            if(typeof(gameEvents) == "function")
-                gameEvents(id, eventData);
-
-        });
-
-    });
-
-	}
-
 	$(document).ready(function() {
 
-	   socket = io('//{{host}}', {path: '/module', 'reconnection': true,'reconnectionDelay': 500,'maxReconnectionAttempts':Infinity});
-	   registerEvents();
+		$('#menu-toggle').on('click', function(evt) {
+
+			$('#sidebar-wrapper').show(function(){
+				$('#menu-close').on('click', function(evt) {
+					$('#sidebar-wrapper').animate({
+						right: '100%'
+					}, 500);
+
+					setTimeout(function() {
+						$('#sidebar-wrapper').hide();
+					}, 600)
+				});
+			}).animate({
+				right: '0px'
+			}, 500);
+
+		});
+
+		{{#ifeq section 'portfolio'}}
+
+			var filtered = 0;
+			var filters = [];
+			var container = $('#project-grid');
 
 
-			socketEvents = function(eventId, eventData) {
+			$('.tag').on('click', function() {
+				
+				$(this).toggleClass('is-checked');
 
-			    switch (eventId) {
+				applyFilter(this, $(this).hasClass('is-checked'));
+				displayChecked(this, $(this).hasClass('is-checked'));
+			});
 
-			        case 'connect':
+			$('#project-grid').imagesLoaded( function() {
+				
+				var $filtered = $(container).isotope({
+				    itemSelector: '.project-item',
+				    filter: '*', 
+				    masonry: {
+					  gutter: 10
+					}
+				});
 
-			            console.log('connected');
+				$('.clear-all').trigger('click');
 
-				        break;
+				var num = $filtered.isotope('getFilteredItemElements').length;
+				checkFiltered(num, container, $filtered);
+			});
 
-				      case 'disconnect':
 
-			            console.log('disconnected');
+			function displayChecked (elem, selected) {
 
-				        break;
-			    }
+				var selector = $(elem);
+				var option = selector.data('filter-value');
+
+				if ($('.filters-chosen').find('div').length > 0)
+					$('.filters-chosen').css('display', 'inline-block');
+				else
+					$('.filters-chosen').hide();
+
 			}
+
+			function checkFiltered (num, container, filtered) {
+
+				filtered.isotope('layout');
+
+				filtered += num;
+				
+				if ( filtered === 0 ) {
+				  $('.no-filtered-visible').show();
+				} else {
+					$('.no-filtered-visible').hide();
+				}
+
+			}
+		    
+		    function applyFilter(elem, selected) {
+
+		    	filtered = 0;
+					
+			    var selector = $(elem);
+			    			    
+				if (selected) {
+					if (selector.data('filter-value').length >= 1)
+				    filters.push('.' + selector.data('filter-value').toString());
+				} else {
+					var index = filters.indexOf('.' + selector.data('filter-value').toString());
+					if (index > -1) {
+						filters.splice(index, 1);
+					}
+				}
+			    			    
+			    var filterStr = filters.join('');
+			    
+				var $filtered = $(container).isotope({ 
+					filter: filterStr, 
+					itemSelector: '.project-item' 
+				});
+				var num = $filtered.isotope('getFilteredItemElements').length;
+				checkFiltered(num, container, $filtered);   
+
+			}
+
+			$(".clear-all").on('click', function() {
+				
+				filters = [];
+				$(container).isotope({
+			        filter: '*' 
+
+				});
+					
+				$('.is-checked').removeClass('is-checked');
+				$('.all-options').addClass('is-checked');
+				$('.all-options').each(function(i, obj){
+					applyFilter(this);
+					displayChecked(this);
+				});
+
+			});
+
+		{{/ifeq}}
+
 
 	});
 	

@@ -13,7 +13,7 @@
  */
 var keystone = require('keystone'),
     Index = keystone.list('Index'),
-    Item = keystone.list('Item'),
+    Project = keystone.list('Project'),
     _ = require('underscore');
 
 exports = module.exports = function(req, res) {
@@ -35,21 +35,8 @@ exports = module.exports = function(req, res) {
             if (err) throw err;
 
             locals.index = resultIndex;
-
-            var queryItem = Item.model.find({}, {}, {
-                sort: {
-                    'createdAt': -1
-                }
-            });
-
-            queryItem.exec(function(err, result) {
-                if (err) throw err;
-
-                locals.items = result;
                 
-                next();
-
-            });
+            next();
 
         });
     });

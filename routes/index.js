@@ -51,6 +51,6 @@ router.all('/admin', function(req, res, next) {
 
 // Views
 router.get('/', routes.views.index);
-router.get('/:category_id', routes.views.category);
+router.get('/portfolio/', routes.views.portfolio);
     
 module.exports = router;

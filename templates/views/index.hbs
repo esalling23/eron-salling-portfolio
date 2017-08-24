@@ -9,13 +9,8 @@
 * ==========
 */
 --}}
-
-
-<div class="container-fluid home">
-	<div class="row">
-
-	<h3>This is a page!</h3>
-		
+<div class="container-fluid home" style="{{#if index.backgroundImg}}background-image:url('{{index.backgroundImg.url}}'){{else}}background:{{index.backgroundClr}}{{/if}}">
+	<div class="row intro">
+		{{{index.intro.html}}}	
 	</div>
-
 </div> <!-- .container-fluid -->

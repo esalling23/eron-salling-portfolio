@@ -3,6 +3,8 @@
 	"database": "porfolio",
 	"subdomain": "starter-keystone4",
 	"admin_nav": { 
-									"index": ["Index"]
-								}
+					"Home Page": ["Index"], 
+					"Porfolio": ["Project", "Tag"], 
+					"About Page": ["About"]
+				}
 }
