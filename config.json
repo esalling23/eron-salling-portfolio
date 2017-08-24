@@ -1,0 +1,8 @@
+{
+	"name": "porfolio-website",
+	"database": "porfolio",
+	"subdomain": "starter-keystone4",
+	"admin_nav": { 
+									"index": ["Index"]
+								}
+}

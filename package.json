@@ -1,0 +1,19 @@
+{
+  "name": "portfolio-website",
+  "description": "Erica Salling Portfolio Website",
+  "version": "0.0.3",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esalling23/portfolio-website.git"
+  },
+  "main": "app.js",
+  "dependencies": {
+    "app-module-path": "^1.0.6",
+    "app-root-path": "^1.0.0",
+    "express": "^4.13.3",
+    "json-fs-store": "^1.0.0",
+    "keystone": "https://github.com/engagementgamelab/keystone.git",
+    "node-sass-middleware": "^0.9.7",
+    "underscore": "^1.8.3"
+  }
+}
