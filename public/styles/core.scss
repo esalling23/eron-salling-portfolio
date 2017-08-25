@@ -25,11 +25,15 @@
 	overflow: auto;
 }
 
-.home, .porfolio, .about {
+.home, .porfolio, .about, .project-page {
 	padding: 40px;
 	padding-top: 80px;
 	width: 100%;
 	height: 100%;
+}
+
+.row {
+	margin: 0px;
 }
 
 .container-fluid {
@@ -55,12 +59,12 @@
 // Button Styles
 .theme-btn {
 	color: $theme-black;
-	background-color: $theme-creme;
+	background-color: $theme-base;
 
 	&:hover, &:focus {
-		color: $theme-red;
-		background-color: $theme-creme;
-		border: 1px solid $theme-red;
+		color: $theme-accent;
+		background-color: $theme-base;
+		border: 1px solid $theme-accent;
 	}
 }
 
@@ -76,18 +80,18 @@ button, .btn, input, .theme-btn {
 
 	&.light {
 		div {
-		    background-color: $theme-creme;
+		    background-color: $theme-accent;
 		    @include transition(all, 0.5s);
 		}
 		&:hover, &:focus {
 			div {
-			    background-color: $theme-red;
+			    background-color: $theme-accent-alt;
 			}
 		}
 	}
 	&.dark {
 		div {
-		    background-color: $theme-red;
+		    background-color: $theme-accent;
 		    @include transition(all, 0.5s);
 		}
 		&:hover, &:focus {
@@ -141,13 +145,13 @@ button, .btn, input, .theme-btn {
 
 			a {
 				display: block;
-				color: $theme-creme;
+				color: $theme-accent;
 				font-size: 26px;
 				margin: 20px auto;
 				@include transition(all, 0.5s);
 
 				&:hover, &:focus {
-					color: $theme-red;
+					color: $theme-accent-alt;
 					text-decoration: none;
 				}
 			}
@@ -157,7 +161,6 @@ button, .btn, input, .theme-btn {
 
 // Home Page
 .home {
-	padding: 40px;
 	height:100%;
 	width:100%;
 	background: no-repeat center center fixed;
@@ -177,7 +180,7 @@ button, .btn, input, .theme-btn {
 // About Page
 .about {
 	background-color: $theme-black;
-	color: $theme-creme;
+	color: $theme-base;
 
 	.intro {
 		p {
@@ -195,14 +198,14 @@ button, .btn, input, .theme-btn {
 
 			a {
 				display: block;
-				color: $theme-creme;
+				color: $theme-accent;
 				font-size:16px;
 				margin: 0px auto;
 				margin-bottom: 20px;
 				@include transition(all, 0.5s);
 
 				&:hover, &:focus {
-					color: $theme-red;
+					color: $theme-accent-alt;
 					text-decoration: none;
 				}
 			}
@@ -216,7 +219,7 @@ button, .btn, input, .theme-btn {
 
 .porfolio {
 	background-color: $theme-black;
-	color: $theme-creme;
+	color: $theme-base;
 
 	.tag-row {
 		margin: 20px 0px;
@@ -240,7 +243,7 @@ button, .btn, input, .theme-btn {
 		line-height: 26px;
 		border-radius: 0px;
 		border: 0px;
-		background: $theme-creme;
+		background: $theme-base;
 		color: $theme-black;
 
 		&:hover, &:focus, &:active {
@@ -249,11 +252,11 @@ button, .btn, input, .theme-btn {
 		}
 
 		&:hover, &:focus, &.is-checked {
-			background: $theme-creme;
-			color: $theme-red;
+			background: $theme-base;
+			color: $theme-accent;
 			line-height: 24px;
-			border: 1px solid $theme-red;
-		    height: 42px;
+			border: 1px solid $theme-accent;
+		    height: 40px;
 		    margin: 3px;
 		    margin-left: 0px;
 		    margin-right: 2px;
@@ -280,9 +283,9 @@ button, .btn, input, .theme-btn {
 		margin-bottom: 5px;
 		padding: 0px; 
 
-	    background-color: $theme-creme;
-	    border: 1px solid $theme-red;
-	    color: $theme-red;
+	    background-color: $theme-base;
+	    border: 1px solid $theme-accent;
+	    color: $theme-accent;
 	    position: relative;
 
 	    img {
@@ -317,8 +320,8 @@ button, .btn, input, .theme-btn {
 	    	opacity:0;
 	    	bottom: -1px;
 	    	left: -1px;
-	    	background-color: $theme-creme;
-	    	border: 1px solid $theme-red;
+	    	background-color: $theme-base;
+	    	border: 1px solid $theme-accent;
 	    }
 
 	    &:hover, &:focus {
@@ -332,9 +335,40 @@ button, .btn, input, .theme-btn {
 // Individual Project Page
 .project-page {
 	background-color: $theme-black;
-	color: $theme-creme;
+	color: $theme-base;
 
+	.tag {
+		display: inline;
+		height: 40px;
+		width: auto;
+		padding: 2px 16px;
+		margin: 4px;
+		margin-left: 0px;
+		line-height: 24px;
+		border-radius: 0px;
+		border: 1px solid $theme-accent;
+		background: $theme-base;
+		color: $theme-accent;
+	}
 
+	.description {
+		margin-top: 40px;	
+		font-size: 24px;
+	}
+
+	a {
+		display: block;
+		color: $theme-accent;
+		font-size:16px;
+		margin: 0px auto;
+		margin-bottom: 20px;
+		@include transition(all, 0.5s);
+
+		&:hover, &:focus {
+			color: $theme-accent-alt;
+			text-decoration: none;
+		}
+	}
 
 }
 
