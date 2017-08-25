@@ -19,10 +19,11 @@
 	margin: 0px;
 }
 
-.page-wrapper, #wrapper, .home, .porfolio, .about {
+.page-wrapper, #wrapper, .home, .porfolio, .about, .project-page {
 	height: 100%;
 	width: 100%;
-	overflow: auto;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 
 .home, .porfolio, .about, .project-page {
@@ -353,7 +354,7 @@ button, .btn, input, .theme-btn {
 
 	.description {
 		margin-top: 40px;	
-		font-size: 24px;
+		font-size: 20px;
 	}
 
 	a {
@@ -385,7 +386,7 @@ button, .btn, input, .theme-btn {
 
 	.home {
 		padding: 40px 0px;
-		background-position: right;
+		background-position: -300px;
 
 		.intro {
 			margin: 80px 40px;
