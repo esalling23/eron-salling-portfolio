@@ -21,15 +21,21 @@ $color-green: #00CB86;
 
 
 // Theme Colors
-
+$theme-grey-dark: #151515;
 $theme-black: #0C0F0C;
+$theme-black-green: #0F170B;
 $theme-orange: #ce7403;
+$theme-yellow: #F2D221;
 $theme-red: #9d2f0d;
 $theme-creme: #FFFCF4;
 $theme-green: #3d7460;
+$theme-greener: #4B8C49;
+$theme-green-alt: #6C910F;
 
 $theme-text: $theme-creme;
+$theme-text-alt: $theme-grey-dark;
+$theme-dark: $theme-grey-dark;
 $theme-base: $theme-creme;
 $theme-accent: $theme-green;
-$theme-accent-alt: $theme-orange;
+$theme-accent-alt: $theme-greener;
 

@@ -59,7 +59,7 @@
 
 // Button Styles
 .theme-btn {
-	color: $theme-black;
+	color: $theme-dark;
 	background-color: $theme-base;
 
 	&:hover, &:focus {
@@ -97,7 +97,7 @@ button, .btn, input, .theme-btn {
 		}
 		&:hover, &:focus {
 			div {
-			    background-color: $theme-black;
+			    background-color: $theme-dark;
 			}
 		}
 	}
@@ -122,7 +122,7 @@ button, .btn, input, .theme-btn {
 	border-radius: 0px;
 
 	&.solid {
-		background-color: $theme-black;
+		background-color: $theme-dark;
 	}
 }
 
@@ -132,7 +132,7 @@ button, .btn, input, .theme-btn {
 	height:100%;
 	width:100%;
 	z-index: 50000;
-	background-color: $theme-black;
+	background-color: $theme-dark;
 
 	.sidebar-nav {
 		list-style-type: none;
@@ -180,7 +180,7 @@ button, .btn, input, .theme-btn {
 
 // About Page
 .about {
-	background-color: $theme-black;
+	background-color: $theme-dark;
 	color: $theme-base;
 
 	.intro {
@@ -219,7 +219,7 @@ button, .btn, input, .theme-btn {
 // Portfolio 
 
 .porfolio {
-	background-color: $theme-black;
+	background-color: $theme-dark;
 	color: $theme-base;
 
 	.tag-row {
@@ -245,7 +245,7 @@ button, .btn, input, .theme-btn {
 		border-radius: 0px;
 		border: 0px;
 		background: $theme-base;
-		color: $theme-black;
+		color: $theme-dark;
 
 		&:hover, &:focus, &:active {
 			box-shadow: none;
@@ -323,7 +323,7 @@ button, .btn, input, .theme-btn {
 
 // Individual Project Page
 .project-page {
-	background-color: $theme-black;
+	background-color: $theme-dark;
 	color: $theme-base;
 
 	.tag {
