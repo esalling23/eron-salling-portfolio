@@ -51,6 +51,9 @@ router.all('/admin', function(req, res, next) {
 
 // Views
 router.get('/', routes.views.index);
+router.get('/about/', routes.views.about);
+
 router.get('/portfolio/', routes.views.portfolio);
+router.get('/portfolio/:key', routes.views.project);
     
 module.exports = router;

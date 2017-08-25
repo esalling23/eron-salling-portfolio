@@ -14,23 +14,147 @@
 
 	$(document).ready(function() {
 
+		var windowsize = $(window).width(),
+			bodysize = $('#wrapper').width(),
+			wrapperLeft = $('#wrapper').offset().left,
+			extraWindow = (windowsize - bodysize)/2;
+
+		var imagesLoaded = function(parentElem, callback) {
+
+		  parentElem.find('img').last().on('load', function() {
+
+		    // Image loaded, callback fires
+		    callback();
+
+		  })
+		  .each(function() {
+
+		    // Force image to dispatch 'load' (cache workaround)
+		    if(this.complete) $(this).load();
+
+		  });
+
+		};
+
+		var finishResize = function() {
+
+			// Show wrapper now that resize is complete
+			$('#wrapper').css('visibility', 'visible');
+
+		}
+		
+		var setAbsolutes = function(absolutes) {
+
+			if (absolutes.length == 0) {
+				// Call finish function after xxx milaseconds
+				var finish = _.debounce(finishResize, 500);
+				finish();
+				return;
+			}
+
+			var length = absolutes.length;
+
+			_.each(absolutes, function(item, ind) {
+
+				var position = {};
+
+				// Check current positions
+				if ($(item).css('left') !== undefined && $(item).css('left') !== null && $(item).css('left') !== 'auto' && $(item).css('left')) {
+					position.left = $(item).css('left');
+				}
+
+				if ($(item).css('right') !== undefined &&$(item).css('right') !== null && $(item).css('right') !== 'auto' && $(item).css('right')) {
+					position.right = $(item).css('right');
+				}
+
+				// If left, set it. 
+				if (position.left){
+					$(item).css('left', wrapperLeft);
+				}
+				//If right, set it.
+				if (position.right) {
+					position.right =+ extraWindow;
+					$(item).css('right', position.right);
+				}
+
+				if (ind == length - 1) {
+					// Call finish function after xxx milaseconds
+					var finish = _.debounce(finishResize, 500);
+					finish();
+
+				}
+
+			});
+
+		};
+
+		// Locally-scoped methods
+		var findAbsolutes = function() {
+
+			windowsize = $(window).width(),
+			bodysize = $('#wrapper').width(),
+			wrapperLeft = $('#wrapper').offset().left,
+			extraWindow = (windowsize - bodysize)/2;
+
+			// Project Grid Sizing
+			imagesLoaded($('#project-grid'), function() {
+				if (windowsize <= 380) {
+					_.each($('.project-info'), function(info){
+						var height = $(info).closest('.project-item').height();
+						$(info).css('height', height + 'px');
+					});
+				}
+			});
+
+			// Remove empty paragraph tags from markdown
+			_.each($('p'), function(p) {
+				if ($(p).html().length <= 0)
+					p.remove();
+			});
+
+			// Get all absolutely-positioned elements
+			var outerAbsolutes = 
+			$('#wrapper :not(#sidebar-wrapper)')
+			.filter(function(){
+			  return ($(this).css('position') == 'absolute');
+			});
+
+			setAbsolutes(outerAbsolutes);
+
+		};
+
+		findAbsolutes();
+
+		$(window).on('resize', function () {
+
+			// Hide content wrapper during resize
+			$('#wrapper').css('visibility' ,'hidden');
+
+			// Adjust absolutely-position elements for desktop only
+			findAbsolutes();
+
+		});
+
 		$('#menu-toggle').on('click', function(evt) {
 
-			$('#sidebar-wrapper').show(function(){
-				$('#menu-close').on('click', function(evt) {
-					$('#sidebar-wrapper').animate({
-						right: '100%'
-					}, 500);
+			$(this).hide();
 
-					setTimeout(function() {
-						$('#sidebar-wrapper').hide();
-					}, 600)
-				});
-			}).animate({
+			$('#sidebar-wrapper').animate({
 				right: '0px'
 			}, 500);
 
+			$('#menu-close').on('click', function(evt) {
+				$('#menu-toggle').show();
+
+				$('#sidebar-wrapper').animate({
+					right: '100%'
+				}, 500);
+
+			});
+
 		});
+
+
 
 		{{#ifeq section 'portfolio'}}
 

@@ -29,27 +29,31 @@
 	
 	<body class="body">
 
-		{{> nav}}
+		<div id="wrapper">
 
-		<!-- page wrapper start -->
-		<!-- ================ -->
-		<div class="page-wrapper">
-			
-			<!-- BODY CONTENT START -->
-			{{{body}}}
-						
-			{{!-- {{> footer}} --}}
+			{{> nav}}
 
-			<!-- page-wrapper end -->
-			{{!-- {{#ifeq env "development"}} --}}
-				{{> script/development}}
-			{{!-- {{else}}
-				{{> script/production section=section}}
-			{{/ifeq}} --}}
+			<!-- page wrapper start -->
+			<!-- ================ -->
+			<div class="page-wrapper">
+				
+				<!-- BODY CONTENT START -->
+				{{{body}}}
+							
+				{{!-- {{> footer}} --}}
+
+				<!-- page-wrapper end -->
+				{{!-- {{#ifeq env "development"}} --}}
+					{{> script/development}}
+				{{!-- {{else}}
+					{{> script/production section=section}}
+				{{/ifeq}} --}}
 
 
 
-			{{{isAdminEditorJS user}}}
+				{{{isAdminEditorJS user}}}
+			</div>
+
 		</div>
 
 	</body>

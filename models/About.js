@@ -33,6 +33,16 @@ var About = new keystone.List('About',
 About.add({
 	name: { type: String, default: "About Page", hidden: true, required: true, initial: true },
 	intro: { type: Types.Markdown, label: "Intro Text",  initial: true, required: true }, 
+	body: { type: Types.Markdown, label: "Body Text",  initial: true, required: true },
+
+	twitterURL: { type: Types.Url, label: 'Twitter'},	
+	fbURL: { type: Types.Url, label: 'Facebook'},	
+	linkedInURL: { type: Types.Url, label: 'LinkedIn'},	
+	githubURL: { type: Types.Url, label: 'Github'},
+
+	email: { type: String, label: 'Email'},
+	phone: { type: String, label: 'Phone'},
+	
 	backgroundImg: { type: Types.CloudinaryImage, label: 'Background Image', note: 'If blank, will use hex color'}, 
 	backgroundClr: { type: Types.Color, label: 'Background Color', note: 'Will be overridden by background image'}
 	

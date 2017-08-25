@@ -17,7 +17,7 @@
 	overflow: auto;
 }
 
-.page-wrapper, .home, .porfolio, .about {
+.page-wrapper, #wrapper, .home, .porfolio, .about {
 	height: 100%;
 	width: 100%;
 	overflow: auto;
@@ -47,6 +47,25 @@
 }
 .buffer {
 		margin-top: 5%;	
+}
+
+// Button Styles
+.theme-btn {
+	color: $theme-black;
+	background-color: $theme-creme;
+
+	&:hover, &:focus {
+		color: $theme-red;
+		background-color: $theme-creme;
+		border: 1px solid $theme-red;
+	}
+}
+
+button, .btn, input, .theme-btn {
+	&:hover, &:focus, &:active {
+		box-shadow: none;
+		outline: 0px;
+	}
 }
 
 // Navigation
@@ -99,12 +118,11 @@
 }
 
 #sidebar-wrapper {
-	display:none;
 	position: absolute;
 	right: 100%;
 	height:100%;
 	width:100%;
-	z-index: 10000;
+	z-index: 50000;
 	background-color: $theme-black;
 
 	.sidebar-nav {
@@ -152,10 +170,37 @@
 
 // About Page
 .about {
-	background-color: $theme-creme;
-	color: $theme-black;
+	background-color: $theme-black;
+	color: $theme-creme;
 
-	h3 {
+	.intro {
+		p {
+			font-size: 20px;
+		}
+	}
+
+	.social-links {
+
+		padding: 0px;
+		padding-left: 20px;
+		list-style-type: none;
+
+		li {
+
+			a {
+				display: block;
+				color: $theme-creme;
+				font-size:16px;
+				margin: 0px auto;
+				margin-bottom: 20px;
+				@include transition(all, 0.5s);
+
+				&:hover, &:focus {
+					color: $theme-red;
+					text-decoration: none;
+				}
+			}
+		}
 
 	}
 
@@ -223,14 +268,28 @@
 	    	margin: 0 auto;
 	    }
 
+		button {
+			font-size: 14px;
+		    height: 30px;
+		    line-height: 20px;
+		    padding: 4px 16px;
+
+		    &:hover, &:focus {
+		    	line-height: 18px;
+		    	outline: none;
+
+		    }
+		}
+
 	    .project-info {
 	    	height: 300px;
+	    	width: 300px;
+	    	max-width: 100%;
 	    	position: absolute;
 	    	padding: 40px;
 	    	opacity:0;
 	    	bottom: -1px;
 	    	left: -1px;
-	    	width: 300px;
 	    	background-color: $theme-creme;
 	    	border: 1px solid $theme-red;
 	    	@include transition(all, 0.2s);
@@ -247,7 +306,7 @@
 
 // Media 
 
-@media(max-width: 768px) {
+@media(max-width: 767px) {
 
 	.home {
 		padding: 40px 0px;
@@ -257,20 +316,72 @@
 		}
 	}
 
-}
-
-@media(max-width: 380px) {
-
-	.project-item {
-		height: auto;
+	.about {
 		
-		img {
-			height: auto;
-		}
-
-		.project-info {
-
+		.social-links {
+			padding: 0px;
+			margin-top: 80px;
+			li {
+				display: inline-block;
+				margin-right: 40px;
+			}
+			a {
+				
+			}
 		}
 	}
 
+}
+
+@media(max-width: 381px) {
+
+	.porfolio {
+		.project-item {
+			height: auto !important;
+
+			img {
+				height: auto !important;
+			}
+
+			.project-info {
+				padding: 4px;
+				padding-left: 8px;
+				h3 {
+					margin: 4px;
+					font-size: 16px;
+				}
+				p {
+					padding: 4px;
+					margin: 0px;
+					font-size: 12px;
+					line-height: 1;
+				}
+			}
+
+			button {
+				font-size: 10px;
+			    height: 21px;
+			    line-height: 20px;
+			    padding: 0px 8px;
+
+			    &:hover, &:focus {
+			    	line-height: 18px;
+			    }
+			}
+		}
+	}
+
+	
+	.about {
+		
+		.social-links {
+			li {
+				display: inline-block;
+				margin-right: 20px;
+			}
+			a {
+				
+			}
+		}
+	}
 }
