@@ -289,28 +289,16 @@ button, .btn, input, .theme-btn {
 	    color: $theme-accent;
 	    position: relative;
 
+	    a {
+	    	color: $theme-accent;
+	    }
+
 	    img {
 	    	height: 300px;
 	    	width: 300px;
 	    	max-width: 100%;
 	    	margin: 0 auto;
 	    }
-
-		a {
-			font-size: 14px;
-		    height: 30px;
-		    line-height: 20px;
-		    padding: 4px 16px;
-		    border-radius:0px;
-		    margin-left: 4px;
-		    margin-top: 8px;
-
-		    &:hover, &:focus {
-		    	line-height: 18px;
-		    	outline: none;
-
-		    }
-		}
 
 	    .project-info {
 	    	height: 300px;
