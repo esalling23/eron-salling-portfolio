@@ -33,7 +33,8 @@ var Tag = new keystone.List('Tag',
  */
 Tag.add({
 
-	name: { type: String, label: 'Name', required: true, initial: true }
+	name: { type: String, label: 'Name', required: true, initial: true }, 
+	category: { type: Types.Select, label: 'Category', options: 'Role, Format, Skill'}
 	
 });
 

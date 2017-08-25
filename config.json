@@ -1,7 +1,6 @@
 {
 	"name": "porfolio-website",
-	"database": "porfolio",
-	"subdomain": "starter-keystone4",
+	"database": "portfolio",
 	"admin_nav": { 
 					"Home Page": ["Index"], 
 					"Porfolio": ["Project", "Tag"], 

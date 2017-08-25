@@ -12,8 +12,8 @@
 
 
 <div class="container-fluid project-page">
-	<h3>{{name}}</h3>
-	{{{intro.html}}}
+	<h3>{{project.name}}</h3>
+	{{{project.intro.html}}}
 	<div class="row tag-row">
 		{{#each tags}}
 			<button id="{{key}}" class="tag btn btn-default" type="button" data-filter-value="{{key}}">
@@ -23,8 +23,10 @@
 		<button class="tag clear-all btn btn-default" type="button" data-filter-value="">Reset</button>
 	</div>	
 
-	<div class="row" id="project-grid">
-		{{{body.html}}}
+	<div class="row">
+		{{{project.body.html}}}
 	</div>
+
+	<a href="{{project.url}}">Project Link</a>
 
 </div> <!-- .container-fluid -->

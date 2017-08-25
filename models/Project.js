@@ -44,8 +44,13 @@ Project.add({
 		ref: 'Tag', 
 		label: 'Project Tags', 
 		many: true
-	}
-	
+	},
+
+	url: { type: String, label: 'Project Url'},
+
+	startDate: { type: Date, label: 'Start Date', note: 'Only month and year will be used'}, 
+	endDate: { type: Date, label: 'End Date', note: 'Only month and year will be used'}
+
 });
 
 /**

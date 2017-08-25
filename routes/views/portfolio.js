@@ -26,6 +26,12 @@ exports = module.exports = function(req, res) {
 
     view.on('init', function(next) {
 
+        var categorize = function(val, cat) {
+            return val.filter(function(item) {
+                return item.category == cat;
+            });
+        };
+
         var queryProj = Project.model.find({})
         .populate('tags');
 
@@ -45,7 +51,14 @@ exports = module.exports = function(req, res) {
                 }
             };
 
-            locals.tags = tags;
+            tags = _.uniq(tags);
+
+            locals.tags = {
+                roles: categorize(tags, 'Role'), 
+                formats: categorize(tags, 'Format'), 
+                skills: categorize(tags, 'Skill')
+            };
+
             locals.projects = projects;
 
             next();

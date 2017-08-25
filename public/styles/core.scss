@@ -15,6 +15,7 @@
 	color: $theme-text;
 	font-family: 'Bree Serif', serif;
 	overflow: auto;
+	margin: 0px;
 }
 
 .page-wrapper, #wrapper, .home, .porfolio, .about {
@@ -111,6 +112,7 @@ button, .btn, input, .theme-btn {
 	padding-left: 15px;
 	padding-top: 10px;
 	z-index: 100000;
+	border-radius: 0px;
 
 	&.solid {
 		background-color: $theme-black;
@@ -216,11 +218,21 @@ button, .btn, input, .theme-btn {
 		margin: 20px 0px;
 	}
 
+	.tag-group {
+		display: block;
+
+		p {
+			margin: 0px;
+		}
+	}
+
+
 	.tag {
 		height: 40px;
 		width: auto;
 		padding: 2px 16px;
 		margin: 4px;
+		margin-left: 0px;
 		line-height: 26px;
 		border-radius: 0px;
 		background: $theme-creme;
@@ -237,6 +249,11 @@ button, .btn, input, .theme-btn {
 			color: $theme-red;
 			line-height: 24px;
 			border: 1px solid $theme-red;
+		}
+
+
+		&.clear-all {
+			margin-top: 20px;
 		}
 	}
 
@@ -255,7 +272,7 @@ button, .btn, input, .theme-btn {
 		margin-bottom: 5px;
 		padding: 0px; 
 
-	    background-color: $theme-black;
+	    background-color: $theme-creme;
 	    border: 1px solid $theme-red;
 	    color: $theme-red;
 	    position: relative;
@@ -268,11 +285,14 @@ button, .btn, input, .theme-btn {
 	    	margin: 0 auto;
 	    }
 
-		button {
+		a {
 			font-size: 14px;
 		    height: 30px;
 		    line-height: 20px;
 		    padding: 4px 16px;
+		    border-radius:0px;
+		    margin-left: 4px;
+		    margin-top: 8px;
 
 		    &:hover, &:focus {
 		    	line-height: 18px;
@@ -303,13 +323,29 @@ button, .btn, input, .theme-btn {
 	}
 }
 
+// Individual Project Page
+.project-page {
+	background-color: $theme-black;
+	color: $theme-creme;
+
+
+
+}
+
 
 // Media 
+
+@media(min-width: 768px) {
+	.home {
+		background-position: center;
+	}
+}
 
 @media(max-width: 767px) {
 
 	.home {
 		padding: 40px 0px;
+		background-position: right;
 
 		.intro {
 			margin: 80px 40px;
@@ -336,6 +372,17 @@ button, .btn, input, .theme-btn {
 @media(max-width: 381px) {
 
 	.porfolio {
+
+		.tag {
+			font-size: 10px;
+		    height: 24px;
+		    line-height: 20px;
+		    padding: 0px 4px;
+
+		    &:hover, &:focus {
+		    	line-height: 18px;
+		    }
+		}
 		.project-item {
 			height: auto !important;
 
@@ -358,7 +405,7 @@ button, .btn, input, .theme-btn {
 				}
 			}
 
-			button {
+			a {
 				font-size: 10px;
 			    height: 21px;
 			    line-height: 20px;

@@ -26,7 +26,7 @@ exports = module.exports = function(req, res) {
 
     view.on('init', function(next) {
 
-        var queryProj = Project.model.findOne({ 'key': req.params.key})
+        var queryProj = Project.model.findOne({ 'key': req.params.key })
         .populate('tags');
 
         queryProj.exec(function(err, result) {
@@ -37,13 +37,11 @@ exports = module.exports = function(req, res) {
             // Do stuff to project
 
             var tags = [];
-            for(var i = 0; i < project.length; i++) {
-                if (project[i].tags !== null && project[i].tags !== undefined){
-                    _.each(project[i].tags, function(tag) {
-                        tags.push(tag);
-                    });
-                }
-            };
+            if (project.tags !== null && project.tags !== undefined){
+                _.each(project.tags, function(tag) {
+                    tags.push(tag);
+                });
+            }
 
             locals.tags = tags;
             locals.project = project;
