@@ -37,9 +37,10 @@
 		};
 
 		var finishResize = function() {
-
+			{{#ifeq section 'portfolio'}}
 			// Show wrapper now that resize is complete
-			$('#wrapper').css('visibility', 'visible');
+			$('#project-grid').css('opacity' ,'1');
+			{{/ifeq}}
 
 		}
 		
@@ -78,6 +79,11 @@
 				}
 
 				if (ind == length - 1) {
+
+					{{#ifeq section 'portfolio'}}
+					$('#project-grid').isotope('layout');
+					{{/ifeq}}
+
 					// Call finish function after xxx milaseconds
 					var finish = _.debounce(finishResize, 500);
 					finish();
@@ -127,8 +133,11 @@
 
 		$(window).on('resize', function () {
 
+			{{#ifeq section 'portfolio'}}
 			// Hide content wrapper during resize
-			$('#wrapper').css('visibility' ,'hidden');
+			$('#project-grid').css('opacity' ,'0');
+
+			{{/ifeq}}
 
 			// Adjust absolutely-position elements for desktop only
 			findAbsolutes();

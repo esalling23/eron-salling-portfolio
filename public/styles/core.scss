@@ -14,7 +14,8 @@
 	width: 100%;
 	color: $theme-text;
 	font-family: 'Bree Serif', serif;
-	overflow: auto;
+	overflow-x: hidden;
+	overflow-y: scroll;
 	margin: 0px;
 }
 
@@ -27,7 +28,8 @@
 .home, .porfolio, .about {
 	padding: 40px;
 	padding-top: 80px;
-
+	width: 100%;
+	height: 100%;
 }
 
 .container-fluid {
@@ -158,9 +160,11 @@ button, .btn, input, .theme-btn {
 	padding: 40px;
 	height:100%;
 	width:100%;
-	background-size: auto 100%;
-	background-position: center;
-
+	background: no-repeat center center fixed;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+	background-size: cover;
 
 	.intro {
 
@@ -235,20 +239,24 @@ button, .btn, input, .theme-btn {
 		margin-left: 0px;
 		line-height: 26px;
 		border-radius: 0px;
+		border: 0px;
 		background: $theme-creme;
 		color: $theme-black;
 
 		&:hover, &:focus, &:active {
 			box-shadow: none;
-			border: 0px;
 			outline: 0px;
 		}
 
-		&:hover, &.is-checked {
+		&:hover, &:focus, &.is-checked {
 			background: $theme-creme;
 			color: $theme-red;
 			line-height: 24px;
 			border: 1px solid $theme-red;
+		    height: 42px;
+		    margin: 3px;
+		    margin-left: 0px;
+		    margin-right: 2px;
 		}
 
 
@@ -276,7 +284,6 @@ button, .btn, input, .theme-btn {
 	    border: 1px solid $theme-red;
 	    color: $theme-red;
 	    position: relative;
-	    @include transition(all, 0.5s);
 
 	    img {
 	    	height: 300px;
@@ -312,7 +319,6 @@ button, .btn, input, .theme-btn {
 	    	left: -1px;
 	    	background-color: $theme-creme;
 	    	border: 1px solid $theme-red;
-	    	@include transition(all, 0.2s);
 	    }
 
 	    &:hover, &:focus {
