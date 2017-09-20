@@ -298,6 +298,8 @@ button, .btn, input, .theme-btn {
 	    	width: 300px;
 	    	max-width: 100%;
 	    	margin: 0 auto;
+	    	filter: grayscale(100%);
+	    	-webkit-filter: grayscale(100%);
 	    }
 
 	    .project-info {
@@ -438,7 +440,7 @@ button, .btn, input, .theme-btn {
 				font-size: 10px;
 			    height: 21px;
 			    line-height: 20px;
-			    padding: 0px 8px;
+			    padding: 0px;
 
 			    &:hover, &:focus {
 			    	line-height: 18px;
@@ -454,9 +456,6 @@ button, .btn, input, .theme-btn {
 			li {
 				display: inline-block;
 				margin-right: 20px;
-			}
-			a {
-				
 			}
 		}
 	}

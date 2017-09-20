@@ -35,10 +35,12 @@ var Project = new keystone.List('Project',
 Project.add({
 	name: { type: String, label: 'Project Name', required: true, initial: true },
 	intro: { type: Types.Markdown, label: "Intro Text", note: 'Displays on grid.', initial: true, required: true }, 
-	body: { type: Types.Markdown, label: "Body Text", note: 'Displays on individual page.', initial: true, required: true }, 
+	body: { type: Types.Markdown, label: "Body Text", note: 'Displays on individual page.', initial: true, required: true },
+
 	icon: { type: Types.CloudinaryImage, label: 'Project Icon'}, 
 	images: { type: Types.CloudinaryImages, label: 'Project Images'}, 
 	imageCaps: { type: Types.TextArray, label: 'Project Captions', note: 'Must be one for each project image'}, 
+	
 	tags: { 
 		type: Types.Relationship, 
 		ref: 'Tag', 

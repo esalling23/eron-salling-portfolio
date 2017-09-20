@@ -35,6 +35,8 @@ About.add({
 	intro: { type: Types.Markdown, label: "Intro Text",  initial: true, required: true }, 
 	body: { type: Types.Markdown, label: "Body Text",  initial: true, required: true },
 
+	image: { type: Types.CloudinaryImage, label: "About Image" },
+
 	twitterURL: { type: Types.Url, label: 'Twitter'},	
 	fbURL: { type: Types.Url, label: 'Facebook'},	
 	linkedInURL: { type: Types.Url, label: 'LinkedIn'},	
