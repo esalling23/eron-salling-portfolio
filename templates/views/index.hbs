@@ -10,7 +10,51 @@
 */
 --}}
 <div class="container-fluid home" style="{{#if index.backgroundImg}}background-image:url('{{index.backgroundImg.url}}'){{else}}background:{{index.backgroundClr}}{{/if}}">
+
 	<div class="row intro">
-		{{{index.intro.html}}}	
+		{{{index.intro.html}}}
+
 	</div>
+
+	<div class="about">
+		<h1>Me</h1>
+		<div class="about-text">
+			{{{about.body.html}}}
+		</div>
+	</div>
+
+	<div class="portfolio">
+		<h1>My Work</h2>
+		<!-- <div class="row"> -->
+		{{#each projects}}
+		{{> projectPage project=this}}
+		{{/each}}
+		<!-- </div> -->
+	</div>
+
+	<div class="contact">
+		<ul class="social-links">
+			{{#if about.fbURL}}
+				<li class="facebook"><a target="_blank" href="{{about.fbURL}}">Facebook</a></li>
+			{{/if}}
+
+			{{#if about.twitterURL}}
+				<li class="twitter"><a target="_blank" href="{{about.twitterURL}}">Twitter</a></li>
+			{{/if}}
+
+			{{#if about.linkedInURL}}
+				<li class="linkedin"><a target="_blank" href="{{about.linkedInURL}}">LinkedIn</a></li>
+			{{/if}}
+
+			{{#if about.githubURL}}
+				<li class="github"><a target="_blank" href="{{about.githubURL}}">Github</a></li>
+			{{/if}}
+
+			{{#if about.email}}
+				<li class="email"><a href="mailto:{{about.email}}">Email</a></li>
+			{{/if}}
+		</ul>
+
+	</div>
+
 </div> <!-- .container-fluid -->

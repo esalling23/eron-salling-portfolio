@@ -1,10 +1,10 @@
 {{!< default}}
-{{!-- 
+{{!--
 /**
  * Uncertainty Project
  * Developed by Engagement Lab, 2016
  * ==============
- * 
+ *
  * Script include for global logic
  * ==========
  */
@@ -45,7 +45,7 @@
 		  });
 
 		};
-		
+
 		var setAbsolutes = function(absolutes) {
 
 			if (absolutes.length == 0) {
@@ -67,7 +67,7 @@
 					position.right = $(item).css('right');
 				}
 
-				// If left, set it. 
+				// If left, set it.
 				if (position.left){
 					$(item).css('left', wrapperLeft);
 				}
@@ -114,7 +114,7 @@
 			});
 
 			// Get all absolutely-positioned elements
-			var outerAbsolutes = 
+			var outerAbsolutes =
 			$('#wrapper :not(#sidebar-wrapper)')
 			.filter(function(){
 			  return ($(this).css('position') == 'absolute');
@@ -162,7 +162,7 @@
 
 
 			$('.tag').on('click', function() {
-				
+
 				$(this).toggleClass('is-checked');
 
 				applyFilter(this, $(this).hasClass('is-checked'));
@@ -170,10 +170,10 @@
 			});
 
 			$('#project-grid').imagesLoaded( function() {
-				
+
 				var $filtered = $(container).isotope({
 				    itemSelector: '.project-item',
-				    filter: '*', 
+				    filter: '*',
 				    masonry: {
 					  gutter: 10
 					}
@@ -203,7 +203,7 @@
 				filtered.isotope('layout');
 
 				filtered += num;
-				
+
 				if ( filtered === 0 ) {
 				  $('.no-filtered-visible').show();
 				} else {
@@ -211,13 +211,13 @@
 				}
 
 			}
-		    
+
 		    function applyFilter(elem, selected) {
 
 		    	filtered = 0;
-					
+
 			    var selector = $(elem);
-			    			    
+
 				if (selected) {
 					if (selector.data('filter-value').length >= 1)
 				    filters.push('.' + selector.data('filter-value').toString());
@@ -227,26 +227,26 @@
 						filters.splice(index, 1);
 					}
 				}
-			    			    
+
 			    var filterStr = filters.join('');
-			    
-				var $filtered = $(container).isotope({ 
-					filter: filterStr, 
-					itemSelector: '.project-item' 
+
+				var $filtered = $(container).isotope({
+					filter: filterStr,
+					itemSelector: '.project-item'
 				});
 				var num = $filtered.isotope('getFilteredItemElements').length;
-				checkFiltered(num, container, $filtered);   
+				checkFiltered(num, container, $filtered);
 
 			}
 
 			$(".clear-all").on('click', function() {
-				
+
 				filters = [];
 				$(container).isotope({
-			        filter: '*' 
+			        filter: '*'
 
 				});
-					
+
 				$('.is-checked').removeClass('is-checked');
 				$('.all-options').addClass('is-checked');
 				$('.all-options').each(function(i, obj){
@@ -260,5 +260,5 @@
 
 
 	});
-	
+
 </script>

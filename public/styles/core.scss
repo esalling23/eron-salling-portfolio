@@ -27,7 +27,7 @@
 }
 
 .home, .porfolio, .about, .project-page {
-	padding: 40px;
+	padding: 0px;
 	padding-top: 80px;
 	width: 100%;
 	height: 100%;
@@ -54,7 +54,7 @@
 	}
 }
 .buffer {
-		margin-top: 5%;	
+		margin-top: 5%;
 }
 
 // Button Styles
@@ -106,9 +106,9 @@ button, .btn, input, .theme-btn {
 	    height: 5px;
 	    margin: 6px 0;
 	}
-	
 
-	
+
+
 }
 
 #menu-toggle {
@@ -142,7 +142,7 @@ button, .btn, input, .theme-btn {
 		li {
 			text-align: center;
 			width: 100%;
-			
+
 
 			a {
 				display: block;
@@ -164,15 +164,13 @@ button, .btn, input, .theme-btn {
 .home {
 	height:100%;
 	width:100%;
-	background: no-repeat center center fixed;
-	-webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-	background-size: cover;
+
+	 @include background-paralax;
 
 	.intro {
-
+		height: calc(100% - 80px);
 		margin: 80px;
+		margin-bottom: 0px;
 
 	}
 
@@ -180,25 +178,47 @@ button, .btn, input, .theme-btn {
 
 // About Page
 .about {
-	background-color: $theme-dark;
+	background-color: black;
 	color: $theme-base;
+	padding-top: 0px;
+	padding: 40px 0px 80px 0px;
+	text-align: center;
+	height: auto;
 
-	.intro {
+	.about-text {
+		width: 60%;
+		margin: 0 auto;
+
 		p {
 			font-size: 20px;
 		}
 	}
 
+
+}
+
+hr {
+	display: block;
+	width: 90%;
+	margin: 0px 5%;
+	border-top-color: rgba(180, 180, 180, 0.6);
+}
+
+.contact {
+	height: 60px;
+	background-color: $theme-grey-dark;
 	.social-links {
-
-		padding: 0px;
-		padding-left: 20px;
+		width: 60%;
+		float: left;
+		padding: 20px 0px 0px 80px;
 		list-style-type: none;
-
+		margin: 0px;
 		li {
+			display: inline;
+			padding-right: 40px;
 
 			a {
-				display: block;
+				display: inline-block;
 				color: $theme-accent;
 				font-size:16px;
 				margin: 0px auto;
@@ -213,15 +233,21 @@ button, .btn, input, .theme-btn {
 		}
 
 	}
-
 }
 
-// Portfolio 
 
-.porfolio {
+// Portfolio
+
+.portfolio {
+	margin: 0px;
+	padding: 80px;
 	background-color: $theme-dark;
 	color: $theme-base;
-
+	h1 {
+		margin: 0 auto;
+		text-align: center;
+		width: 100%;
+	}
 	.tag-row {
 		margin: 20px 0px;
 	}
@@ -275,6 +301,32 @@ button, .btn, input, .theme-btn {
 		position: relative;
 		margin: 0px;
 	}
+	.projectPage {
+
+		.project-text {
+			padding-left: 40px;
+		}
+
+		.image-wrap {
+			width: 350px;
+			max-width: 100%;
+			background: white;
+			img {
+				width: 100%;
+			}
+		}
+
+		.project-info {
+			margin-top: 160px;
+			margin-bottom: 160px;
+			overflow: hidden;
+
+			&:nth-child(1) {
+				margin-top: 80px;
+			}
+		}
+	}
+
 
 	.project-item {
 		height: 300px;
@@ -282,7 +334,7 @@ button, .btn, input, .theme-btn {
 		max-width: 100%;
 		margin-top: 5px;
 		margin-bottom: 5px;
-		padding: 0px; 
+		padding: 0px;
 
 	    background-color: $theme-base;
 	    border: 1px solid $theme-accent;
@@ -343,7 +395,7 @@ button, .btn, input, .theme-btn {
 	}
 
 	.description {
-		margin-top: 40px;	
+		margin-top: 40px;
 		font-size: 20px;
 	}
 
@@ -364,7 +416,7 @@ button, .btn, input, .theme-btn {
 }
 
 
-// Media 
+// Media
 
 @media(min-width: 768px) {
 	.home {
@@ -384,7 +436,7 @@ button, .btn, input, .theme-btn {
 	}
 
 	.about {
-		
+
 		.social-links {
 			padding: 0px;
 			margin-top: 80px;
@@ -393,7 +445,7 @@ button, .btn, input, .theme-btn {
 				margin-right: 40px;
 			}
 			a {
-				
+
 			}
 		}
 	}
@@ -449,9 +501,9 @@ button, .btn, input, .theme-btn {
 		}
 	}
 
-	
+
 	.about {
-		
+
 		.social-links {
 			li {
 				display: inline-block;

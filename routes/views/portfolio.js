@@ -7,7 +7,7 @@
  * Help: http://keystonejs.com/docs/getting-started/#routesviews-firstview
  *
  * @class Index
- * @author 
+ * @author
  *
  * ==========
  */
@@ -26,11 +26,11 @@ exports = module.exports = function(req, res) {
 
     view.on('init', function(next) {
 
-        var categorize = function(val, cat) {
-            return val.filter(function(item) {
-                return item.category == cat;
-            });
-        };
+      var categorize = function(val, cat) {
+          return val.filter(function(item) {
+              return item.category == cat;
+          });
+      };
 
         var queryProj = Project.model.find({})
         .populate('tags');
@@ -54,8 +54,8 @@ exports = module.exports = function(req, res) {
             tags = _.uniq(tags);
 
             locals.tags = {
-                roles: categorize(tags, 'Role'), 
-                formats: categorize(tags, 'Format'), 
+                roles: categorize(tags, 'Role'),
+                formats: categorize(tags, 'Format'),
                 skills: categorize(tags, 'Skill')
             };
 

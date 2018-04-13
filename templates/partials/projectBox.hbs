@@ -1,10 +1,10 @@
-<div class="col-md-6 project-item{{#each project.tags}} {{key}}{{/each}}">
+<div class="project-item{{#each project.tags}} {{key}}{{/each}}">
 	<a href="/portfolio/{{project.key}}">
 		<img src="{{{cloudinaryUrl project.icon}}}" alt="{{project.name}}">
 		<div class="project-info">
 			<h3 class="styled-title">{{project.name}}</h3>
 			<p>{{{project.intro.html}}}</p>
 		</div>
-		
+
 	</a>
 </div>

@@ -7,14 +7,21 @@
  * Help: http://keystonejs.com/docs/getting-started/#routesviews-firstview
  *
  * @class Index
- * @author 
+ * @author
  *
  * ==========
  */
 var keystone = require('keystone'),
     Index = keystone.list('Index'),
+    About = keystone.list('About'),
     Project = keystone.list('Project'),
     _ = require('underscore');
+
+var categorize = function(val, cat) {
+    return val.filter(function(item) {
+        return item.category == cat;
+    });
+};
 
 exports = module.exports = function(req, res) {
 
@@ -31,12 +38,53 @@ exports = module.exports = function(req, res) {
                 'createdAt': -1
             }
         });
+
+        var queryAbout = About.model.findOne({}, {}, {});
+
+        var queryProj = Project.model.find({})
+        .populate('tags');
+
         queryIndex.exec(function(err, resultIndex) {
             if (err) throw err;
 
             locals.index = resultIndex;
-                
-            next();
+
+            queryAbout.exec(function(err, result) {
+                if (err) throw err;
+
+                locals.about = result;
+
+                queryProj.exec(function(err, result) {
+                    if (err) throw err;
+
+                    var projects = result;
+
+                    // Do stuff to projects
+
+                    var tags = [];
+                    for(var i = 0; i < projects.length; i++) {
+                        if (projects[i].tags !== null && projects[i].tags !== undefined){
+                            _.each(projects[i].tags, function(tag) {
+                                tags.push(tag);
+                            });
+                        }
+                    };
+
+                    tags = _.uniq(tags);
+
+                    locals.tags = {
+                        roles: categorize(tags, 'Role'),
+                        formats: categorize(tags, 'Format'),
+                        skills: categorize(tags, 'Skill')
+                    };
+
+                    locals.projects = projects;
+
+                    next();
+
+                });
+
+            });
 
         });
     });

@@ -1,12 +1,25 @@
-	<h3>{{name}}</h3>
-	{{{body.html}}}
+<div class="row projectPage">
+	<div class="project-info">
+		<div class="pull-left image-wrap">
+			<img src="{{{cloudinaryUrl project.icon}}}" alt="{{project.name}}">
+		</div>
 
-	{{!-- Image slider --}}
+		<div class="col-sm-12 col-md-6 col-lg-6 pull-left project-text">
+			<h2>{{project.name}}</h2>
+			{{{project.intro.html}}}
+			<div class="row tag-row">
+				{{#each tags}}
+					<div class="tag no-link">{{name}}</div>
+				{{/each}}
+			</div>
 
-	<div class="row">
-		<p>This project involved: 
-		{{#each tags}}	
-		<span>{{name}}</span>
-		{{/each}}
-		</p>
+			<div class="row description">
+				{{{project.body.html}}}
+			</div>
+			<a href="{{project.url}}">Project Link</a>
+
+		</div>
 	</div>
+
+	{{#if @last}}{{else}}<div class="break"><hr></div>{{/if}}
+</div>

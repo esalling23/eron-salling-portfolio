@@ -21,7 +21,9 @@ $color-green: #00CB86;
 
 
 // Theme Colors
+$theme-grey-light: #d6d6d6;
 $theme-grey-dark: #151515;
+$theme-grey-darker: #232323;
 $theme-black: #0C0F0C;
 $theme-black-green: #0F170B;
 $theme-orange: #ce7403;
@@ -34,8 +36,7 @@ $theme-green-alt: #6C910F;
 
 $theme-text: $theme-creme;
 $theme-text-alt: $theme-grey-dark;
-$theme-dark: $theme-grey-dark;
-$theme-base: $theme-creme;
+$theme-dark: $theme-grey-darker;
+$theme-base: $theme-grey-light;
 $theme-accent: $theme-green;
 $theme-accent-alt: $theme-greener;
-
