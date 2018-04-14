@@ -7,8 +7,10 @@
 		<div class="col-sm-12 col-md-6 col-lg-6 pull-left project-text">
 			<h2>{{project.name}}</h2>
 			{{{project.intro.html}}}
+			<p><strong>Start Date: </strong>{{project.start}}</p>
+			<p><strong>End Date: </strong>{{project.end}}</p>
 			<div class="row tag-row">
-				{{#each tags}}
+				{{#each project.tags}}
 					<div class="tag no-link">{{name}}</div>
 				{{/each}}
 			</div>
@@ -18,11 +20,7 @@
 			</div>
 			<a href="{{project.url}}">Project Link</a>
 
-			<div class="row tag-row">
-				{{#each tags}}
-					<div class="tag no-link">{{name}}</div>
-				{{/each}}
-			</div>	
+
 
 		</div>
 	</div>

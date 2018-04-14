@@ -77,7 +77,13 @@ exports = module.exports = function(req, res) {
                         skills: categorize(tags, 'Skill')
                     };
 
-                    console.log(projects);
+                    projects = _.map(projects, function(p) {
+                      p.start = p.startDate.toDateString();
+                      p.end = p.endDate.toDateString();
+                      console.log(p.endDate.toDateString());
+                      return p;
+                    });
+                    // console.log(projects);
                     locals.projects = _.sortBy(projects, function(p) {
                       console.log(p.endDate);
                       return Date.parse(p.endDate);
