@@ -87,7 +87,7 @@ exports = module.exports = function(req, res) {
                     locals.projects = _.sortBy(projects, function(p) {
                       console.log(p.endDate);
                       return Date.parse(p.endDate);
-                    });
+                    }).reverse();
                     // console.log(_.sortBy(projects, "endDate"));
 
                     next();
