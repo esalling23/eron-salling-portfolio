@@ -41,8 +41,7 @@ exports = module.exports = function(req, res) {
 
         var queryAbout = About.model.findOne({}, {}, {});
 
-        var queryProj = Project.model.find({})
-        .populate('tags');
+        var queryProj = Project.model.find({}).populate('tags');
 
         queryIndex.exec(function(err, resultIndex) {
             if (err) throw err;
@@ -78,7 +77,12 @@ exports = module.exports = function(req, res) {
                         skills: categorize(tags, 'Skill')
                     };
 
-                    locals.projects = projects;
+                    console.log(projects);
+                    locals.projects = _.sortBy(projects, function(p) {
+                      console.log(p.endDate);
+                      return Date.parse(p.endDate);
+                    });
+                    // console.log(_.sortBy(projects, "endDate"));
 
                     next();
 
