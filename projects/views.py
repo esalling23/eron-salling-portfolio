@@ -2,9 +2,11 @@ from django.core import serializers
 from django.http import JsonResponse
 
 from .models import Project
+from .serializers import ProjectSerializer
 
 # Create your views here.
 def projects_index(request):
     """Index request to list all projects"""
-    projects = serializers.serialize('json', Project.objects.all())
-    return JsonResponse({ 'projects': projects })
+    projects = Project.objects.all()
+    serializer = ProjectSerializer(projects, many=True)
+    return JsonResponse({ 'projects': serializer.data })
