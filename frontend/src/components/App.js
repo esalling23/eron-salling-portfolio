@@ -1,7 +1,16 @@
-import React from 'react'
-import { Row, Col, } from 'react-materialize'
+import React, { useState, useEffect } from 'react'
+import '../styles/index.scss'
 
 const App = () => {
+  const [projects, setProjects] = useState(null)
+  
+  useEffect(() => {
+    fetch('/projects')
+      .then(res => res.json())
+      .then(res => setProjects(res.projects))
+      .catch(console.error)
+  }, [])
+
   return (
     <main>
       <section>
@@ -10,6 +19,13 @@ const App = () => {
       </section>
       <section>
         <h2>Work</h2>
+        { projects ? projects.map(project => (
+          <div key={project.id}>
+            <h3>{project.title}</h3>
+            <h5>{project.date_started} - {project.date_ended ? project.date_ended : 'Current'}</h5>
+            <p>{project.description}</p>
+          </div>
+        )) : 'Loading...' }
       </section>
     </main>
   )
