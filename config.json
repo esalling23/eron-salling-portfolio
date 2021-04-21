@@ -1,9 +1,0 @@
-{
-	"name": "porfolio-website",
-	"database": "portfolio",
-	"admin_nav": { 
-					"Home Page": ["Index"], 
-					"Porfolio": ["Project", "Tag"], 
-					"About Page": ["About"]
-				}
-}
