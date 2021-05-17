@@ -32,15 +32,21 @@ if os.getenv('ENV') == 'development':
     # Only allow locally running client at port 7165 for CORS
     CORS_ORIGIN_WHITELIST = ['http://localhost:7165']
 else:
-    # If we are on production, use the dj_database_url package
-    # to locate the database based on Heroku setup
-    DB = dj_database_url.config()
+    DB = {
+      'ENGINE': 'django.db.backends.postgresql',
+      'NAME': os.getenv('DB_NAME_PROD'),
+      'USER': os.getenv('DB_USER_NAME'),
+      'PASSWORD': os.getenv('DB_USER_PASS'),
+      'PORT': ''
+    }
     # Set debug to false
     DEBUG = False
     # Only allow the `CLIENT_ORIGIN` for CORS
     CORS_ORIGIN_WHITELIST = [
-        os.getenv('CLIENT_ORIGIN')
+        ''
     ]
+
+    ALLOWED_HOSTS = ['eronsalling.com', '143.198.132.99', 'localhost']
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
