@@ -33,18 +33,19 @@ if os.getenv('ENV') == 'development':
     CORS_ORIGIN_WHITELIST = ['http://localhost:7165']
 else:
     DB = {
-      'ENGINE': 'django.db.backends.postgresql',
+      'ENGINE': 'django.db.backends.postgresql_psycopg2',
       'NAME': os.getenv('DB_NAME_PROD'),
       'USER': os.getenv('DB_USER_NAME'),
       'PASSWORD': os.getenv('DB_USER_PASS'),
+      'HOST': 'localhost',
       'PORT': ''
     }
     # Set debug to false
     DEBUG = False
     # Only allow the `CLIENT_ORIGIN` for CORS
-    CORS_ORIGIN_WHITELIST = [
-        ''
-    ]
+    # CORS_ORIGIN_WHITELIST = [
+    #     'http://eronsalling.com'
+    # ]
 
     ALLOWED_HOSTS = ['eronsalling.com', '143.198.132.99', 'localhost']
 
@@ -80,10 +81,12 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'storages',
+    'webpack_loader',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -109,6 +112,18 @@ TEMPLATES = [
         },
     },
 ]
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'CACHE': not DEBUG,
+        'BUNDLE_DIR_NAME': 'webpack_bundles/', # must end with slash
+        'STATS_FILE': os.path.join(BASE_DIR, 'frontend/webpack-stats.json'),
+        'POLL_INTERVAL': 0.1,
+        'TIMEOUT': None,
+        'IGNORE': [r'.+\.hot-update.js', r'.+\.map'],
+        'LOADER_CLASS': 'webpack_loader.loader.WebpackLoader',
+    }
+}
 
 WSGI_APPLICATION = 'portfolio.wsgi.application'
 
@@ -158,3 +173,9 @@ AWS_DEFAULT_ACL = 'public-read'
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'frontend/assets'),
+)
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
