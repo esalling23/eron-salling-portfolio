@@ -9,7 +9,7 @@ import Portfolio from './pages/Portfolio'
 
 const App = () => {
   const [projects, setProjects] = useState(null)
-  
+
   useEffect(() => {
     fetch('/projects')
       .then(res => res.json())

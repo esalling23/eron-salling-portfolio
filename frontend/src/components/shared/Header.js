@@ -4,10 +4,10 @@ import { CircleFill } from 'react-bootstrap-icons'
 import { Link } from 'react-router-dom'
 
 const Header = () => (
-	<Navbar expand='sm' className='my-5 main-nav'>
+	<Navbar expand='sm' className='my-5 main-nav justify-content-center'>
 		{/* {<Navbar.Brand>Eron Salling</Navbar.Brand>} */}
-		<Navbar.Toggle aria-controls='main-nav' />
-		<Navbar.Collapse id='main-nav'>
+		<Navbar.Toggle aria-controls='main-nav' className=''/>
+		<Navbar.Collapse id='main-nav' >
 			<Nav className='justify-content-center align-items-center'>
 				<Nav.Link className='mx-5' href='#/'>
 					Home
