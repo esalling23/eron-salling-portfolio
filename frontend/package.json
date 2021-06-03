@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development --entry ./src/index.js --output-path ./static/frontend --watch",
+    "dev": "webpack --mode development --config webpack.config.js --watch",
     "build": "webpack --mode production --config webpack.config.js"
   },
   "keywords": [],
@@ -23,6 +23,7 @@
     "react-bootstrap": "^1.5.2",
     "react-bootstrap-icons": "^1.4.0",
     "react-dom": "^17.0.2",
+    "react-reveal": "^1.2.2",
     "react-router-dom": "^5.2.0",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",

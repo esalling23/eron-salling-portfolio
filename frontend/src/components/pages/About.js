@@ -10,10 +10,10 @@ const About = () => (
 			<Col xs={8} md={6}>
 				<p>
 					Hey there, I'm Eron Salling (he/him). I'm a game developer who specializes in
-					educational experiences and civic engagement.
-
-					I've built games and applications in React, "vanilla" JS, C#, and Python. One of my favorite tools is Unity, 
-					but I've also tinkered with Unreal Engine and PhaserJS. 
+					educational experiences and civic engagement. 
+				</p>
+				<p>
+					When building games I tend to lean on Unity and C#, but I also enjoy building web applications using Django and ReactJS as well as the MERN stack. 
 				</p>
 			</Col>
 		</Row>

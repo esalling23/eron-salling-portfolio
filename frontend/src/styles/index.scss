@@ -8,7 +8,7 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2, a {
     font-family: 'Ubuntu Mono', monospace;
 }
 
@@ -24,17 +24,42 @@ section {
 
 .main-nav {
     width: fit-content;
+    margin: auto;
 }
 
-@include media-breakpoint-down(sm) { 
-    .main-nav {
-        
-    }
+.nav-link {
+    font-size: 1.5em;
 }
 
+// Handles New lines in database text paragraphs
+p {
+    white-space: pre-line;
+}
 
-@include media-breakpoint-up(md) { 
-    .main-nav {
-        margin: auto;
+.full-screen {
+    flex: 1 1 auto;
+    flex-direction: column;
+    height: calc(100vh - 180px);
+    margin-bottom: 10%;
+}
+
+// Typing cursor on the home page
+.typing-cursor {
+    font-size: 2em;
+}
+
+// From React Typist Examples
+.flash {
+    font-weight: bold;
+
+    animation-name: blinker;
+    animation-duration: 0.95s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    @keyframes blinker {
+        25% { opacity: 1.0; }
+        30% { opacity: 0.0; }
+        70% { opacity: 0.0; }
+        75% { opacity: 1.0; }
     }
 }
