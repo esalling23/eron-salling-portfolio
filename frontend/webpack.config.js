@@ -9,6 +9,7 @@ module.exports = {
 		path: path.resolve('./assets/webpack_bundles/'),
 		publicPath: '/static/webpack_bundles/',
 		filename: '[name]-[fullhash].js',
+		clean: true,
 	},
 	plugins: [new BundleTracker({ filename: './webpack-stats.json' })],
 	module: {
