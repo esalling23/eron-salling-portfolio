@@ -80,7 +80,6 @@ p {
 
 // Bootstrap Badge overrides
 .badge {
-    margin-left: 1.5em;
     // Alters sizing so it's more square
     padding: 0.4em 0.8em;
 
@@ -90,8 +89,9 @@ p {
 
     a {
         font-size: 1.25em;
-        &:hover {
+        &:hover, &:hover * {
             color: $link-hover;
+            text-decoration: none;
         }
     }
 }
