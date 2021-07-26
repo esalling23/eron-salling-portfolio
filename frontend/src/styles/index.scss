@@ -27,8 +27,18 @@ section {
     margin: auto;
 }
 
-.nav-link {
+.navbar-light .navbar-nav .nav-link {
     font-size: 1.5em;
+    border-bottom: 3px solid $main-bg-color;
+    // text-decoration: underline $main-bg-color;
+    transition: border-color 300ms;
+
+    &.selected {
+        // text-decoration: underline $main-font-color;
+        border-bottom: 3px solid $main-font-color;
+        color: $main-font-color;
+        transition: border-color 300ms;
+    }
 }
 
 // Handles New lines in database text paragraphs

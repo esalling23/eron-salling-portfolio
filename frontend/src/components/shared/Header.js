@@ -1,7 +1,13 @@
 import React from 'react'
 import { Navbar, Nav } from 'react-bootstrap'
 import { CircleFill } from 'react-bootstrap-icons'
-import { Link } from 'react-router-dom'
+import { LinkContainer } from 'react-router-bootstrap'
+
+const HeaderLink = ({ to, text }) => (
+	<LinkContainer exact to={to} activeClassName='selected'>
+		<Nav.Link className='mx-5'>{text}</Nav.Link>
+	</LinkContainer>
+)
 
 const Header = () => (
 	<Navbar expand='sm' className='my-5 main-nav justify-content-center'>
@@ -9,20 +15,15 @@ const Header = () => (
 		<Navbar.Toggle aria-controls='main-nav' className='' />
 		<Navbar.Collapse id='main-nav'>
 			<Nav className='justify-content-center align-items-center'>
-				<Nav.Link className='mx-5' href='#/'>
-					Home
-				</Nav.Link>
+				<HeaderLink to='/' text='Home' />
 				<CircleFill size={4} />
-				<Nav.Link className='mx-5' href='#portfolio'>
-					Portfolio
-				</Nav.Link>
+				<HeaderLink to='/portfolio' text='Portfolio' />
 				<CircleFill size={4} />
-				<Nav.Link className='mx-5' href='#about'>
-					About
-				</Nav.Link>
+				<HeaderLink to='/about' text='About' />
 			</Nav>
 		</Navbar.Collapse>
 	</Navbar>
 )
+
 
 export default Header
