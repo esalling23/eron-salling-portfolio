@@ -1,5 +1,10 @@
 import React from 'react'
-import { Image, Col, Row, Collapse } from 'react-bootstrap'
+import format from 'date-fns/format'
+
+// Formats date into "Month NumYear"
+const formatDate = (date) => {
+	return format(new Date(date), 'MMM yyyy')
+}
 
 const Project = ({
 	title,
@@ -17,7 +22,7 @@ const Project = ({
 			</Col>
 			<Col md={6} className='my-5'>
 				<h5>
-					{dateStarted} - {dateEnded ? dateEnded : 'Current'}
+					{formatDate(dateStarted)} - {dateEnded ? formatDate(dateEnded) : 'Current'}
 				</h5>
 				<p>{description}</p>
 			</Col>
