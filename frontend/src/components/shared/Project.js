@@ -23,11 +23,18 @@ const Project = ({
 				<Image src={mainImg} alt='Main project image' fluid />
 			</Col>
 			<Col md={6} className='my-2'>
-				<h5>
-					{formatDate(dateStarted)} - {dateEnded ? formatDate(dateEnded) : 'Current'}
-				</h5>
-				{moreLink && <Badge variant="primary"><a target="_blank" href={moreLink}>See more</a></Badge>}
-				<p className="pt-3">{description}</p>
+				<p className='pt-3'>{description}</p>
+				<div>
+					{formatDate(dateStarted)} -{' '}
+					{dateEnded ? formatDate(dateEnded) : 'Current'}
+					{moreLink && (
+						<Badge variant='primary'>
+							<a target='_blank' href={moreLink}>
+								See more
+							</a>
+						</Badge>
+					)}
+				</div>
 			</Col>
 		</Row>
 	</Col>
