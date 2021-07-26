@@ -1,5 +1,6 @@
 import React from 'react'
-import { Image, Row, Col } from 'react-bootstrap'
+import { Image, Row, Col, Badge } from 'react-bootstrap'
+import { Github, Linkedin } from 'react-bootstrap-icons'
 
 const About = () => (
 	<section id='about'>
@@ -20,6 +21,19 @@ const About = () => (
 					building web applications using Django and ReactJS as well as the MERN
 					stack.
 				</p>
+
+				<div>
+					<Badge variant='primary'>
+						<a target='_blank' href='https://github.com/esalling23'>
+							<Github /> Github
+						</a>
+					</Badge>
+					<Badge variant='primary' className='ml-3'>
+						<a target='_blank' href='https://www.linkedin.com/in/eron-salling/'>
+							<Linkedin /> Linkedin
+						</a>
+					</Badge>
+				</div>
 			</Col>
 		</Row>
 	</section>
