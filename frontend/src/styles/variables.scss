@@ -1,7 +1,15 @@
 $mustard-lite: #f2cc8f;
 $mustard-brite: #fcbf49;
+$dark-blue: #2d3c5e;
 
 $dark-grey: #31393C;
 
 $main-bg-color: $mustard-brite;
 $main-font-color: $dark-grey;
+$accent-bg-color: $dark-blue;
+$link-color: $mustard-lite;
+$link-hover: $mustard-brite;
+
+// Bootstrap overrides
+$primary: $accent-bg-color;
+
