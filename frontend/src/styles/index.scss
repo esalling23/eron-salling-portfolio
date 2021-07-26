@@ -63,3 +63,20 @@ p {
         75% { opacity: 1.0; }
     }
 }
+
+// Bootstrap Badge overrides
+.badge {
+    // Alters sizing so it's more square
+    padding: 0.4em 0.8em;
+
+    * {
+        color: $link-color;
+    }
+
+    a {
+        font-size: 1.25em;
+        &:hover {
+            color: $link-hover;
+        }
+    }
+}
