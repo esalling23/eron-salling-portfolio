@@ -47,7 +47,7 @@ else:
     #     'http://eronsalling.com'
     # ]
 
-    ALLOWED_HOSTS = ['eronsalling.com', '143.198.132.99', 'localhost']
+    ALLOWED_HOSTS = [os.getenv('HOST'), os.getenv('IP'), 'localhost']
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
