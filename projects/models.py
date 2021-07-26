@@ -11,6 +11,7 @@ class Project(models.Model):
     # If `date_ended` is empty, this is a current project
     date_ended = models.DateField(null=True, blank=True)
     description = models.TextField()
+    more_link = models.URLField(max_length=400, null=True, blank=True)
 
     def __str__(self):
         return self.title
