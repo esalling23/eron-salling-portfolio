@@ -11,7 +11,7 @@ const Portfolio = ({ projects }) => (
 			</Row>
 		)}
 		{projects && (
-			<Row className="justify-content-center">
+			<Row className="justify-content-center" style={{ paddingBottom: '10em' }}>
 				{projects.map((project) => (
 					<Project
 						key={project.id}
