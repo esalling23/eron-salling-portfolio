@@ -8,7 +8,7 @@ const Layout = ({ children }) => (
 		<Header />
 		<main className="px-5">
 			<Row className="justify-content-center">
-				<Col md={10}>{ children }</Col>
+				<Col md={12}>{ children }</Col>
 			</Row>
 		</main>
 	</Container>

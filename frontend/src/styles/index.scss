@@ -41,6 +41,10 @@ section {
     }
 }
 
+.project-container:not(:first-child) {
+    padding-top: 3em;
+}
+
 // Handles New lines in database text paragraphs
 p {
     white-space: pre-line;
@@ -76,6 +80,7 @@ p {
 
 // Bootstrap Badge overrides
 .badge {
+    margin-left: 1.5em;
     // Alters sizing so it's more square
     padding: 0.4em 0.8em;
 

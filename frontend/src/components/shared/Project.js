@@ -16,7 +16,7 @@ const Project = ({
 	mainImg,
 	thumbnailImg,
 }) => (
-	<Col md={12}>
+	<Col md={12} className='project-container'>
 		<h2>{title}</h2>
 		<Row>
 			<Col md={6} className='my-2'>
