@@ -16,7 +16,7 @@
     "css-loader": "^6.2.0",
     "date-fns": "^2.23.0",
     "file-loader": "^6.2.0",
-    "node-sass": "^6.0.1",
+    "node-sass": "^7.0.0",
     "react": "^17.0.2",
     "react-awesome-reveal": "^3.8.1",
     "react-bootstrap": "^1.6.1",
