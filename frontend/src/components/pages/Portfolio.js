@@ -1,16 +1,19 @@
 import React from 'react'
-import { Spinner, Row, Col } from 'react-bootstrap'
+import { Spinner, Row } from 'react-bootstrap'
 
 import Project from '../shared/Project'
 
-const Portfolio = ({ projects }) => (
-	<section>
-		{!projects && (
-			<Row className='justify-content-md-center'>
-				<Spinner animation='border' variant='dark' />
-			</Row>
-		)}
-		{projects && (
+const Portfolio = ({ projects }) => {
+	const content = useMemo(() => {
+		if (!projects) {
+			return (
+				<Row className="justify-content-md-center">
+					<Spinner animation="border" variant="dark" />
+				</Row>
+			)
+		}
+
+		return (
 			<Row className="justify-content-center" style={{ paddingBottom: '10em' }}>
 				{projects.map((project) => (
 					<Project
@@ -25,8 +28,14 @@ const Portfolio = ({ projects }) => (
 					/>
 				))}
 			</Row>
-		)}
-	</section>
-)
+		)
+	}, [projects])
+
+	return (
+		<section>
+			{content}
+		</section>
+	)
+}
 
 export default Portfolio

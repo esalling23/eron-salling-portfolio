@@ -3,11 +3,11 @@ import { Image, Row, Col, Badge } from 'react-bootstrap'
 import { Github, Linkedin } from 'react-bootstrap-icons'
 
 const About = () => (
-	<section id='about'>
-		<Row className='justify-content-center'>
-			<Col className='pb-3' xs={8} md={6}>
+	<section id="about">
+		<Row className="justify-content-center">
+			<Col className="pb-3" xs={8} md={6}>
 				<Image
-					src='https://eron-portfolio.s3.amazonaws.com/Eron+Headshot+Big'
+					src="https://eron-portfolio.s3.amazonaws.com/Eron+Headshot+Big"
 					fluid
 				/>
 			</Col>
@@ -23,13 +23,13 @@ const About = () => (
 				</p>
 
 				<div>
-					<Badge variant='primary'>
-						<a target='_blank' href='https://github.com/esalling23'>
+					<Badge variant="primary">
+						<a target="_blank" href="https://github.com/esalling23">
 							<Github /> Github
 						</a>
 					</Badge>
-					<Badge variant='primary' className='ml-3'>
-						<a target='_blank' href='https://www.linkedin.com/in/eron-salling/'>
+					<Badge variant="primary" className="ml-3">
+						<a target="_blank" href="https://www.linkedin.com/in/eron-salling/">
 							<Linkedin /> Linkedin
 						</a>
 					</Badge>
