@@ -11,11 +11,11 @@ django-storages = "*"
 python-dotenv = "*"
 gunicorn = "*"
 django-cors-headers = "*"
-psycopg2 = "*"
 pillow = "*"
 djangorestframework = "*"
 whitenoise = "*"
 django-webpack-loader = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 
