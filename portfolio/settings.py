@@ -18,8 +18,11 @@ import dj_database_url
 from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
 
+devenv = 'development'
+env = os.getenv('ENV') or devenv
+
 # Determine if we are on local or production
-if os.getenv('ENV') == 'development':
+if env == devenv:
     # If we are on development, use the `DB_NAME_DEV` value
     # from the .env file as the database name
     DB_NAME = os.getenv('DB_NAME_DEV')
