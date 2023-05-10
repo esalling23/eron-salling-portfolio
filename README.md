@@ -12,8 +12,9 @@ To run this application:
    1. `ENV` with "development" or "production"
       1. If this does not exist, server will assume a development environment
    2. `SECRET` with literally anything
-   3. `DB_NAME_PROD` with the database name
+   3. `DB_NAME_PROD` & `DB_NAME_PROD` with relevant database name
    4. `DB_USER_NAME` with a database user with access
    5. `DB_USER_PASS` with the password for `DB_USER_NAME`
 6. Apply existing migrations `python3 manage.py migrate`
-7. Run server with `python3 manage.py runserver`
+7. Create a superuser with `python manage.py createsuperuser`
+8. Run server with `python3 manage.py runserver`
