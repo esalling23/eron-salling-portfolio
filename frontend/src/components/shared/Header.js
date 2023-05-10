@@ -4,22 +4,22 @@ import { CircleFill } from 'react-bootstrap-icons'
 import { LinkContainer } from 'react-router-bootstrap'
 
 const HeaderLink = ({ to, text }) => (
-	<LinkContainer exact to={to} activeClassName='selected'>
-		<Nav.Link className='mx-5'>{text}</Nav.Link>
+	<LinkContainer exact to={to} activeClassName="selected">
+		<Nav.Link className="mx-5">{text}</Nav.Link>
 	</LinkContainer>
 )
 
 const Header = () => (
-	<Navbar expand='sm' className='my-5 main-nav justify-content-center'>
+	<Navbar expand="sm" className="my-5 main-nav justify-content-center">
 		{/* {<Navbar.Brand>Eron Salling</Navbar.Brand>} */}
-		<Navbar.Toggle aria-controls='main-nav' className='' />
-		<Navbar.Collapse id='main-nav'>
-			<Nav className='justify-content-center align-items-center'>
-				<HeaderLink to='/' text='Home' />
+		<Navbar.Toggle aria-controls="main-nav" className="" />
+		<Navbar.Collapse id="main-nav">
+			<Nav className="justify-content-center align-items-center">
+				<HeaderLink to="/" text="Home" />
 				<CircleFill size={4} />
-				<HeaderLink to='/portfolio' text='Portfolio' />
+				<HeaderLink to="/portfolio" text="Portfolio" />
 				<CircleFill size={4} />
-				<HeaderLink to='/about' text='About' />
+				<HeaderLink to="/about" text="About" />
 			</Nav>
 		</Navbar.Collapse>
 	</Navbar>
