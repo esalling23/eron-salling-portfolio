@@ -1,8 +1,14 @@
 from rest_framework import serializers
 
-from .models import Project
+from .models import Project, Category
+
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta: 
+        model = Category
+        fields = '__all__'
 
 class ProjectSerializer(serializers.ModelSerializer):
+    categories = CategorySerializer(many=True)
     class Meta:
         model = Project
-        fields = '__all__'
+        fields = ['main_img', 'thumbnail_img', 'title', 'date_started', 'date_ended', 'description', 'more_link', 'categories']
