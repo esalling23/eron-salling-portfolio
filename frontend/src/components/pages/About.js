@@ -2,16 +2,18 @@ import React from 'react'
 import { Image, Row, Col, Badge } from 'react-bootstrap'
 import { Github, Linkedin } from 'react-bootstrap-icons'
 
+import BadgeLink from '../shared/BadgeLink'
+
 const About = () => (
 	<section id="about">
 		<Row className="justify-content-center">
-			<Col className="pb-3" xs={8} md={6}>
+			<Col className="pb-3" md={6}>
 				<Image
 					src="https://eron-portfolio.s3.amazonaws.com/Eron+Headshot+Big"
 					fluid
 				/>
 			</Col>
-			<Col xs={8} md={6}>
+			<Col md={6}>
 				<p>
 					Hey there, I'm Eron Salling (he/him). I'm a game developer who
 					specializes in educational experiences and civic engagement.
@@ -23,16 +25,12 @@ const About = () => (
 				</p>
 
 				<div>
-					<Badge variant="primary">
-						<a target="_blank" href="https://github.com/esalling23">
-							<Github /> Github
-						</a>
-					</Badge>
-					<Badge variant="primary" className="ml-3">
-						<a target="_blank" href="https://www.linkedin.com/in/eron-salling/">
-							<Linkedin /> Linkedin
-						</a>
-					</Badge>
+					<BadgeLink variant="primary" url="https://github.com/esalling23">
+						<Github /> Github
+					</BadgeLink>
+					<BadgeLink className="ml-3" url="https://www.linkedin.com/in/eron-salling/">
+						<Linkedin /> Linkedin
+					</BadgeLink>
 				</div>
 			</Col>
 		</Row>
