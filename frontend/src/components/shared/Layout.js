@@ -1,16 +1,21 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
+import styled from 'styled-components'
 
 import Header from './Header'
 
+const StyledMain = styled.main`
+	position: relative;
+`
+
 const Layout = ({ children }) => (
-	<Container>
+	<Container fluid>
 		<Header />
-		<main className="px-5">
-			<Row className="justify-content-center">
-				<Col md={12}>{ children }</Col>
-			</Row>
-		</main>
+		<StyledMain as={Row} className="px-5 d-flex justify-content-center">
+			<Col md={12}>
+				{ children }
+			</Col>
+		</StyledMain>
 	</Container>
 )
 
