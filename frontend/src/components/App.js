@@ -9,11 +9,15 @@ import Portfolio from './pages/Portfolio'
 
 const App = () => {
   const [projects, setProjects] = useState(null)
+  const [categories, setCategories] = useState(null)
 
   useEffect(() => {
     fetch('/projects')
-      .then(res => res.json())
-      .then(res => setProjects(res.projects))
+			.then(res => res.json())
+			.then(res => setProjects(res.projects))
+			.then(() => fetch('/categories'))
+			.then(res => res.json())
+			.then(res => setCategories(res.categories))
       .catch(console.error)
   }, [])
 
@@ -23,7 +27,7 @@ const App = () => {
 				<Route path='/about' component={About} />
 				<Route
 					path='/portfolio'
-					render={() => <Portfolio projects={projects} />}
+					render={() => <Portfolio projects={projects} categories={categories} />}
 				/>
 				<Route path='/' component={Home} />
 			</Switch>
