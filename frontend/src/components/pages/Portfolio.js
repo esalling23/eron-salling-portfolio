@@ -76,8 +76,7 @@ const Portfolio = ({ projects, categories }) => {
 	/>
 
 	const loadingSpinner = <StyledToggleDisplay
-		as={Row}
-		className="justify-content-center h-100 w-100"
+		className="d-flex justify-content-center h-100 w-100"
 		isHidden={isLoaded}
 	>
 		<Spinner animation="border" variant="dark" />

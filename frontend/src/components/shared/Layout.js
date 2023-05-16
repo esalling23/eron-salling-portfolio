@@ -9,10 +9,10 @@ const StyledMain = styled.main`
 `
 
 const Layout = ({ children }) => (
-	<Container fluid>
+	<Container fluid className="pb-3">
 		<Header />
-		<StyledMain as={Row} className="px-5 d-flex justify-content-center">
-			<Col md={12}>
+		<StyledMain as={Row} className="d-flex justify-content-center">
+			<Col sm={12} lg={8}>
 				{ children }
 			</Col>
 		</StyledMain>

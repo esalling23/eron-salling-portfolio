@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import { Image, Col, Row, Badge } from 'react-bootstrap'
 import styled from 'styled-components'
+import { BoxArrowUpRight } from 'react-bootstrap-icons'
 
 import SeeMoreText from './SeeMoreText'
 import { formatDate, getCategoryId } from '../../lib/utils'
@@ -30,9 +31,9 @@ const Project = ({
 }) => {
 	const imageRef = useRef(null);
 
-	const dateRange = <div className="d-inline">
-		{formatDate(dateStarted)}{' - '}{dateEnded ? formatDate(dateEnded) : 'Current'}
-	</div>
+	const dateRange = <StyledDateRange className="d-inline">
+		({formatDate(dateStarted)}{' - '}{dateEnded ? formatDate(dateEnded) : 'Current'})
+	</StyledDateRange>
 
 	const extras = (
 		<div className="pt-3 d-inline">
@@ -57,8 +58,10 @@ const Project = ({
 		>
 			<h2>{title}</h2>
 			<div className="d-flex flex-wrap align-items-center">
-				<StyledDateRange className="px-1 d-inline">({dateRange})</StyledDateRange>
-				{moreLink && <BadgeLink url={moreLink} className="ml-3">View Website</BadgeLink>}
+				{dateRange}
+				{moreLink && <BadgeLink url={moreLink} className="ml-3">
+					<BoxArrowUpRight />
+				</BadgeLink>}
 			</div>
 			<div>{categoryTags}</div>
 			<Row>

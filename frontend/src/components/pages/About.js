@@ -7,13 +7,13 @@ import BadgeLink from '../shared/BadgeLink'
 const About = () => (
 	<section id="about">
 		<Row className="justify-content-center">
-			<Col className="pb-3" md={6}>
+			<Col className="pb-3" md={6} sm={12}>
 				<Image
 					src="https://eron-portfolio.s3.amazonaws.com/Eron+Headshot+Big"
 					fluid
 				/>
 			</Col>
-			<Col md={6}>
+			<Col md={6} sm={12}>
 				<p>
 					Hey there, I'm Eron Salling (he/him). I'm a game developer who
 					specializes in educational experiences and civic engagement.

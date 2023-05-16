@@ -5,7 +5,7 @@ export const StyledToggleDisplay = styled.div`
 `
 
 export const StyledCategoryTag = styled.div`
-  margin: 0.5rem;
+  margin: 0.1rem;
   &:nth-child(1) {
 		margin-left: 0 !important;
 	}
