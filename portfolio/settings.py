@@ -19,7 +19,7 @@ from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
 
 devenv = 'development'
-env = os.getenv('ENV') or devenv
+env = os.getenv('ENV', devenv)
 
 # Determine if we are on local or production
 if env == devenv:
@@ -50,7 +50,7 @@ else:
     #     'http://eronsalling.com'
     # ]
 
-    ALLOWED_HOSTS = [os.getenv('HOST'), os.getenv('IP'), 'localhost']
+    ALLOWED_HOSTS = [os.getenv('IP'), 'localhost'] + os.getenv('DOMAINS').split(" ")
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
