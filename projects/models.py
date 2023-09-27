@@ -23,6 +23,8 @@ class Project(models.Model):
     more_link = models.URLField(max_length=400, null=True, blank=True)
     # Each project can have multiple categories
     categories = models.ManyToManyField(Category, blank=True)
+    # Hide in front end
+    is_hidden = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title

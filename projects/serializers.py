@@ -11,4 +11,14 @@ class ProjectSerializer(serializers.ModelSerializer):
     categories = CategorySerializer(many=True)
     class Meta:
         model = Project
-        fields = ['main_img', 'thumbnail_img', 'title', 'date_started', 'date_ended', 'description', 'more_link', 'categories']
+        fields = [
+            'main_img', 
+            'thumbnail_img', 
+            'title', 
+            'date_started', 
+            'date_ended', 
+            'description', 
+            'more_link', 
+            'categories',
+            'is_hidden'
+        ]
