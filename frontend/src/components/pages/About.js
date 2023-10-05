@@ -19,9 +19,8 @@ const About = () => (
 					specializes in educational experiences and civic engagement.
 				</p>
 				<p>
-					When building games I tend to lean on Unity and C#, but I also enjoy
-					building web applications using Django and ReactJS as well as the MERN
-					stack.
+					When building games I tend to lean on ReactJS, along with other frontend tools like Redux, Socket.io, and more.
+					As a full-stack developer I've worked on many stacks and consider myself a polyglot, specializing in JavaScript, Python, and C# development. 
 				</p>
 
 				<div>
