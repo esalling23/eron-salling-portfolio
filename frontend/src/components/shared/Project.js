@@ -17,6 +17,10 @@ const StyledDateRange = styled.h5`
 	font-size: 1.2em;
 `
 
+const StyledImage = styled(Image)`
+	width: 100%;
+`
+
 const Project = ({
 	title,
 	dateStarted,
@@ -66,7 +70,7 @@ const Project = ({
 			<div>{categoryTags}</div>
 			<Row>
 				<Col lg={6} className="my-2">
-					<Image
+					<StyledImage
 						ref={imageRef}
 						src={mainImg}
 						alt="Main project image"
