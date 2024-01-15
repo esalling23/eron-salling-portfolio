@@ -20,3 +20,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    uvicorn.run("core.asgi:application", reload=True)

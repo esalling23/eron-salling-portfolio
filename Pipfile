@@ -16,6 +16,10 @@ djangorestframework = "*"
 whitenoise = "*"
 django-webpack-loader = "*"
 psycopg2-binary = "*"
+python-socketio = "*"
+uuid = "*"
+uvicorn = {extras = ["standard"], version = "*"}
+redis = "*"
 
 [dev-packages]
 

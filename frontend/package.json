@@ -39,5 +39,9 @@
     "Webpack"
   ],
   "author": "Eron Salling",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.6",
+    "socket.io-client": "^4.7.2"
+  }
 }
