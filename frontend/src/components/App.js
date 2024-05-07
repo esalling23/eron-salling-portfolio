@@ -8,8 +8,6 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Portfolio from './pages/Portfolio';
 import LoadingSpinner from './shared/LoadingSpinner';
-// import ReduxExample from './pages/ReduxExample';
-// import RPGCanvas from './rpg-canvas/RPGCanvas';
 
 const App = () => {
 	const location = useLocation();

@@ -45,7 +45,7 @@ sudo apt-get update
 cd ~/eron-salling-portfolio && git stash save -m "Stashing local changes as part of deploy" && git pull origin main
 pipenv shell "pipenv install && cd frontend && rm -rf node_modules package-lock.json && npm install && npm run build && cd ../ && python manage.py migrate && python manage.py collectstatic && exit"
 
-# can't get the gunicorn to register in the other folder - had it working once but not anymore :(
+# can't get the gunicorn to register in the other folder 
 # cd ~/ && rm -rf /var/www/eronsalling.me
 # cp -rf ~/eron-salling-portfolio /var/www/eronsalling.me
 sudo systemctl restart gunicorn
