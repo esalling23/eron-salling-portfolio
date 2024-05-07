@@ -1,3 +1,6 @@
+import socketio
+sio = socketio.Server()
+
 # establishes a connection with the client
 @sio.on("connect")
 async def connect(sid, env):
