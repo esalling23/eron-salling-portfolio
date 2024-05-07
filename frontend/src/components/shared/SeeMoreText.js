@@ -1,6 +1,7 @@
-import React, { useState, useMemo, useEffect } from 'react'
-import { Button } from 'react-bootstrap'
-import styled from 'styled-components'
+import React, { useState, useMemo, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { Button } from 'react-bootstrap';
+import styled from 'styled-components';
 
 const StyledSeeMoreButton = styled(Button)`
 	background: none;
@@ -15,7 +16,7 @@ const StyledSeeMoreButton = styled(Button)`
 	&:hover {
 		text-decoration: underline;
 	}
-`
+`;
 
 // Text element that can see more or see less
 const SeeMoreText = ({
@@ -35,11 +36,11 @@ const SeeMoreText = ({
 
 	const handleToggleTextLength = () => {
 		setIsSeeingMore(curr => !curr);
-	}
+	};
 
 	useEffect(() => {
 		onToggle();
-	}, [seenText])
+	}, [seenText]);
 
 	return (
 		<>
@@ -48,7 +49,12 @@ const SeeMoreText = ({
 				onClick={handleToggleTextLength}
 			>{`See ${isSeeingMore ? 'Less' : 'More'}`}</StyledSeeMoreButton>
 		</>
-	)
-}
+	);
+};
 
-export default SeeMoreText
+SeeMoreText.propTypes = {
+	text: PropTypes.string,
+	onToggle: PropTypes.function
+};
+
+export default SeeMoreText;

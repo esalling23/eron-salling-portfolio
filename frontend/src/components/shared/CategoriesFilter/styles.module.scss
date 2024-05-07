@@ -1,0 +1,14 @@
+@import '../../../styles/variables.scss';
+
+.filterButton {
+	color: white;
+	&.show > button {
+		background-color: $main-font-color !important; 
+	}
+	> button {
+		&:active, &:focus, &:hover {
+			background-color: $main-font-color;
+		}
+		background-color: $main-font-color !important;
+	}
+}

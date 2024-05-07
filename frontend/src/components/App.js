@@ -1,38 +1,71 @@
-import React, { useState, useEffect } from 'react'
-import { Route, Switch } from 'react-router-dom'
-import '../styles/index.scss'
+import React, { useState, useEffect } from 'react';
+import { Route,  Routes, useLocation} from 'react-router-dom';
+import '../styles/index.scss';
+import axios from 'axios';
 
-import Layout from './shared/Layout'
-import Home from './pages/Home'
-import About from './pages/About'
-import Portfolio from './pages/Portfolio'
+import Layout from './shared/Layout';
+import Home from './pages/Home';
+import About from './pages/About';
+import Portfolio from './pages/Portfolio';
+import LoadingSpinner from './shared/LoadingSpinner';
+// import ReduxExample from './pages/ReduxExample';
+// import RPGCanvas from './rpg-canvas/RPGCanvas';
 
 const App = () => {
-  const [projects, setProjects] = useState(null)
-  const [categories, setCategories] = useState(null)
+	const location = useLocation();
 
-  useEffect(() => {
-    fetch('/projects')
-			.then(res => res.json())
-			.then(res => setProjects(res.projects))
-			.then(() => fetch('/categories'))
-			.then(res => res.json())
-			.then(res => setCategories(res.categories))
-      .catch(console.error)
-  }, [])
+	const [projects, setProjects] = useState(null);
+	const [categories, setCategories] = useState(null);
+	const [contentData, setContentData] = useState(null);
 
-  return (
+	useEffect(() => {
+		axios.get('/projects')
+			.then(res => {
+				setProjects(res.data.projects);
+				// Pre-load images
+				for (const proj of res.data.projects) {
+					const img = new Image();
+					img.src = proj.main_img;
+				}
+			})
+			.then(() => axios.get('/categories'))
+			.then(res => setCategories(res.data.categories))
+			.then(() => axios.get('/content'))
+			.then(res => {
+				setContentData(res.data.content);
+				// Pre-load About Page Image
+				const img = new Image;
+				console.log(res.data.content.about_img);
+				img.src = res.data.content.about_img;
+			})
+			.catch(console.error);
+	}, []);
+
+	if (!contentData) {
+		return <Layout>
+			<LoadingSpinner isLoaded={false} />
+		</Layout>;
+	}
+
+	return (
 		<Layout>
-			<Switch>
-				<Route path='/about' component={About} />
+			<Routes location={location} key={location.key}>
+				<Route path='/about' element={(
+					<About img={contentData.about_img} description={contentData.about_description} />
+				)} />
 				<Route
 					path='/portfolio'
-					render={() => <Portfolio projects={projects} categories={categories} />}
+					element={<Portfolio projects={projects} categories={categories} />}
 				/>
-				<Route path='/' component={Home} />
-			</Switch>
+				<Route path='/' element={(
+					<Home 
+						typewriterTexts={contentData.typewriter_texts} 
+						title={contentData.home_title}
+					/>
+				)} />
+			</Routes>
 		</Layout>
-	)
-}
+	);
+};
 
-export default App
+export default App;
