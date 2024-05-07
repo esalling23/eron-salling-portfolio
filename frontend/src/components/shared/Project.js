@@ -1,25 +1,26 @@
-import React, { useRef, useEffect } from 'react'
-import { Image, Col, Row, Badge } from 'react-bootstrap'
-import styled from 'styled-components'
-import { BoxArrowUpRight } from 'react-bootstrap-icons'
+import React, { useRef } from 'react';
+import PropTypes from 'prop-types';
+import { Image, Col, Row, Badge } from 'react-bootstrap';
+import styled from 'styled-components';
+import { BoxArrowUpRight } from 'react-bootstrap-icons';
 
-import SeeMoreText from './SeeMoreText'
-import { formatDate, getCategoryId } from '../../lib/utils'
-import { StyledCategoryTag, StyledInline } from '../../styles/SharedComponents'
-import BadgeLink from './BadgeLink'
+import SeeMoreText from './SeeMoreText';
+import { formatDate, getCategoryId } from '../../lib/utils';
+import { StyledCategoryTag } from '../../styles/SharedComponents';
+import BadgeLink from './BadgeLink';
 
 const StyledProject = styled.div`
 	height: fit-content;
 	display: relative;
-`
+`;
 
 const StyledDateRange = styled.h5`
 	font-size: 1.2em;
-`
+`;
 
 const StyledImage = styled(Image)`
 	width: 100%;
-`
+`;
 
 const Project = ({
 	title,
@@ -37,13 +38,13 @@ const Project = ({
 
 	const dateRange = <StyledDateRange className="d-inline">
 		({formatDate(dateStarted)}{' - '}{dateEnded ? formatDate(dateEnded) : 'Current'})
-	</StyledDateRange>
+	</StyledDateRange>;
 
-	const extras = (
-		<div className="pt-3 d-inline">
-			{dateRange}
-		</div>
-	)
+	// const extras = (
+	// 	<div className="pt-3 d-inline">
+	// 		{dateRange}
+	// 	</div>
+	// );
 
 	const categoryTags = categories.map(({ name }) => (
 		<StyledCategoryTag
@@ -51,9 +52,9 @@ const Project = ({
 			key={name}
 			variant="info"
 		>#{name}</StyledCategoryTag>
-	))
+	));
 
-	const categoryClasses = categories.map(({ id }) => getCategoryId(id)).join(' ')
+	const categoryClasses = categories.map(({ id }) => getCategoryId(id)).join(' ');
 
 	return (
 		<StyledProject
@@ -86,7 +87,20 @@ const Project = ({
 				</Col>
 			</Row>
 		</StyledProject>
-	)
-}
+	);
+};
 
-export default Project
+Project.propTypes = {
+	title: PropTypes.string,
+	dateStarted: PropTypes.string,
+	dateEnded: PropTypes.string,
+	description: PropTypes.string,
+	moreLink: PropTypes.string,
+	mainImg: PropTypes.string,
+	// thumbnailImg,
+	categories: PropTypes.string,
+	handleContentLoaded: PropTypes.function,
+	handleResize: PropTypes.function
+};
+
+export default Project;

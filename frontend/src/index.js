@@ -1,12 +1,20 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { HashRouter } from 'react-router-dom'
-import App from './components/App'
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { HashRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import App from './components/App';
+import store from './redux/reducer.js';
 
-const appJsx = (
-  <HashRouter>
-    <App/>
-  </HashRouter>
-)
+const Container = () => (
+	<Provider store={store}>
+		<HashRouter>
+			<App/>
+		</HashRouter>
+	</Provider>
+);
 
-render(appJsx, document.getElementById('app'))
+const container = document.getElementById('app');
+const root = createRoot(container);
+root.render(<Container />);
+
+// render(appJsx, document.getElementById('app'));

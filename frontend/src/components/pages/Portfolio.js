@@ -1,31 +1,39 @@
-import React, { useState, useRef, useMemo, useEffect } from 'react'
-import { Spinner, Row } from 'react-bootstrap'
-import Isotope from 'isotope-layout'
-import styled from 'styled-components'
+import React, { useState, useRef, useMemo, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { Row } from 'react-bootstrap';
+import Isotope from 'isotope-layout';
+import styled from 'styled-components';
 
-import Project from '../shared/Project'
-import CategoriesFilter from '../shared/CategoriesFilter'
-import { StyledToggleDisplay } from '../../styles/SharedComponents'
+import Project from '../shared/Project';
+import CategoriesFilter from '../shared/CategoriesFilter';
+import { StyledToggleDisplay } from '../../styles/SharedComponents';
+import LoadingSpinner from '../shared/LoadingSpinner';
+import PageContainer from '../shared/PageContainer';
 
 const StyledProjectsDisplay = styled(StyledToggleDisplay)`
 	padding-bottom: 10em;
 	display: block;
-`
+`;
 
 const Portfolio = ({ projects, categories }) => {
 	// init one ref to store the future isotope object
 	const isotope = useRef(null);
 
 	// store the filter keyword in a state
-	const [filterKey, setFilterKey] = useState('*')
+	const [filterKey, setFilterKey] = useState('*');
 
 	// Loading support
 	const [loadedProjectCount, setLoadedProjectCount] = useState(0);
 
 	const isLoaded = useMemo(
-		() => projects && categories && loadedProjectCount === projects.length,
+		() => {
+			// console.log(loadedProjectCount, projects.length)
+			return projects 
+				&& categories
+				&& loadedProjectCount === projects.length;
+		},
 		[projects, categories, loadedProjectCount],
-	)
+	);
 	
 	// initialize an Isotope object with configs
 	useEffect(() => {
@@ -35,10 +43,10 @@ const Portfolio = ({ projects, categories }) => {
 		isotope.current = new Isotope('.filter-container', {
 			itemSelector: '.project-container',
 			layout: 'vertical'
-		})
+		});
 
-		return () => isotope.current.destroy()
-	}, [isLoaded])
+		return () => isotope.current.destroy();
+	}, [isLoaded]);
 
 	// handling filter key change
 	useEffect(() => {
@@ -47,11 +55,11 @@ const Portfolio = ({ projects, categories }) => {
 		}
 
 		filterKey === '*'
-			? isotope.current.arrange({filter: `*`})
-			: isotope.current.arrange({filter: `.${filterKey}`})
-	}, [filterKey])
+			? isotope.current.arrange({filter: '*'})
+			: isotope.current.arrange({filter: `.${filterKey}`});
+	}, [filterKey]);
 
-	const handleFilterKeyChange = key => setFilterKey(key)
+	const handleFilterKeyChange = key => setFilterKey(key);
 
 	const projectList = projects?.map((project) => (
 		<Project
@@ -67,24 +75,18 @@ const Portfolio = ({ projects, categories }) => {
 			handleContentLoaded={() => setLoadedProjectCount(curr => curr + 1)}
 			handleResize={() => isotope.current?.layout()}
 		/>
-	))
+	));
 
 	const categoriesDisplay = <CategoriesFilter
 		as={Row}
 		categories={categories}
 		handleFilter={handleFilterKeyChange}
-	/>
-
-	const loadingSpinner = <StyledToggleDisplay
-		className="d-flex justify-content-center h-100 w-100"
-		isHidden={isLoaded}
-	>
-		<Spinner animation="border" variant="dark" />
-	</StyledToggleDisplay>
+	/>;
+	
 
 	return (
-		<section>
-			{isLoaded ? categoriesDisplay : loadingSpinner}
+		<PageContainer>
+			{isLoaded ? categoriesDisplay : <LoadingSpinner isLoaded={isLoaded} />} 
 			{/* Render projects hidden to wait for images to load */}
 			<StyledProjectsDisplay
 				as={Row}
@@ -93,8 +95,14 @@ const Portfolio = ({ projects, categories }) => {
 			>
 				{projectList || ''}
 			</StyledProjectsDisplay>
-		</section>
-	)
-}
+		</PageContainer>
+	);
+};
 
-export default Portfolio
+Portfolio.propTypes = {
+	projects: PropTypes.array,
+	categories: PropTypes.array,
+};
+
+
+export default Portfolio;

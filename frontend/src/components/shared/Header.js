@@ -1,13 +1,19 @@
-import React from 'react'
-import { Navbar, Nav } from 'react-bootstrap'
-import { CircleFill } from 'react-bootstrap-icons'
-import { LinkContainer } from 'react-router-bootstrap'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Navbar, Nav } from 'react-bootstrap';
+import { CircleFill } from 'react-bootstrap-icons';
+import { LinkContainer } from 'react-router-bootstrap';
 
 const HeaderLink = ({ to, text }) => (
 	<LinkContainer exact to={to} activeClassName="selected">
 		<Nav.Link className="mx-5">{text}</Nav.Link>
 	</LinkContainer>
-)
+);
+
+HeaderLink.propTypes = {
+	to: PropTypes.string,
+	text: PropTypes.string,
+};
 
 const Header = () => (
 	<Navbar expand="sm" className="my-5 main-nav justify-content-center">
@@ -23,7 +29,7 @@ const Header = () => (
 			</Nav>
 		</Navbar.Collapse>
 	</Navbar>
-)
+);
 
 
-export default Header
+export default Header;

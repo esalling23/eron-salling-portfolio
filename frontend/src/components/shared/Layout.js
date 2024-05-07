@@ -1,22 +1,32 @@
-import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
-import styled from 'styled-components'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Container, Row, Col } from 'react-bootstrap';
+import styled from 'styled-components';
+import { AnimatePresence } from 'framer-motion';
 
-import Header from './Header'
+import Header from './Header';
+import PixelBackground from './PixelBackground';
 
 const StyledMain = styled.main`
 	position: relative;
-`
+`;
 
-const Layout = ({ children }) => (
-	<Container fluid className="pb-3">
-		<Header />
-		<StyledMain as={Row} className="d-flex justify-content-center">
-			<Col sm={12} lg={8}>
-				{ children }
-			</Col>
-		</StyledMain>
-	</Container>
-)
+const Layout = ({ children }) => {
+	// const isPresent = useIsPresent();
+	return (
+		<AnimatePresence>
+			<Container fluid className="pb-3">
+				<Header />
+				<StyledMain as={Row} className="d-flex justify-content-center">
+					{ children }
+				</StyledMain>
+			</Container>
+		</AnimatePresence>
+	);
+};
 
-export default Layout
+Layout.propTypes = {
+	children: PropTypes.any,
+};
+
+export default Layout;
