@@ -18,8 +18,9 @@ django-webpack-loader = "*"
 psycopg2-binary = "*"
 python-socketio = "*"
 uuid = "*"
-uvicorn = {extras = ["standard"], version = "*"}
+uvicorn = "*"
 redis = "*"
+django-import-export = "*"
 
 [dev-packages]
 
