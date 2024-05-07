@@ -85,6 +85,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'storages',
     'webpack_loader',
+		'import_export',
 ]
 
 MIDDLEWARE = [
