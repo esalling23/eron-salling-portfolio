@@ -7,14 +7,22 @@ import Layout from './shared/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
 import Portfolio from './pages/Portfolio';
-import LoadingSpinner from './shared/LoadingSpinner';
+import PixelLoader from './shared/PixelLoader';
 
 const App = () => {
 	const location = useLocation();
 
 	const [projects, setProjects] = useState(null);
 	const [categories, setCategories] = useState(null);
-	const [contentData, setContentData] = useState(null);
+	const [contentData, setContentData] = useState({
+		about_img: null,
+		about_description: null,
+		home_title: null,
+		typewriter_texts: null,
+	});
+
+	const [loadingComplete, setLoadingComplete] = useState(false);
+	const [appLoaded, setAppLoaded] = useState(false);
 
 	useEffect(() => {
 		axios.get('/projects')
@@ -33,36 +41,45 @@ const App = () => {
 				setContentData(res.data.content);
 				// Pre-load About Page Image
 				const img = new Image;
-				console.log(res.data.content.about_img);
 				img.src = res.data.content.about_img;
 			})
 			.catch(console.error);
 	}, []);
 
-	if (!contentData) {
-		return <Layout>
-			<LoadingSpinner isLoaded={false} />
-		</Layout>;
-	}
-
-	return (
-		<Layout>
-			<Routes location={location} key={location.key}>
-				<Route path='/about' element={(
-					<About img={contentData.about_img} description={contentData.about_description} />
-				)} />
-				<Route
-					path='/portfolio'
-					element={<Portfolio projects={projects} categories={categories} />}
+	const getRoutes = () => (
+		<Routes location={location} key={location.key}>
+			<Route path='/about' element={(
+				<About img={contentData.about_img} description={contentData.about_description} />
+			)} />
+			<Route
+				path='/portfolio'
+				element={<Portfolio projects={projects} categories={categories} />}
+			/>
+			<Route path='/' element={(
+				<Home
+					isTyping={loadingComplete}
+					typewriterTexts={contentData.typewriter_texts} 
+					title={contentData.home_title}
 				/>
-				<Route path='/' element={(
-					<Home 
-						typewriterTexts={contentData.typewriter_texts} 
-						title={contentData.home_title}
-					/>
-				)} />
-			</Routes>
-		</Layout>
+			)} />
+		</Routes>
+	);
+	
+	return (
+		<>
+			<Layout>{getRoutes()}</Layout>
+			{!loadingComplete && <PixelLoader 
+				isLoading={!appLoaded}
+				onAnimationExited={() => {
+					setLoadingComplete(true);
+				}}
+				onAnimationComplete={() => {
+					if (contentData && projects && categories) {
+						setAppLoaded(true);
+					}
+				}} 
+			/>}
+		</>
 	);
 };
 

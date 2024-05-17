@@ -4,10 +4,12 @@ import { Image, Col, Row, Badge } from 'react-bootstrap';
 import styled from 'styled-components';
 import { BoxArrowUpRight } from 'react-bootstrap-icons';
 
-import SeeMoreText from './SeeMoreText';
-import { formatDate, getCategoryId } from '../../lib/utils';
-import { StyledCategoryTag } from '../../styles/SharedComponents';
-import BadgeLink from './BadgeLink';
+import SeeMoreText from '../SeeMoreText';
+import { formatDate, getCategoryId } from '../../../lib/utils';
+import { StyledCategoryTag } from '../../../styles/SharedComponents';
+import BadgeLink from '../BadgeLink';
+
+import styles from './styles.module.scss';
 
 const StyledProject = styled.div`
 	height: fit-content;
@@ -15,7 +17,7 @@ const StyledProject = styled.div`
 `;
 
 const StyledDateRange = styled.h5`
-	font-size: 1.2em;
+	font-size: 1em;
 `;
 
 const StyledImage = styled(Image)`
@@ -50,7 +52,7 @@ const Project = ({
 		<StyledCategoryTag
 			as={Badge}
 			key={name}
-			variant="info"
+			variant="dark"
 		>#{name}</StyledCategoryTag>
 	));
 
@@ -63,12 +65,14 @@ const Project = ({
 		>
 			<h2>{title}</h2>
 			<div className="d-flex flex-wrap align-items-center">
-				{dateRange}
-				{moreLink && <BadgeLink url={moreLink} className="ml-3">
-					<BoxArrowUpRight />
+				{moreLink && <BadgeLink 
+					url={moreLink} 
+					variant="dark"
+					className={`${styles.seeMoreLink} ml-3`}
+				>
+					Visit <BoxArrowUpRight className='ml-3' />
 				</BadgeLink>}
 			</div>
-			<div>{categoryTags}</div>
 			<Row>
 				<Col lg={6} className="my-2">
 					<StyledImage
@@ -78,11 +82,13 @@ const Project = ({
 						fluid
 						onLoad={handleContentLoaded}
 					/>
+					<div className="mt-3">{categoryTags}</div>
 				</Col>
 				<Col lg={6} className="my-2">
 					<SeeMoreText
 						text={description}
 						onToggle={handleResize}
+						extras={dateRange}
 					/>
 				</Col>
 			</Row>

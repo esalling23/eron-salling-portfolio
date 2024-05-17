@@ -9,4 +9,4 @@ export const StyledCategoryTag = styled.div`
   &:nth-child(1) {
 		margin-left: 0 !important;
 	}
-`
+`;

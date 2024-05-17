@@ -1,0 +1,22 @@
+@import '../../../styles/variables.scss';
+
+.button {
+	padding: 0.4em 0.8em;
+	background: $main-font-color;
+
+	* {
+		color: white;
+	}
+
+	a {
+		font-size: 1.25em;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&:hover, &:hover * {
+			color: $main-bg-color;
+			text-decoration: none;
+		}
+	}
+}

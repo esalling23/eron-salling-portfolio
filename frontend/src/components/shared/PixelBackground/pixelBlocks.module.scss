@@ -6,8 +6,10 @@
 	width: 100vw;
 	overflow: hidden;
 	position: absolute;
-	background-color: $main-bg-color;
+	// background-color: $main-bg-color;
 	z-index: 1;
+	top: 0;
+	left: 0;
 
 	.column {
 		width: 5vw;

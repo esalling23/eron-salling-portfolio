@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import Project from '../shared/Project';
 import CategoriesFilter from '../shared/CategoriesFilter';
 import { StyledToggleDisplay } from '../../styles/SharedComponents';
-import LoadingSpinner from '../shared/LoadingSpinner';
+// import LoadingSpinner from '../shared/LoadingSpinner';
 import PageContainer from '../shared/PageContainer';
 
 const StyledProjectsDisplay = styled(StyledToggleDisplay)`
@@ -85,8 +85,8 @@ const Portfolio = ({ projects, categories }) => {
 	
 
 	return (
-		<PageContainer>
-			{isLoaded ? categoriesDisplay : <LoadingSpinner isLoaded={isLoaded} />} 
+		<PageContainer isPageLoading={!isLoaded}>
+			{isLoaded && categoriesDisplay} 
 			{/* Render projects hidden to wait for images to load */}
 			<StyledProjectsDisplay
 				as={Row}

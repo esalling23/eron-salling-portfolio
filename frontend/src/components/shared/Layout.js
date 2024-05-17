@@ -1,27 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import styled from 'styled-components';
 import { AnimatePresence } from 'framer-motion';
 
 import Header from './Header';
-import PixelBackground from './PixelBackground';
 
 const StyledMain = styled.main`
-	position: relative;
+	position: initial;
 `;
 
 const Layout = ({ children }) => {
-	// const isPresent = useIsPresent();
 	return (
-		<AnimatePresence>
-			<Container fluid className="pb-3">
-				<Header />
-				<StyledMain as={Row} className="d-flex justify-content-center">
-					{ children }
-				</StyledMain>
-			</Container>
-		</AnimatePresence>
+		<>
+			<AnimatePresence>
+				<Container fluid className="pb-3">
+					<Header />
+					<StyledMain 
+						as={Row} 
+						className="d-flex justify-content-center"
+					>
+						{ children }
+					</StyledMain>
+				</Container>
+			</AnimatePresence>
+		</>
 	);
 };
 

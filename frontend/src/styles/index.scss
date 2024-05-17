@@ -1,4 +1,10 @@
 @import './variables.scss';
+
+
+$theme-colors: (
+  "dark": $main-font-color
+);
+
 @import "~bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Ubuntu+Mono:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Madimi+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
@@ -17,6 +23,7 @@ h1, h2, a, .Typewriter {
 html, body, main, .container, #app{
     height: 100%;
     min-height: 100%;
+		overflow: auto;
 }
 
 section {
@@ -86,14 +93,15 @@ p {
     padding: 0.4em 0.8em;
 
     * {
-        color: $link-color;
+        color: white;
     }
 
     a {
         font-size: 1.25em;
         &:hover, &:hover * {
-            color: $link-hover;
+            color: $main-bg-color;
             text-decoration: none;
         }
     }
 }
+
