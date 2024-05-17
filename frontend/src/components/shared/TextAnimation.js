@@ -8,7 +8,6 @@ const StyledTypewriter = styled(Typewriter)`
 `;
 
 const TextAnimation = ({ textArray, isRepeating = true }) => {
-	// const initTypewriter = t => console.log(t)
 	return <StyledTypewriter
 		options={{
 			strings: textArray,
@@ -16,7 +15,6 @@ const TextAnimation = ({ textArray, isRepeating = true }) => {
 			loop: isRepeating,
 			skipAddStyles: true
 		}}
-		// onInit={initTypewriter}
 	/>;
 };
 
