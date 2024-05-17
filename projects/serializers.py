@@ -15,6 +15,7 @@ class ProjectSerializer(serializers.ModelSerializer):
             'main_img', 
             'thumbnail_img', 
             'title', 
+            'subtitle', 
             'date_started', 
             'date_ended', 
             'description', 
