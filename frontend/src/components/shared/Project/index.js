@@ -26,6 +26,7 @@ const StyledImage = styled(Image)`
 
 const Project = ({
 	title,
+	subtitle,
 	dateStarted,
 	dateEnded,
 	description,
@@ -64,6 +65,7 @@ const Project = ({
 			className={`project-container ${categoryClasses}`}
 		>
 			<h2>{title}</h2>
+			<h5>{subtitle}</h5>
 			<div className="d-flex flex-wrap align-items-center">
 				{moreLink && <BadgeLink 
 					url={moreLink} 
@@ -98,6 +100,7 @@ const Project = ({
 
 Project.propTypes = {
 	title: PropTypes.string,
+	subtitle: PropTypes.string,
 	dateStarted: PropTypes.string,
 	dateEnded: PropTypes.string,
 	description: PropTypes.string,

@@ -65,6 +65,7 @@ const Portfolio = ({ projects, categories }) => {
 		<Project
 			key={project.id}
 			title={project.title}
+			subtitle={project.subtitle}
 			dateStarted={project.date_started}
 			dateEnded={project.date_ended}
 			description={project.description}
