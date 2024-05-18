@@ -7,6 +7,7 @@ import PixelBackground from '../PixelBackground';
 
 const containerAnim = {
 	start: {
+		x: '-50%',
 		opacity: 1,
 		transition: {
 			staggerChildren: 0.2,
@@ -20,13 +21,15 @@ const containerAnim = {
 	},
 };
 
+const speed = 0.2;
+
 const loadingCircleTransition = {
-	duration: 0.5,
+	duration: speed,
 	repeatType: 'reverse',
 	repeat: 1,
 	ease: 'easeInOut',
-	repeatDelay: 1,
-	delay: stagger(0.2)
+	repeatDelay: speed,
+	delay: stagger(speed)
 };
 
 const PixelLoader = ({
@@ -43,22 +46,27 @@ const PixelLoader = ({
 	useEffect(() => {
 		if (isLoading) {
 			const enterAnimation = async () => {
-				await animate('.block', { opacity: ['0%', '100%'] }, { 
-					duration: 0.5, 
-					delay: stagger(0.6),
-					transition: { ease: 'easeInOut', delay: 0.2 }
+				const rollingAnim = animate('.block', 
+					{ rotate: 360 }, 
+					{ duration: speed * 2, ease: 'backIn' },
+				);
+				await animateContainer(containerScope.current, { x: ['-50%', 0], width: '100vw' }, { 
+					duration: speed * 2,
+					delay: stagger(0.1),
+					transition: { ease: 'easeInOut', delay: speed }
 				});
+				rollingAnim.cancel();
 				setBlocksReady(true);
 			};
 			enterAnimation();
 		} else {
 			const exitAnimation = async () => {
-				await animate('.block', { y: '0%' }, {
-					duration: 0.5,
-				});
-				await animate('.block', { opacity: 0 }, { duration: 0.5 });
+				await animate('.block', { opacity: 0 }, { duration: speed });
 				setAnimateBackground(true);
-				await animateContainer(containerScope.current, { opacity: 0 }, { duration: 1 });
+				await animateContainer(containerScope.current, 
+					{ opacity: 0 }, 
+					{ delay: 0.2, duration: 0.5, ease: 'easeOut' },
+				);
 			};
 			
 			exitAnimation();

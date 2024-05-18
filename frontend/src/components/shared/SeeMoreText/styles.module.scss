@@ -1,7 +1,14 @@
 @import '../../../styles/variables.scss';
 
 .seeMoreTextButton {
-	background: $main-font-color;
+	background: transparent;
+	color: $main-font-color;
 	border: none;
-	padding: 2px 8px;
+	padding: 0;
+	width: fit-content;
+	
+	&:hover, &:focus, &:active {
+		color: $main-font-color;
+		text-decoration: underline;
+	}
 }

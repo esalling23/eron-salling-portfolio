@@ -8,10 +8,9 @@ const Home = ({
 	typewriterTexts,
 	isTyping = true
 }) => {
-	// const [isPageLoaded, setIsPageLoaded] = useState(false);
 	return (
-		<PageContainer>
-			<section className="full-screen d-flex">
+		<PageContainer className='d-flex justify-content-center'>
+			<section className="full-screen d-flex" style={{ width: 'fit-content' }}>
 				<h1>{title}</h1>
 				<div className="d-flex typing-cursor">
 					<div className="pt-1 pr-3">{'>'}</div>

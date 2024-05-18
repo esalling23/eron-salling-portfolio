@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'react-bootstrap';
+import { Nav } from 'react-bootstrap';
 import styles from './styles.module.scss';
 
 // Text element that can see more or see less
@@ -34,10 +34,10 @@ const SeeMoreText = ({
 			{isSeeingMore && (
 				<div className="mb-3">{extras}</div>
 			)}
-			<Button
+			<Nav.Link
 				className={styles.seeMoreTextButton}
 				onClick={handleToggleTextLength}
-			>{`See ${isSeeingMore ? 'Less' : 'More'}`}</Button>
+			>{`See ${isSeeingMore ? 'Less' : 'More'}`}</Nav.Link>
 		</>
 	);
 };

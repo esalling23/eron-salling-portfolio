@@ -11,7 +11,7 @@ const About = ({
 	img,
 }) => (
 	<PageContainer id="about">
-		<Row className="justify-content-center">
+		<Row className="justify-content-center mb-5">
 			<Col className="pb-3" md={6} sm={12}>
 				<Image
 					src={img}
@@ -20,13 +20,13 @@ const About = ({
 			</Col>
 			<Col md={6} sm={12}>
 				<p>{description}</p>
-
+ 
 				<div>
 					<BadgeLink variant="primary" url="https://github.com/esalling23">
-						<Github /> Github
+						<Github className="mr-2" /> Github
 					</BadgeLink>
 					<BadgeLink className="ml-3" url="https://www.linkedin.com/in/eron-salling/">
-						<Linkedin /> Linkedin
+						<Linkedin className="mr-2" /> Linkedin
 					</BadgeLink>
 				</div>
 			</Col>
