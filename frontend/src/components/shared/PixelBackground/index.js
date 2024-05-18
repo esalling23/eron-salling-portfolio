@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
 
 import styles from './pixelBlocks.module.scss';
 import useWindowSize from '../../../lib/hooks/useWindowSize';
@@ -29,7 +30,9 @@ const PixelBackground = ({
 	};
 
 	return (
-		<div 
+		<motion.div 
+			animate={{ backgroundColor: 'transparent' }}
+			transition={{ duration: 0.2 }}
 			className={`${styles.pixelBlocks}`}
 		>
 			<Pixels
@@ -38,7 +41,7 @@ const PixelBackground = ({
 				pixelCount={pixelCount}
 				onBlockAnimComplete={onBlockAnimComplete}
 			/>
-		</div>
+		</motion.div>
 	);
 };
 

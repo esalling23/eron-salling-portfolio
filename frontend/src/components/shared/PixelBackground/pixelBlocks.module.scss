@@ -6,7 +6,7 @@
 	width: 100vw;
 	overflow: hidden;
 	position: absolute;
-	// background-color: $main-bg-color;
+	background-color: $main-font-color;
 	z-index: 1;
 	top: 0;
 	left: 0;
@@ -19,6 +19,7 @@
 			height: 5vw;
 			width: 100%;
 			background-color: $main-font-color;
+			opacity: 1;
 		}
 	}
 }
