@@ -6,7 +6,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 const HeaderLink = ({ to, text }) => (
 	<LinkContainer exact to={to} activeClassName="selected">
-		<Nav.Link className="mx-5">{text}</Nav.Link>
+		<Nav.Link>{text}</Nav.Link>
 	</LinkContainer>
 );
 
@@ -16,18 +16,22 @@ HeaderLink.propTypes = {
 };
 
 const Header = () => (
-	<Navbar expand="sm" className="my-5 main-nav justify-content-center">
-		{/* {<Navbar.Brand>Eron Salling</Navbar.Brand>} */}
-		<Navbar.Toggle aria-controls="main-nav" className="" />
-		<Navbar.Collapse id="main-nav">
-			<Nav className="justify-content-center align-items-center">
-				<HeaderLink to="/" text="Home" />
-				<CircleFill size={4} />
-				<HeaderLink to="/portfolio" text="Portfolio" />
-				<CircleFill size={4} />
-				<HeaderLink to="/about" text="About" />
-			</Nav>
-		</Navbar.Collapse>
+	<Navbar 
+		className="my-5 w-100 justify-content-center"
+	>
+		<Nav 
+			className="p-0 col-md-8 col-lg-6 d-flex justify-content-between align-items-center" 
+			style={{
+				minWidth: 'fit-content',
+				maxWidth: '100%',
+			}}
+		>
+			<HeaderLink to="/" text="Home" />
+			<CircleFill size={4} />
+			<HeaderLink to="/portfolio" text="Portfolio" />
+			<CircleFill size={4} />
+			<HeaderLink to="/about" text="About" />
+		</Nav>
 	</Navbar>
 );
 
