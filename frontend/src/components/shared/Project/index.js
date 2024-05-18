@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Image, Col, Row, Badge } from 'react-bootstrap';
 import styled from 'styled-components';
 import { BoxArrowUpRight } from 'react-bootstrap-icons';
+import { motion } from 'framer-motion';
 
 import SeeMoreText from '../SeeMoreText';
 import { formatDate, getCategoryId } from '../../../lib/utils';
@@ -10,11 +11,6 @@ import { StyledCategoryTag } from '../../../styles/SharedComponents';
 import BadgeLink from '../BadgeLink';
 
 import styles from './styles.module.scss';
-
-const StyledProject = styled.div`
-	height: fit-content;
-	display: relative;
-`;
 
 const StyledDateRange = styled.h5`
 	font-size: 1em;
@@ -32,7 +28,6 @@ const Project = ({
 	description,
 	moreLink,
 	mainImg,
-	// thumbnailImg,
 	categories,
 	handleContentLoaded,
 	handleResize
@@ -42,12 +37,6 @@ const Project = ({
 	const dateRange = <StyledDateRange className="d-inline">
 		({formatDate(dateStarted)}{' - '}{dateEnded ? formatDate(dateEnded) : 'Current'})
 	</StyledDateRange>;
-
-	// const extras = (
-	// 	<div className="pt-3 d-inline">
-	// 		{dateRange}
-	// 	</div>
-	// );
 
 	const categoryTags = categories.map(({ name }) => (
 		<StyledCategoryTag
@@ -60,13 +49,17 @@ const Project = ({
 	const categoryClasses = categories.map(({ id }) => getCategoryId(id)).join(' ');
 
 	return (
-		<StyledProject
+		<motion.div
+			whileHover={{
+				scale: 1.05,
+				transition: { duration: 0.4 },
+			}}
 			as={Col}
-			className={`project-container ${categoryClasses}`}
+			className={`project-container ${categoryClasses} ${styles.projectContainer} p-4 p-lg-5`}
 		>
-			<h2>{title}</h2>
-			<h5>{subtitle}</h5>
-			<div className="d-flex flex-wrap align-items-center">
+
+			<div className="d-flex flex-wrap align-items-center justify-content-between">
+				<h2>{title}</h2>
 				{moreLink && <BadgeLink 
 					url={moreLink} 
 					variant="dark"
@@ -75,6 +68,7 @@ const Project = ({
 					Visit <BoxArrowUpRight className='ml-3' />
 				</BadgeLink>}
 			</div>
+			<h5>{subtitle}</h5>
 			<Row>
 				<Col lg={7} className="my-2">
 					<StyledImage
@@ -94,7 +88,7 @@ const Project = ({
 					/>
 				</Col>
 			</Row>
-		</StyledProject>
+		</motion.div>
 	);
 };
 
@@ -106,7 +100,6 @@ Project.propTypes = {
 	description: PropTypes.string,
 	moreLink: PropTypes.string,
 	mainImg: PropTypes.string,
-	// thumbnailImg,
 	categories: PropTypes.string,
 	handleContentLoaded: PropTypes.function,
 	handleResize: PropTypes.function

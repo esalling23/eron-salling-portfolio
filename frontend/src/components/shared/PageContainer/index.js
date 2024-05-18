@@ -5,9 +5,10 @@ import { motion } from 'framer-motion';
 
 const PageContainer = ({
 	children,
+	...rest
 }) => {
 	return (
-		<Col sm={12} lg={10}>
+		<Col xs={11} lg={10} {...rest}>
 			<motion.div
 				initial={{
 					opacity: '0%'

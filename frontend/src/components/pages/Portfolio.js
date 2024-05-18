@@ -84,7 +84,6 @@ const Portfolio = ({ projects, categories }) => {
 		handleFilter={handleFilterKeyChange}
 	/>;
 	
-
 	return (
 		<PageContainer isPageLoading={!isLoaded}>
 			{isLoaded && categoriesDisplay} 
