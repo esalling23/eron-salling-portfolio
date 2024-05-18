@@ -11,7 +11,7 @@ const About = ({
 	img,
 }) => (
 	<PageContainer id="about">
-		<Row className="justify-content-center">
+		<Row className="justify-content-center mb-5">
 			<Col className="pb-3" md={6} sm={12}>
 				<Image
 					src={img}
