@@ -7,6 +7,7 @@ import PixelBackground from '../PixelBackground';
 
 const containerAnim = {
 	start: {
+		x: '-50%',
 		opacity: 1,
 		transition: {
 			staggerChildren: 0.2,
@@ -45,11 +46,16 @@ const PixelLoader = ({
 	useEffect(() => {
 		if (isLoading) {
 			const enterAnimation = async () => {
-				await animate('.block', { opacity: ['0%', '100%'] }, { 
-					duration: speed, 
+				const rollingAnim = animate('.block', 
+					{ rotate: 360 }, 
+					{ duration: speed * 2, ease: 'backIn' },
+				);
+				await animateContainer(containerScope.current, { x: ['-50%', 0], width: '100vw' }, { 
+					duration: speed * 2,
 					delay: stagger(0.1),
 					transition: { ease: 'easeInOut', delay: speed }
 				});
+				rollingAnim.cancel();
 				setBlocksReady(true);
 			};
 			enterAnimation();

@@ -7,7 +7,7 @@
 .pixelBlocks {
 	display: flex;
 	height: 100vh;
-	width: 100vw;
+	width: 200vw;
 	overflow: hidden;
 	position: absolute;
 	top: 0;
@@ -19,8 +19,6 @@
 	align-items: center;
 
 	.block {
-		opacity: 0;
-		
 		height: 5vw;
 		width: 5vw;
 
