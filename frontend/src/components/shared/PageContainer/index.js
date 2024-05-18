@@ -7,7 +7,7 @@ const PageContainer = ({
 	children,
 }) => {
 	return (
-		<Col sm={12} lg={8}>
+		<Col sm={12} lg={10}>
 			<motion.div
 				initial={{
 					opacity: '0%'

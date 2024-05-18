@@ -76,7 +76,7 @@ const Project = ({
 				</BadgeLink>}
 			</div>
 			<Row>
-				<Col lg={6} className="my-2">
+				<Col lg={7} className="my-2">
 					<StyledImage
 						ref={imageRef}
 						src={mainImg}
@@ -86,7 +86,7 @@ const Project = ({
 					/>
 					<div className="mt-3">{categoryTags}</div>
 				</Col>
-				<Col lg={6} className="my-2">
+				<Col lg={5} className="my-2">
 					<SeeMoreText
 						text={description}
 						onToggle={handleResize}
