@@ -48,7 +48,7 @@ const PixelLoader = ({
 			const enterAnimation = async () => {
 				const rollingAnim = animate('.block', 
 					{ rotate: 360 }, 
-					{ duration: speed * 2, ease: 'backIn' },
+					{ duration: speed * 2, ease: 'easeOut' },
 				);
 				await animateContainer(containerScope.current, { x: ['-50%', 0], width: '100vw' }, { 
 					duration: speed * 2,
