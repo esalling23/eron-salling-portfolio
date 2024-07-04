@@ -1,0 +1,25 @@
+@import '../../styles/variables.scss';
+
+.tileBoard {
+	display: grid;
+	gap: 10px;
+	width: 90vmin;
+	height: 90vmin;
+	background-color: white;
+	padding: 10px;
+	box-sizing: border-box;
+
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+
+	.column {
+		display: grid;
+		gap: 10px;
+		grid-template-rows: repeat(3, minmax(0, 1fr));
+
+		.tile {
+			position: relative;
+			overflow: hidden;
+			aspect-ratio: 1;
+		}
+	}
+}

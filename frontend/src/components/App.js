@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Portfolio from './pages/Portfolio';
 import PixelLoader from './shared/PixelLoader';
+import Arcade from './pages/Arcade';
 
 const App = () => {
 	const location = useLocation();
@@ -21,7 +22,7 @@ const App = () => {
 		typewriter_texts: null,
 	});
 
-	const [loadingComplete, setLoadingComplete] = useState(false);
+	const [loadingComplete, setLoadingComplete] = useState(true);
 	const [appLoaded, setAppLoaded] = useState(false);
 
 	useEffect(() => {
@@ -55,6 +56,9 @@ const App = () => {
 				path='/portfolio'
 				element={<Portfolio projects={projects} categories={categories} />}
 			/>
+			<Route path='/arcade' element={(
+				<Arcade />
+			)} />
 			<Route path='/' element={(
 				<Home
 					isTyping={loadingComplete}
