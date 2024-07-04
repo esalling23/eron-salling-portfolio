@@ -1,30 +1,10 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import React, { useCallback, useMemo, useState } from 'react';
 
-import styles from './tileMatch.module.scss';
-import { shuffle } from '../../lib/utils';
-
-const MIN_BOARD_SIZE = 3;
-const GAME_STAGE = {
-	ENTRY: 'ENTRY',
-	START: 'START',
-	PLAY: 'PLAY',
-	END: 'END'
-};
-
-const tileAnim = {
-	pulse: ({ backgroundColor, delay }) => ({
-		backgroundColor: `#${backgroundColor}`,
-		transition: {
-			duration: 0.3,
-			delay: 1 + (0.3 * delay),
-		}
-	}),
-	enter: {
-		backgroundColor: 'white',
-		duration: 0.5
-	}
-};
+// import styles from './tileMatch.module.scss';
+import { shuffle } from '../../../lib/utils';
+import Board from './components/Board';
+import { GAME_STAGE, MIN_BOARD_SIZE } from './lib';
 
 const TileMatch = () => {
 	const [streak, setStreak] = useState(null);
@@ -74,6 +54,21 @@ const TileMatch = () => {
 		setIsSuccess(null);
 	};
 
+	const onReady = () => {
+		setGameStage(GAME_STAGE.PLAY);
+	};
+
+	const onSuccess = () => {
+		setIsSuccess(true);
+		setStreak(curr => curr + 1);
+		setGameStage(GAME_STAGE.END);
+	};
+
+	const onFail = () => {
+		setIsSuccess(false);
+		setGameStage(GAME_STAGE.END);
+	};
+
 	const content = useMemo(() => {
 		if (gameStage === GAME_STAGE.ENTRY) {
 			return (
@@ -89,41 +84,23 @@ const TileMatch = () => {
 			</div>;
 		}
 
-		return <motion.div className={styles.tileBoard}
-			initial={{
-				opacity: 0,
-			}}
-			animate={{
-				opacity: '100%'
-			}}
-			transition={{
-				duration: 0.1
-			}}
-		>
-			{board.map((col, i) => {
-				return (
-					<div 
-						className={styles.column}
-						key={`column-${i}`}
-					>
-						{col.map((tile, tileI) => {
-							return <motion.div
-								className={styles.tile}
-								key={`tile-${tileI}`}
-								custom={{
-									backgroundColor: tile.color,
-									delay: tile.delay
-								}}
-								variants={tileAnim}
-								initial={'enter'}
-								animate={'pulse'}
-							/>;
-						})}
-					</div>
-				);
-			})}
-		</motion.div>;
-	}, [gameStage, initGame, isSuccess, continueGame]);
+		return <Board
+			board={board}
+			gameStage={gameStage}
+			onReady={onReady}
+			onSuccess={onSuccess}
+			onFail={onFail}
+		/>;
+	}, [
+		streak,
+		gameStage,
+		initGame,
+		isSuccess,
+		continueGame,
+		onSuccess,
+		onFail,
+		onReady,
+	]);
 
 	console.log(board);
 
