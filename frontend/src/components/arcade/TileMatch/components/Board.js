@@ -2,12 +2,34 @@ import { motion } from 'framer-motion';
 import React, { useCallback, useMemo, useState } from 'react';
 import styles from '../tileMatch.module.scss';
 import Tile from './Tile';
+import { MIN_BOARD_SIZE } from '../lib';
+import { shuffle } from '../../../../lib/utils';
+import SizedGrid from './SizedGrid';
 
-const Board = ({ board, gameStage, onReady, onSuccess, onFail }) => {
+const Board = ({ size, gameStage, onReady, onSuccess, onFail }) => {
 	const [sequenceIndex, setSequenceIndex] = useState(0);
 	const [currentTileCount, setCurrentTileCount] = useState(0);
 
-	const boardSize = useMemo(() => board.length ** 2, [board]);
+	const boardSize = useMemo(() => size ** 2, [size]);
+
+	// START stage --
+	// should display a NxN board of colored tiles
+	const generateBoard = () => {
+		// todo - increase board size based on level
+		const delays = shuffle([...new Array(boardSize)].map((_, i) => i));
+
+		return [...new Array(size)].map((_e, y) => 
+			[...new Array(size)].map((_e, x) => ({
+				x,
+				y,
+				color: Math.random().toString(16).substr(-6),
+				delay: delays[(x * size) + y]
+			}))
+		);
+	};
+
+	const board = useMemo(() => generateBoard(), []);
+
 
 	const onTileReady = useCallback(() => {
 		setSequenceIndex(curr => curr + 1);
@@ -35,7 +57,10 @@ const Board = ({ board, gameStage, onReady, onSuccess, onFail }) => {
 	}, [currentTileCount, boardSize, onSuccess, onFail]);
 
 	return (
-		<motion.div className={styles.tileBoard}
+		<motion.div 
+			as={SizedGrid}
+			size={size}
+			className={styles.tileBoard}
 			initial={{
 				opacity: 0,
 			}}
@@ -48,7 +73,8 @@ const Board = ({ board, gameStage, onReady, onSuccess, onFail }) => {
 		>
 			{board.map((col, i) => {
 				return (
-					<div 
+					<SizedGrid
+						size={size} 
 						className={styles.column}
 						key={`column-${i}`}
 					>
@@ -62,7 +88,7 @@ const Board = ({ board, gameStage, onReady, onSuccess, onFail }) => {
 								key={`tile-${tileI}`}
 							/>;
 						})}
-					</div>
+					</SizedGrid>
 				);
 			})}
 		</motion.div>

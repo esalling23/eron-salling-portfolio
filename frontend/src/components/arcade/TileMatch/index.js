@@ -1,35 +1,17 @@
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import React, { useCallback, useMemo, useState } from 'react';
-
+import styled from 'styled-components';
 // import styles from './tileMatch.module.scss';
-import { shuffle } from '../../../lib/utils';
 import Board from './components/Board';
 import { GAME_STAGE, MIN_BOARD_SIZE } from './lib';
+import SizedGrid from './components/SizedGrid';
 
 const TileMatch = () => {
 	const [streak, setStreak] = useState(null);
+	const [nextStreakStep, setNextStreakStep] = useState(MIN_BOARD_SIZE * 2);
+	const [size, setSize] = useState(MIN_BOARD_SIZE);
 	const [gameStage, setGameStage] = useState(GAME_STAGE.ENTRY);
 	const [isSuccess, setIsSuccess] = useState(null);
-
-	const boardSize = useMemo(() => MIN_BOARD_SIZE, [streak]);
-
-	// START stage --
-	// should display a NxN board of colored tiles
-	const generateBoard = () => {
-		// todo - increase board size based on level
-		const delays = shuffle([...new Array(boardSize * boardSize)].map((_, i) => i));
-
-		return [...new Array(boardSize)].map((_e, y) => 
-			[...new Array(boardSize)].map((_e, x) => ({
-				x,
-				y,
-				color: Math.random().toString(16).substr(-6),
-				delay: delays[(x * boardSize) + y]
-			}))
-		);
-	};
-
-	const board = useMemo(() => streak !== null ? generateBoard() : [], [streak]);
 
 	const initGame = useCallback(() => {
 		// initialize game
@@ -46,6 +28,10 @@ const TileMatch = () => {
 	// should show the user total score
 	// should prompt the user to continue
 	const continueGame = () => {
+		if (streak === nextStreakStep) {
+			setNextStreakStep(curr => curr + (size * 2));
+			setSize(curr => curr + 1);
+		}
 		if (isSuccess === true) {
 			setGameStage(GAME_STAGE.START);
 		} else if (isSuccess === false) {
@@ -84,15 +70,16 @@ const TileMatch = () => {
 			</div>;
 		}
 
-		return <Board
-			board={board}
+		return <SizedGrid
+			as={Board}
+			size={size}
 			gameStage={gameStage}
 			onReady={onReady}
 			onSuccess={onSuccess}
 			onFail={onFail}
 		/>;
 	}, [
-		streak,
+		size,
 		gameStage,
 		initGame,
 		isSuccess,
@@ -101,8 +88,6 @@ const TileMatch = () => {
 		onFail,
 		onReady,
 	]);
-
-	console.log(board);
 
 	return (
 		<AnimatePresence>
