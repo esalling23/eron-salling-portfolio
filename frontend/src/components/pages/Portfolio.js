@@ -80,18 +80,19 @@ const Portfolio = ({ projects, categories }) => {
 
 	const categoriesDisplay = <CategoriesFilter
 		as={Row}
+		isLoading={!isLoaded}
 		categories={categories}
 		handleFilter={handleFilterKeyChange}
 	/>;
 	
 	return (
 		<PageContainer isPageLoading={!isLoaded}>
-			{isLoaded && categoriesDisplay} 
+			{categoriesDisplay} 
 			{/* Render projects hidden to wait for images to load */}
 			<StyledProjectsDisplay
 				as={Row}
 				isHidden={!isLoaded}
-				className="justify-content-center filter-container"
+				className="w-100 d-flex justify-content-center filter-container"
 			>
 				{projectList || ''}
 			</StyledProjectsDisplay>

@@ -2,6 +2,7 @@
 
 .filterButton {
 	color: white;
+	align-self: start;
 	&.show > button {
 		background-color: $main-font-color !important; 
 	}

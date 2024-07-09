@@ -10,6 +10,7 @@ const PageContainer = ({
 	return (
 		<Col xs={11} lg={10} {...rest}>
 			<motion.div
+				className="w-100 flex-col-center"
 				initial={{
 					opacity: '0%'
 				}}

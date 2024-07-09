@@ -9,10 +9,10 @@ const Home = ({
 	isTyping = true
 }) => {
 	return (
-		<PageContainer className='d-flex justify-content-center'>
-			<section className="full-screen d-flex" style={{ width: 'fit-content' }}>
+		<PageContainer className='flex-col-center'>
+			<section className="d-flex flex-column justify-content-start" style={{ width: 'fit-content' }}>
 				<h1>{title}</h1>
-				<div className="d-flex typing-cursor">
+				<div className="d-flex typing-cursor codeblock">
 					<div className="pt-1 pr-3">{'>'}</div>
 					{typewriterTexts?.length > 0
 						&& isTyping

@@ -59,6 +59,22 @@ p {
     white-space: pre-line;
 }
 
+.flex-col-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.codeblock {
+	padding: 20px;
+	width: 100%;
+	background: #232323;;
+	color: white;
+	border-radius: 10px;
+	height: 200%;
+}
+
 .full-screen {
     flex: 1 1 auto;
     flex-direction: column;
