@@ -1,16 +1,16 @@
 import { AnimatePresence } from 'framer-motion';
 import React, { useCallback, useMemo, useState } from 'react';
-
-import styles from './tileMatch.module.scss';
-import Board from './components/Board';
-import { GAME_STAGE, MIN_BOARD_SIZE } from './lib';
-import StreakProgress from './components/StreakProgress';
 import classNames from 'classnames';
-import Modal from '../../shared/Layout/Modal';
 import { Button } from 'react-bootstrap';
 import { Howl } from 'howler';
 
 import successSfx from '../../../../assets/audio/success.mp3';
+import styles from './tileMatch.module.scss';
+
+import { GAME_STAGE, MIN_BOARD_SIZE } from './lib';
+import Board from './components/Board';
+import StreakProgress from './components/StreakProgress';
+import StartScreen from './screens/StartScreen';
 
 const TileMatch = () => {
 	const [streak, setStreak] = useState(null);
@@ -21,7 +21,6 @@ const TileMatch = () => {
 
 	// Instructions
 	const [instructionCopy, setInstructionCopy] = useState('Note the order of the tiles as they appear');
-	const [isHowToPlayOpen, setIsHowToPlayOpen] = useState(false);
 
 	// SFX for level success
 	const successSound = new Howl({
@@ -76,32 +75,10 @@ const TileMatch = () => {
 		setGameStage(GAME_STAGE.END);
 	};
 
-	const showHowToPlay = () => {
-		setIsHowToPlayOpen(true);
-	};
-	const closeHowToPlay = () => {
-		setIsHowToPlayOpen(false);
-	};
-
 	const content = useMemo(() => {
 		if (gameStage === GAME_STAGE.ENTRY) {
 			return (
-				<div className="h-100 w-100 flex-col-center">
-					<Modal
-						title="How To Play"
-						bodyContent={(<ol className="text-left">
-							<li key="steps-0">Watch as the tiles appear one-by-one</li>
-							<li key="steps-1">Select each tile in the order they appeared</li>
-							<li key="steps-2">Complete the sequence in the correct order to win</li>
-							<li key="steps-3">For each win in a row, your streak will increase</li>
-							<li key="steps-4">As your streak increases you will unlock higher difficulty levels</li>
-						</ol>)}
-						isModalOpen={isHowToPlayOpen}
-						closeModal={closeHowToPlay}
-					/>
-					<Button key="start-btn" onClick={initGame}>Start</Button>
-					<Button key="how-to-play-btn" size="sm" className="my-2" onClick={showHowToPlay}>How To Play</Button>
-				</div>
+				<StartScreen initGame={initGame} />
 			);
 		}
 		
@@ -143,7 +120,6 @@ const TileMatch = () => {
 		</div>;
 	}, [
 		instructionCopy,
-		isHowToPlayOpen,
 		size,
 		gameStage,
 		initGame,
@@ -156,8 +132,8 @@ const TileMatch = () => {
 
 	return (
 		<AnimatePresence>
-			<h1 className="w-100 text-center">TileMatch - A Memory Game</h1>
-			<div className={classNames('d-flex justify-content-start align-items-center', styles.gameContainer)}>
+			<h1 key="tile-match-title" className="w-100 text-center">TileMatch - A Memory Game</h1>
+			<div key="tile-match-content" className={classNames('d-flex justify-content-start align-items-center', styles.gameContainer)}>
 				{content}
 			</div>
 		</AnimatePresence>
