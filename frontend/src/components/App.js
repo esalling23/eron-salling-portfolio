@@ -22,7 +22,7 @@ const App = () => {
 		typewriter_texts: null,
 	});
 
-	const [loadingComplete, setLoadingComplete] = useState(true);
+	const [loadingComplete, setLoadingComplete] = useState(false);
 	const [appLoaded, setAppLoaded] = useState(false);
 
 	useEffect(() => {
@@ -56,7 +56,7 @@ const App = () => {
 				path='/portfolio'
 				element={<Portfolio projects={projects} categories={categories} />}
 			/>
-			<Route path='/arcade' element={(
+			<Route path='/arcade/*' element={(
 				<Arcade />
 			)} />
 			<Route path='/' element={(
