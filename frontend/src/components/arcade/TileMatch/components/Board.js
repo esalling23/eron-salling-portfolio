@@ -1,15 +1,22 @@
-import { motion } from 'framer-motion';
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import PropTypes from 'prop-types';
+
 import styles from '../tileMatch.module.scss';
-import Tile from './Tile';
-import { MIN_BOARD_SIZE } from '../lib';
 import { shuffle } from '../../../../lib/utils';
+import FadeMotion from '../../shared/FadeMotion';
+import Tile from './Tile';
 import SizedGrid from './SizedGrid';
+import generateNote from '../generateNote';
 
 const Board = ({ size, gameStage, onReady, onSuccess, onFail }) => {
 	const [sequenceIndex, setSequenceIndex] = useState(0);
 	const [currentTileCount, setCurrentTileCount] = useState(0);
-
+	const [tilesDisabled, setTilesDisabled] = useState(false);
+	
+	// Fail animation effects all remaining tiles
+	const [isFail, setIsFail] = useState(false);
+	const [finishFailAnimCount, setFinishFailAnimCount] = useState(0);
+	
 	const boardSize = useMemo(() => size ** 2, [size]);
 
 	// START stage --
@@ -23,76 +30,109 @@ const Board = ({ size, gameStage, onReady, onSuccess, onFail }) => {
 				x,
 				y,
 				color: Math.random().toString(16).substr(-6),
-				delay: delays[(x * size) + y]
+				delay: delays[(x * size) + y],
+				sound: generateNote()
 			}))
 		);
 	};
 
 	const board = useMemo(() => generateBoard(), []);
 
-
-	const onTileReady = useCallback(() => {
+	const onTileReady = () => {
 		setSequenceIndex(curr => curr + 1);
+	};
+
+	useEffect(() => {
 		if (sequenceIndex + 1 === boardSize) {
 			onReady();
 		}
-	}, [onReady, sequenceIndex, boardSize]);
+	}, [sequenceIndex, boardSize, onReady]);
 
-	const onSelect = useCallback((tile, cb) => {
-		//compare correct tile delay w/ selected tile delay
-		const isCorrect = currentTileCount === tile.delay;
-		console.log(`Tile selected! ${isCorrect ? 'Correct' : 'Incorrect'}`);
+	const onSelect = useCallback(() => {
+		setTilesDisabled(true);
+	}, []);
+
+	const onFinishSelect = useCallback((isCorrect) => {
 		if (isCorrect) {
-			//correct!
 			setCurrentTileCount(curr => curr + 1);
-			cb();
-			if (currentTileCount + 1 === boardSize) {
-				// end
-				onSuccess();
-			}
 		} else {
-			//incorrect
+			setIsFail(true);
+		}
+	}, [onSuccess, onFail]);
+
+	const onFinishFailAnim = () => {
+		setFinishFailAnimCount(curr => curr + 1);
+	};
+
+	useEffect(() => {
+		if (!isFail) return;
+		if (finishFailAnimCount === (boardSize - currentTileCount)) {
 			onFail();
 		}
-	}, [currentTileCount, boardSize, onSuccess, onFail]);
+	}, [isFail, finishFailAnimCount, currentTileCount, boardSize, onFail]);
+
+	useEffect(() => {
+		if (currentTileCount === boardSize) {
+			// end
+			onSuccess();
+		}
+		setTilesDisabled(false);
+	}, [currentTileCount, boardSize]);
+
+	const boardDisplay = useMemo(() => board.map((col, i) => {
+		return (
+			<SizedGrid
+				size={size} 
+				className={styles.column}
+				key={`column-${i}`}
+			>
+				{col.map((tile, tileI) => {
+					return <Tile
+						tile={tile}
+						correctTileIndex={currentTileCount}
+						isDisabled={tilesDisabled}
+						gameStage={gameStage}
+						isFail={isFail}
+						onReady={onTileReady}
+						onSelect={onSelect}
+						onFinishSelect={onFinishSelect}
+						onFinishFail={onFinishFailAnim}
+						key={`tile-${tileI}`}
+					/>;
+				})}
+			</SizedGrid>
+		);
+	}), [
+		board, 
+		size, 
+		currentTileCount, 
+		tilesDisabled, 
+		gameStage, 
+		isFail,
+		onFinishSelect,
+		onFinishFailAnim,
+		onTileReady,
+		onSelect
+	]);
 
 	return (
-		<motion.div 
+		<FadeMotion
 			as={SizedGrid}
 			size={size}
 			className={styles.tileBoard}
-			initial={{
-				opacity: 0,
-			}}
-			animate={{
-				opacity: '100%'
-			}}
-			transition={{
-				duration: 0.1
-			}}
+			duration={0.1}
 		>
-			{board.map((col, i) => {
-				return (
-					<SizedGrid
-						size={size} 
-						className={styles.column}
-						key={`column-${i}`}
-					>
-						{col.map((tile, tileI) => {
-							return <Tile
-								tile={tile}
-								correctTile={tileI}
-								onReady={onTileReady}
-								onSelect={onSelect}
-								gameStage={gameStage}
-								key={`tile-${tileI}`}
-							/>;
-						})}
-					</SizedGrid>
-				);
-			})}
-		</motion.div>
+			{boardDisplay}
+		</FadeMotion>
 	);
+};
+
+Board.propTypes = {
+	size: PropTypes.number.isRequired, 
+	gameStage: PropTypes.string.isRequired, 
+	onReady: PropTypes.func.isRequired, 
+	onSuccess: PropTypes.func.isRequired, 
+	onFail: PropTypes.func.isRequired
 };
 
 export default Board;
