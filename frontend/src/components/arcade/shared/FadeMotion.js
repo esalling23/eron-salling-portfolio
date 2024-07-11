@@ -28,7 +28,7 @@ const FadeMotion = ({
 
 FadeMotion.propTypes = {
 	children: PropTypes.any,
-	as: PropTypes.element,
+	as: PropTypes.any,
 	duration: PropTypes.number,
 };
 

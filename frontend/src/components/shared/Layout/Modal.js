@@ -28,9 +28,9 @@ const Modal = ({
 };
 
 Modal.propTypes = {
-	title: PropTypes.element | PropTypes.string,
-	bodyContent: PropTypes.element | PropTypes.string,
-	footerContent: PropTypes.element | PropTypes.string,
+	title: PropTypes.any,
+	bodyContent: PropTypes.any,
+	footerContent: PropTypes.any,
 	isModalOpen: PropTypes.bool,
 	styles: PropTypes.any,
 	closeModal: PropTypes.func

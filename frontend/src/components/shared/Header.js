@@ -5,7 +5,7 @@ import { CircleFill } from 'react-bootstrap-icons';
 import { LinkContainer } from 'react-router-bootstrap';
 
 const HeaderLink = ({ to, text }) => (
-	<LinkContainer exact to={to} activeClassName="selected">
+	<LinkContainer exact="true" to={to} activeClassName="selected">
 		<Nav.Link>{text}</Nav.Link>
 	</LinkContainer>
 );
