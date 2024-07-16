@@ -1,16 +1,14 @@
 
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Howl } from 'howler';
 
 import incorrectSfx from '../../../../../assets/audio/incorrect.mp3';
-import correctSfx from '../../../../../assets/audio/correct.mp3';
 
 import { GAME_STAGE } from '../lib';
-// import FadeMotion from '../../shared/FadeMotion';
 import TileButton from './TileButton';
 import TileMotion from './TileMotion';
 import useTone from '../../hooks/useTone';
+import useHowl from '../../hooks/useHowl';
 
 const Tile = ({
 	tile,
@@ -25,15 +23,11 @@ const Tile = ({
 }) => {
 	const [isCorrect, setIsCorrect] = useState(null);
 
-	const playTone = useTone(tile.sound);
+	const [playTone, stopTone] = useTone(tile.sound);
 
 	// individual tile correct sounds
-	const incorrectSound = new Howl({
-		src: incorrectSfx,
+	const [playIncorrectSound] = useHowl(incorrectSfx, {
 		volume: 1.4
-	});
-	const correctSound = new Howl({
-		src: correctSfx
 	});
 
 	const handleSelect = useCallback(() => {
@@ -45,10 +39,10 @@ const Tile = ({
 		if (result) {
 			playTone();
 		} else {
-			incorrectSound.play();
+			playIncorrectSound();
 		}
 		// console.log(`Tile ${tile.delay} selected! ${result ? 'Correct' : 'Incorrect'}`);
-	}, [correctTileIndex, tile, onSelect, correctSound, incorrectSound]);
+	}, [correctTileIndex, tile, onSelect, playIncorrectSound]);
 
 	const handleComplete = useCallback((variant) => {
 		// console.log(variant);
@@ -69,6 +63,12 @@ const Tile = ({
 		if (isCorrect) return 'success';
 		else return 'fail';
 	}, [isCorrect, isFail]);
+
+	useEffect(() => {
+		return () => {
+			stopTone();
+		};
+	}, []);
 
 	return (
 		<TileMotion

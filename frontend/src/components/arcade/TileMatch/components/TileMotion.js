@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 import { motion, useAnimate, useAnimation } from 'framer-motion';
 import classnames from 'classnames';
 import Color from 'color';
-import { Howl } from 'howler';
 import styled from 'styled-components';
 
 import failSfx from '../../../../../assets/audio/fail.mp3';
 
 import styles from '../tileMatch.module.scss';
 import useTone from '../../hooks/useTone';
+import useHowl from '../../hooks/useHowl';
 
 const StyledMotion = styled(motion.div)`
 	${({ $baseColor, $isDisabled }) => `
@@ -119,12 +119,17 @@ const TileMotion = ({
 	const [scope, animate] = useAnimate();
 	const controls = useAnimation();
 
-	const playTone = useTone(tile.sound);
+	const [playTone, stopTone] = useTone(tile.sound);
 
-	const failSound = new Howl({
-		src: failSfx,
-		volume: 0.5
+	const [playFailSound] = useHowl(failSfx, {
+		volume: 0.5,
 	});
+
+	useEffect(() => {
+		return () => {
+			stopTone();
+		};
+	}, []);
 
 	useEffect(() => {
 		let timeout;
@@ -141,7 +146,7 @@ const TileMotion = ({
 				await animate(scope.current, tileAnim.hang, { 
 					delay: hangDelay,
 					duration: 0.8,
-					onComplete: () => failSound.play()
+					onComplete: () => playFailSound()
 				});
 			}
 
