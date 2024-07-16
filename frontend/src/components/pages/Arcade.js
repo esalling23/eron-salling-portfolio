@@ -3,14 +3,14 @@ import React from 'react';
 import PageContainer from '../shared/PageContainer';
 import { Link, Route, Routes } from 'react-router-dom';
 
-import TileMatch from '../arcade/TileMatch';
+import TuneTiles from '../arcade/TuneTiles';
 import { Button } from 'react-bootstrap';
 
 const games = {
 	tileMatch: {
 		name: 'Tune Tiles',
 		path: 'tune-tiles',
-		component: TileMatch
+		component: TuneTiles
 	}
 };
 
