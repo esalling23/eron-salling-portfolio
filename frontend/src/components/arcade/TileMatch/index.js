@@ -114,7 +114,7 @@ const TileMatch = () => {
 
 	return (
 		<AnimatePresence>
-			<h1 key="tile-match-title" className="w-100 text-center">TileMatch - A Memory Game</h1>
+			<h1 key="tile-match-title" className="w-100 text-center">Tune Tiles - A Memory Game</h1>
 			<div key="tile-match-content" className={classNames('d-flex justify-content-start align-items-center', styles.gameContainer)}>
 				{content}
 			</div>

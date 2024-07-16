@@ -8,8 +8,8 @@ import { Button } from 'react-bootstrap';
 
 const games = {
 	tileMatch: {
-		name: 'Tile Match',
-		path: 'tile-match',
+		name: 'Tune Tiles',
+		path: 'tune-tiles',
 		component: TileMatch
 	}
 };
