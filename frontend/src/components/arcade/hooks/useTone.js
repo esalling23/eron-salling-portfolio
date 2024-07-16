@@ -15,7 +15,12 @@ const useTone = (sound) => {
 		synth.triggerAttackRelease(sound, 0.2, now);
 	};
 
-	return playTone;
+	const stopTone = () => {
+		const now = Tone.now();
+		synth.triggerRelease(now);
+	};
+
+	return [playTone, stopTone];
 };
 
 export default useTone;
