@@ -86,16 +86,18 @@ const TileMatch = () => {
 				<div className="flex-col-center">
 					<h4>Your {!isSuccess && 'final '}streak: {streak}</h4>
 				</div>
-				<Button onClick={continueGame}>Continue</Button>
+				{isSuccess && <Button onClick={continueGame}>Continue</Button>}
 			</div>;
 		}
+
+		const showInstructionCopy = gameStage === GAME_STAGE.PLAY || gameStage === GAME_STAGE.SETUP;
 
 		// PLAY stage --
 		// should allow user to click on the tiles to repeat the order
 		// should provide feedback if incorrect tile is clicked or tile sequence is completed successfully
 		return <div className={classNames('flex-col-center', styles.boardContainer)}>
 			<h2>Level {currLevel}</h2>
-			<h6>{gameStage === GAME_STAGE.PLAY || gameStage === GAME_STAGE.SETUP ? instructionCopy : ''}</h6>
+			<h6>{showInstructionCopy ? instructionCopy : ''}</h6>
 			<Board
 				size={size}
 				gameStage={gameStage}
@@ -122,6 +124,12 @@ const TileMatch = () => {
 			<h1 key="tile-match-title" className="w-100 text-center">Tune Tiles - A Memory Game</h1>
 			<div key="tile-match-content" className={classNames('d-flex justify-content-start align-items-center', styles.gameContainer)}>
 				{content}
+				{gameStage !== GAME_STAGE.START && (
+					<Button 
+						className="my-2"
+						onClick={() => setGameStage(GAME_STAGE.START)}
+					>{'Quit'}</Button>
+				)}
 			</div>
 		</AnimatePresence>
 	);
