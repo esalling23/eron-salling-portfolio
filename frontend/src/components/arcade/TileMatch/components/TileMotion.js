@@ -15,11 +15,11 @@ import useTone from '../../hooks/useTone';
 const StyledMotion = styled(motion.div)`
 	${({ $baseColor, $isDisabled }) => `
 		border: 4px solid ${Color(`#${$baseColor}`).darken(0.4)};
+		transition: border-width 0.2s linear;
 
 		${!$isDisabled && `
 			&:hover, &:focus {
 				border-width: 8px;
-				transition: border-width 0.2s linear;
 			}
 		`}
 	`}
