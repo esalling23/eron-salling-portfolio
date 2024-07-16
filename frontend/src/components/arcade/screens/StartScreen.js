@@ -2,16 +2,12 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap';
 
-import Modal from '../../../shared/Layout/Modal';
+import Modal from '../../shared/Layout/Modal';
 
-const howToPlaySteps = [
-	'Watch as the tiles appear one-by-one',
-	'Select each tile in the order they appeared',
-	'Complete the sequence in the correct order to win',
-];
 const StartScreen = ({
 	initGame,
-	levels = []
+	levels = [],
+	howToPlaySteps,
 }) => {
 	const [isHowToPlayOpen, setIsHowToPlayOpen] = useState(false);
 
@@ -65,6 +61,7 @@ const StartScreen = ({
 StartScreen.propTypes = {
 	initGame: PropTypes.func,
 	levels: PropTypes.arrayOf(PropTypes.number),
+	howToPlaySteps: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default StartScreen;

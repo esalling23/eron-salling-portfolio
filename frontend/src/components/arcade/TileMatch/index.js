@@ -10,7 +10,7 @@ import styles from './tileMatch.module.scss';
 import { GAME_STAGE, MAX_BOARD_SIZE, MIN_BOARD_SIZE } from './lib';
 import Board from './components/Board';
 // import StreakProgress from './components/StreakProgress';
-import StartScreen from './screens/StartScreen';
+import StartScreen from '../screens/StartScreen';
 
 const TileMatch = () => {
 	const [streak, setStreak] = useState(null);
@@ -70,6 +70,11 @@ const TileMatch = () => {
 			return (
 				<StartScreen 
 					initGame={initGame}
+					howToPlaySteps={[
+						'Watch as the tiles appear one-by-one',
+						'Select each tile in the order they appeared',
+						'Complete the sequence in the correct order to win',
+					]}
 					levels={[...new Array(MAX_BOARD_SIZE - MIN_BOARD_SIZE)].map((_c, i) => i + 1)}
 				/>
 			);
