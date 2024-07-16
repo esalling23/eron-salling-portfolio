@@ -21,25 +21,55 @@
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/fdfd32366429729aff4c.mp3",
       "publicPath": "/static/webpack_bundles/fdfd32366429729aff4c.mp3"
     },
+    "main-038db9407cfa3593b8ef.js": {
+      "name": "main-038db9407cfa3593b8ef.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-038db9407cfa3593b8ef.js",
+      "publicPath": "/static/webpack_bundles/main-038db9407cfa3593b8ef.js"
+    },
     "main-078f2a5f4e188c3dc169.js": {
       "name": "main-078f2a5f4e188c3dc169.js",
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-078f2a5f4e188c3dc169.js",
       "publicPath": "/static/webpack_bundles/main-078f2a5f4e188c3dc169.js"
+    },
+    "main-08be6c2a477a14fb4a0c.js": {
+      "name": "main-08be6c2a477a14fb4a0c.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-08be6c2a477a14fb4a0c.js",
+      "publicPath": "/static/webpack_bundles/main-08be6c2a477a14fb4a0c.js"
     },
     "main-0a325184905120d3e4d5.js": {
       "name": "main-0a325184905120d3e4d5.js",
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-0a325184905120d3e4d5.js",
       "publicPath": "/static/webpack_bundles/main-0a325184905120d3e4d5.js"
     },
+    "main-0d7fa25eac714956b282.js": {
+      "name": "main-0d7fa25eac714956b282.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-0d7fa25eac714956b282.js",
+      "publicPath": "/static/webpack_bundles/main-0d7fa25eac714956b282.js"
+    },
+    "main-0e3ff815b94ea65986a1.js": {
+      "name": "main-0e3ff815b94ea65986a1.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-0e3ff815b94ea65986a1.js",
+      "publicPath": "/static/webpack_bundles/main-0e3ff815b94ea65986a1.js"
+    },
     "main-0f2bf9ff9c9b5679e8eb.js": {
       "name": "main-0f2bf9ff9c9b5679e8eb.js",
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-0f2bf9ff9c9b5679e8eb.js",
       "publicPath": "/static/webpack_bundles/main-0f2bf9ff9c9b5679e8eb.js"
     },
+    "main-10dd1b87924d447bc601.js": {
+      "name": "main-10dd1b87924d447bc601.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-10dd1b87924d447bc601.js",
+      "publicPath": "/static/webpack_bundles/main-10dd1b87924d447bc601.js"
+    },
     "main-13c1cc0703a6ae4c1097.js": {
       "name": "main-13c1cc0703a6ae4c1097.js",
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-13c1cc0703a6ae4c1097.js",
       "publicPath": "/static/webpack_bundles/main-13c1cc0703a6ae4c1097.js"
+    },
+    "main-1bcef8054b6023bdda27.js": {
+      "name": "main-1bcef8054b6023bdda27.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-1bcef8054b6023bdda27.js",
+      "publicPath": "/static/webpack_bundles/main-1bcef8054b6023bdda27.js"
     },
     "main-1bd116ba9a2f00df6008.js": {
       "name": "main-1bd116ba9a2f00df6008.js",
@@ -50,6 +80,26 @@
       "name": "main-1ca95e60ef112503a083.js",
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-1ca95e60ef112503a083.js",
       "publicPath": "/static/webpack_bundles/main-1ca95e60ef112503a083.js"
+    },
+    "main-1cdc1c5cc596b40b2ed7.js": {
+      "name": "main-1cdc1c5cc596b40b2ed7.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-1cdc1c5cc596b40b2ed7.js",
+      "publicPath": "/static/webpack_bundles/main-1cdc1c5cc596b40b2ed7.js"
+    },
+    "main-1fe66b5f15aa03a88850.js": {
+      "name": "main-1fe66b5f15aa03a88850.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-1fe66b5f15aa03a88850.js",
+      "publicPath": "/static/webpack_bundles/main-1fe66b5f15aa03a88850.js"
+    },
+    "main-21d1bf57e9a1fee1445f.js": {
+      "name": "main-21d1bf57e9a1fee1445f.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-21d1bf57e9a1fee1445f.js",
+      "publicPath": "/static/webpack_bundles/main-21d1bf57e9a1fee1445f.js"
+    },
+    "main-22f52d6522c457fba23b.js": {
+      "name": "main-22f52d6522c457fba23b.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-22f52d6522c457fba23b.js",
+      "publicPath": "/static/webpack_bundles/main-22f52d6522c457fba23b.js"
     },
     "main-236536c23ab6983f80ce.js": {
       "name": "main-236536c23ab6983f80ce.js",
@@ -65,6 +115,16 @@
       "name": "main-24cd76f6377148458153.js",
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-24cd76f6377148458153.js",
       "publicPath": "/static/webpack_bundles/main-24cd76f6377148458153.js"
+    },
+    "main-26132f3545bbeef39e27.js": {
+      "name": "main-26132f3545bbeef39e27.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-26132f3545bbeef39e27.js",
+      "publicPath": "/static/webpack_bundles/main-26132f3545bbeef39e27.js"
+    },
+    "main-27c931f30d116ebae0b8.js": {
+      "name": "main-27c931f30d116ebae0b8.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-27c931f30d116ebae0b8.js",
+      "publicPath": "/static/webpack_bundles/main-27c931f30d116ebae0b8.js"
     },
     "main-287eec764efd7aef6877.js": {
       "name": "main-287eec764efd7aef6877.js",
@@ -91,6 +151,11 @@
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-328bd1058940a47ce406.js",
       "publicPath": "/static/webpack_bundles/main-328bd1058940a47ce406.js"
     },
+    "main-33bd50ca3659343a6d1d.js": {
+      "name": "main-33bd50ca3659343a6d1d.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-33bd50ca3659343a6d1d.js",
+      "publicPath": "/static/webpack_bundles/main-33bd50ca3659343a6d1d.js"
+    },
     "main-3930ff97cfafd440d1e6.js": {
       "name": "main-3930ff97cfafd440d1e6.js",
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-3930ff97cfafd440d1e6.js",
@@ -116,10 +181,20 @@
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-4036862533f17af419e8.js",
       "publicPath": "/static/webpack_bundles/main-4036862533f17af419e8.js"
     },
+    "main-408de794b58a09da21a5.js": {
+      "name": "main-408de794b58a09da21a5.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-408de794b58a09da21a5.js",
+      "publicPath": "/static/webpack_bundles/main-408de794b58a09da21a5.js"
+    },
     "main-415bf374cfc3f04ff350.js": {
       "name": "main-415bf374cfc3f04ff350.js",
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-415bf374cfc3f04ff350.js",
       "publicPath": "/static/webpack_bundles/main-415bf374cfc3f04ff350.js"
+    },
+    "main-41be5490abe84427cc76.js": {
+      "name": "main-41be5490abe84427cc76.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-41be5490abe84427cc76.js",
+      "publicPath": "/static/webpack_bundles/main-41be5490abe84427cc76.js"
     },
     "main-429472553e6c327cadd5.js": {
       "name": "main-429472553e6c327cadd5.js",
@@ -161,15 +236,30 @@
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-542f5c9768f9e99fc878.js",
       "publicPath": "/static/webpack_bundles/main-542f5c9768f9e99fc878.js"
     },
+    "main-577307d86a7ff82b2f30.js": {
+      "name": "main-577307d86a7ff82b2f30.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-577307d86a7ff82b2f30.js",
+      "publicPath": "/static/webpack_bundles/main-577307d86a7ff82b2f30.js"
+    },
     "main-58af8d3ef88243e96b82.js": {
       "name": "main-58af8d3ef88243e96b82.js",
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-58af8d3ef88243e96b82.js",
       "publicPath": "/static/webpack_bundles/main-58af8d3ef88243e96b82.js"
     },
+    "main-5dd2a16669bb2ef8b850.js": {
+      "name": "main-5dd2a16669bb2ef8b850.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-5dd2a16669bb2ef8b850.js",
+      "publicPath": "/static/webpack_bundles/main-5dd2a16669bb2ef8b850.js"
+    },
     "main-60b8e9fab584f4b54723.js": {
       "name": "main-60b8e9fab584f4b54723.js",
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-60b8e9fab584f4b54723.js",
       "publicPath": "/static/webpack_bundles/main-60b8e9fab584f4b54723.js"
+    },
+    "main-624618950994c4d01cc0.js": {
+      "name": "main-624618950994c4d01cc0.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-624618950994c4d01cc0.js",
+      "publicPath": "/static/webpack_bundles/main-624618950994c4d01cc0.js"
     },
     "main-62ed1d14bcee0f2831ef.js": {
       "name": "main-62ed1d14bcee0f2831ef.js",
@@ -181,10 +271,25 @@
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-66b4f1899b4c0c3f826a.js",
       "publicPath": "/static/webpack_bundles/main-66b4f1899b4c0c3f826a.js"
     },
+    "main-67f4d5c5a10cbcfbf256.js": {
+      "name": "main-67f4d5c5a10cbcfbf256.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-67f4d5c5a10cbcfbf256.js",
+      "publicPath": "/static/webpack_bundles/main-67f4d5c5a10cbcfbf256.js"
+    },
+    "main-6918dd6dd3007697da11.js": {
+      "name": "main-6918dd6dd3007697da11.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-6918dd6dd3007697da11.js",
+      "publicPath": "/static/webpack_bundles/main-6918dd6dd3007697da11.js"
+    },
     "main-6efad8dd33f17e40d10b.js": {
       "name": "main-6efad8dd33f17e40d10b.js",
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-6efad8dd33f17e40d10b.js",
       "publicPath": "/static/webpack_bundles/main-6efad8dd33f17e40d10b.js"
+    },
+    "main-7549bd38dd03b2b6594d.js": {
+      "name": "main-7549bd38dd03b2b6594d.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-7549bd38dd03b2b6594d.js",
+      "publicPath": "/static/webpack_bundles/main-7549bd38dd03b2b6594d.js"
     },
     "main-75a42a4341169838174e.js": {
       "name": "main-75a42a4341169838174e.js",
@@ -196,6 +301,16 @@
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-7b6dc1164296f1851350.js",
       "publicPath": "/static/webpack_bundles/main-7b6dc1164296f1851350.js"
     },
+    "main-7b7774ad84d520be3c86.js": {
+      "name": "main-7b7774ad84d520be3c86.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-7b7774ad84d520be3c86.js",
+      "publicPath": "/static/webpack_bundles/main-7b7774ad84d520be3c86.js"
+    },
+    "main-7d3125efd398b0598fd7.js": {
+      "name": "main-7d3125efd398b0598fd7.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-7d3125efd398b0598fd7.js",
+      "publicPath": "/static/webpack_bundles/main-7d3125efd398b0598fd7.js"
+    },
     "main-807e513383ccf41a27bd.js": {
       "name": "main-807e513383ccf41a27bd.js",
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-807e513383ccf41a27bd.js",
@@ -205,6 +320,11 @@
       "name": "main-85b73abba4c61b9aca1d.js",
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-85b73abba4c61b9aca1d.js",
       "publicPath": "/static/webpack_bundles/main-85b73abba4c61b9aca1d.js"
+    },
+    "main-8900fcef63b56aeaa947.js": {
+      "name": "main-8900fcef63b56aeaa947.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-8900fcef63b56aeaa947.js",
+      "publicPath": "/static/webpack_bundles/main-8900fcef63b56aeaa947.js"
     },
     "main-89bbb0d81ce1c6ad6e26.js": {
       "name": "main-89bbb0d81ce1c6ad6e26.js",
@@ -216,10 +336,30 @@
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-8ae6c04ac33959f52e9f.js",
       "publicPath": "/static/webpack_bundles/main-8ae6c04ac33959f52e9f.js"
     },
+    "main-8ba3a7fa644aceab873d.js": {
+      "name": "main-8ba3a7fa644aceab873d.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-8ba3a7fa644aceab873d.js",
+      "publicPath": "/static/webpack_bundles/main-8ba3a7fa644aceab873d.js"
+    },
+    "main-8c4414f15c51fa29ac73.js": {
+      "name": "main-8c4414f15c51fa29ac73.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-8c4414f15c51fa29ac73.js",
+      "publicPath": "/static/webpack_bundles/main-8c4414f15c51fa29ac73.js"
+    },
+    "main-90d9428400e1bee56765.js": {
+      "name": "main-90d9428400e1bee56765.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-90d9428400e1bee56765.js",
+      "publicPath": "/static/webpack_bundles/main-90d9428400e1bee56765.js"
+    },
     "main-925586168ef34c6ef9c9.js": {
       "name": "main-925586168ef34c6ef9c9.js",
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-925586168ef34c6ef9c9.js",
       "publicPath": "/static/webpack_bundles/main-925586168ef34c6ef9c9.js"
+    },
+    "main-9401a0a58854c611eb6d.js": {
+      "name": "main-9401a0a58854c611eb6d.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-9401a0a58854c611eb6d.js",
+      "publicPath": "/static/webpack_bundles/main-9401a0a58854c611eb6d.js"
     },
     "main-955053aa7a7d46e7bc23.js": {
       "name": "main-955053aa7a7d46e7bc23.js",
@@ -231,10 +371,20 @@
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-956c35eb771af960e91f.js",
       "publicPath": "/static/webpack_bundles/main-956c35eb771af960e91f.js"
     },
+    "main-962268def7e9912f582c.js": {
+      "name": "main-962268def7e9912f582c.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-962268def7e9912f582c.js",
+      "publicPath": "/static/webpack_bundles/main-962268def7e9912f582c.js"
+    },
     "main-97947bc26ef63e3f10c0.js": {
       "name": "main-97947bc26ef63e3f10c0.js",
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-97947bc26ef63e3f10c0.js",
       "publicPath": "/static/webpack_bundles/main-97947bc26ef63e3f10c0.js"
+    },
+    "main-999d562c1fc832868682.js": {
+      "name": "main-999d562c1fc832868682.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-999d562c1fc832868682.js",
+      "publicPath": "/static/webpack_bundles/main-999d562c1fc832868682.js"
     },
     "main-9de8c56891fed798fae9.js": {
       "name": "main-9de8c56891fed798fae9.js",
@@ -246,10 +396,50 @@
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-9e600237adfe828cdf75.js",
       "publicPath": "/static/webpack_bundles/main-9e600237adfe828cdf75.js"
     },
+    "main-a0985a34a6dd6a40b9f9.js": {
+      "name": "main-a0985a34a6dd6a40b9f9.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-a0985a34a6dd6a40b9f9.js",
+      "publicPath": "/static/webpack_bundles/main-a0985a34a6dd6a40b9f9.js"
+    },
+    "main-a0db552fb4c852ec4c2e.js": {
+      "name": "main-a0db552fb4c852ec4c2e.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-a0db552fb4c852ec4c2e.js",
+      "publicPath": "/static/webpack_bundles/main-a0db552fb4c852ec4c2e.js"
+    },
+    "main-a21923807585c404d785.js": {
+      "name": "main-a21923807585c404d785.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-a21923807585c404d785.js",
+      "publicPath": "/static/webpack_bundles/main-a21923807585c404d785.js"
+    },
     "main-a5c8a02cb9c095ac5aa6.js": {
       "name": "main-a5c8a02cb9c095ac5aa6.js",
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-a5c8a02cb9c095ac5aa6.js",
       "publicPath": "/static/webpack_bundles/main-a5c8a02cb9c095ac5aa6.js"
+    },
+    "main-a84f1a9ba5b7a8a9505d.js": {
+      "name": "main-a84f1a9ba5b7a8a9505d.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-a84f1a9ba5b7a8a9505d.js",
+      "publicPath": "/static/webpack_bundles/main-a84f1a9ba5b7a8a9505d.js"
+    },
+    "main-a9becaf3f76c3be888d4.js": {
+      "name": "main-a9becaf3f76c3be888d4.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-a9becaf3f76c3be888d4.js",
+      "publicPath": "/static/webpack_bundles/main-a9becaf3f76c3be888d4.js"
+    },
+    "main-aa0411ad80542434fce1.js": {
+      "name": "main-aa0411ad80542434fce1.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-aa0411ad80542434fce1.js",
+      "publicPath": "/static/webpack_bundles/main-aa0411ad80542434fce1.js"
+    },
+    "main-acc195a26819b06c935c.js": {
+      "name": "main-acc195a26819b06c935c.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-acc195a26819b06c935c.js",
+      "publicPath": "/static/webpack_bundles/main-acc195a26819b06c935c.js"
+    },
+    "main-ad5a9cd7cf8032b2ad10.js": {
+      "name": "main-ad5a9cd7cf8032b2ad10.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-ad5a9cd7cf8032b2ad10.js",
+      "publicPath": "/static/webpack_bundles/main-ad5a9cd7cf8032b2ad10.js"
     },
     "main-adbc3380b4e95ade756f.js": {
       "name": "main-adbc3380b4e95ade756f.js",
@@ -276,10 +466,20 @@
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-ba75ac804c5ac5319df3.js",
       "publicPath": "/static/webpack_bundles/main-ba75ac804c5ac5319df3.js"
     },
+    "main-bd4d2cab50a4f900c866.js": {
+      "name": "main-bd4d2cab50a4f900c866.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-bd4d2cab50a4f900c866.js",
+      "publicPath": "/static/webpack_bundles/main-bd4d2cab50a4f900c866.js"
+    },
     "main-bea6ed8f0b0184af19e8.js": {
       "name": "main-bea6ed8f0b0184af19e8.js",
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-bea6ed8f0b0184af19e8.js",
       "publicPath": "/static/webpack_bundles/main-bea6ed8f0b0184af19e8.js"
+    },
+    "main-c54f56924b2356d1d847.js": {
+      "name": "main-c54f56924b2356d1d847.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-c54f56924b2356d1d847.js",
+      "publicPath": "/static/webpack_bundles/main-c54f56924b2356d1d847.js"
     },
     "main-c880bec0851e853bfa3b.js": {
       "name": "main-c880bec0851e853bfa3b.js",
@@ -290,6 +490,16 @@
       "name": "main-c9cacd43c5bc32ab9fa2.js",
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-c9cacd43c5bc32ab9fa2.js",
       "publicPath": "/static/webpack_bundles/main-c9cacd43c5bc32ab9fa2.js"
+    },
+    "main-ca525c8240740daa1bb1.js": {
+      "name": "main-ca525c8240740daa1bb1.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-ca525c8240740daa1bb1.js",
+      "publicPath": "/static/webpack_bundles/main-ca525c8240740daa1bb1.js"
+    },
+    "main-cb9586ffeff91b813035.js": {
+      "name": "main-cb9586ffeff91b813035.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-cb9586ffeff91b813035.js",
+      "publicPath": "/static/webpack_bundles/main-cb9586ffeff91b813035.js"
     },
     "main-ccc7dd694aee71609e84.js": {
       "name": "main-ccc7dd694aee71609e84.js",
@@ -306,10 +516,25 @@
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-d3f2c6bc65099c35b968.js",
       "publicPath": "/static/webpack_bundles/main-d3f2c6bc65099c35b968.js"
     },
+    "main-d4930933b7da56d81097.js": {
+      "name": "main-d4930933b7da56d81097.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-d4930933b7da56d81097.js",
+      "publicPath": "/static/webpack_bundles/main-d4930933b7da56d81097.js"
+    },
     "main-d519ebd5dd5165ee577c.js": {
       "name": "main-d519ebd5dd5165ee577c.js",
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-d519ebd5dd5165ee577c.js",
       "publicPath": "/static/webpack_bundles/main-d519ebd5dd5165ee577c.js"
+    },
+    "main-db8e25b91c8802cdcb67.js": {
+      "name": "main-db8e25b91c8802cdcb67.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-db8e25b91c8802cdcb67.js",
+      "publicPath": "/static/webpack_bundles/main-db8e25b91c8802cdcb67.js"
+    },
+    "main-dda9b915df5775edf333.js": {
+      "name": "main-dda9b915df5775edf333.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-dda9b915df5775edf333.js",
+      "publicPath": "/static/webpack_bundles/main-dda9b915df5775edf333.js"
     },
     "main-e065d3fd318fcbf59273.js": {
       "name": "main-e065d3fd318fcbf59273.js",
@@ -351,6 +576,11 @@
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-e7294399d4d869e59fd3.js",
       "publicPath": "/static/webpack_bundles/main-e7294399d4d869e59fd3.js"
     },
+    "main-e8e6107ec1784eeec5f4.js": {
+      "name": "main-e8e6107ec1784eeec5f4.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-e8e6107ec1784eeec5f4.js",
+      "publicPath": "/static/webpack_bundles/main-e8e6107ec1784eeec5f4.js"
+    },
     "main-ea08863dee97c8ecb0bb.js": {
       "name": "main-ea08863dee97c8ecb0bb.js",
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-ea08863dee97c8ecb0bb.js",
@@ -361,28 +591,83 @@
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-eb2dc32ee2b715b4131b.js",
       "publicPath": "/static/webpack_bundles/main-eb2dc32ee2b715b4131b.js"
     },
+    "main-ebeb4e17c9a687957d49.js": {
+      "name": "main-ebeb4e17c9a687957d49.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-ebeb4e17c9a687957d49.js",
+      "publicPath": "/static/webpack_bundles/main-ebeb4e17c9a687957d49.js"
+    },
+    "main-efb42c5d0ed9b8639311.js": {
+      "name": "main-efb42c5d0ed9b8639311.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-efb42c5d0ed9b8639311.js",
+      "publicPath": "/static/webpack_bundles/main-efb42c5d0ed9b8639311.js"
+    },
+    "main-f3bcd96a0625543ac545.js": {
+      "name": "main-f3bcd96a0625543ac545.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-f3bcd96a0625543ac545.js",
+      "publicPath": "/static/webpack_bundles/main-f3bcd96a0625543ac545.js"
+    },
+    "main-f4ae7eab706fa0b0de21.js": {
+      "name": "main-f4ae7eab706fa0b0de21.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-f4ae7eab706fa0b0de21.js",
+      "publicPath": "/static/webpack_bundles/main-f4ae7eab706fa0b0de21.js"
+    },
+    "main-f85e2d655efde911677b.js": {
+      "name": "main-f85e2d655efde911677b.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-f85e2d655efde911677b.js",
+      "publicPath": "/static/webpack_bundles/main-f85e2d655efde911677b.js"
+    },
     "main-f8825b41aad1e8dd162f.js": {
       "name": "main-f8825b41aad1e8dd162f.js",
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-f8825b41aad1e8dd162f.js",
       "publicPath": "/static/webpack_bundles/main-f8825b41aad1e8dd162f.js"
+    },
+    "main-f915eef0c28c6f2b7754.js": {
+      "name": "main-f915eef0c28c6f2b7754.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-f915eef0c28c6f2b7754.js",
+      "publicPath": "/static/webpack_bundles/main-f915eef0c28c6f2b7754.js"
+    },
+    "main-f9c24524dee2f2f43496.js": {
+      "name": "main-f9c24524dee2f2f43496.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-f9c24524dee2f2f43496.js",
+      "publicPath": "/static/webpack_bundles/main-f9c24524dee2f2f43496.js"
+    },
+    "main-faad25a55660e69b4a2a.js": {
+      "name": "main-faad25a55660e69b4a2a.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-faad25a55660e69b4a2a.js",
+      "publicPath": "/static/webpack_bundles/main-faad25a55660e69b4a2a.js"
+    },
+    "main-fba6571f487cb60cfa63.js": {
+      "name": "main-fba6571f487cb60cfa63.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-fba6571f487cb60cfa63.js",
+      "publicPath": "/static/webpack_bundles/main-fba6571f487cb60cfa63.js"
     },
     "main-fd8f0ec84506df9178e1.js": {
       "name": "main-fd8f0ec84506df9178e1.js",
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-fd8f0ec84506df9178e1.js",
       "publicPath": "/static/webpack_bundles/main-fd8f0ec84506df9178e1.js"
     },
+    "main-fdfa211ac3d0b8c324ee.js": {
+      "name": "main-fdfa211ac3d0b8c324ee.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-fdfa211ac3d0b8c324ee.js",
+      "publicPath": "/static/webpack_bundles/main-fdfa211ac3d0b8c324ee.js"
+    },
     "main-ff1a6d44b94eb948e5f4.js": {
       "name": "main-ff1a6d44b94eb948e5f4.js",
       "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-ff1a6d44b94eb948e5f4.js",
       "publicPath": "/static/webpack_bundles/main-ff1a6d44b94eb948e5f4.js"
+    },
+    "main-ff9903e19e7641016b5e.js": {
+      "name": "main-ff9903e19e7641016b5e.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-ff9903e19e7641016b5e.js",
+      "publicPath": "/static/webpack_bundles/main-ff9903e19e7641016b5e.js"
     }
   },
   "chunks": {
     "main": [
-      "main-62ed1d14bcee0f2831ef.js"
+      "main-9401a0a58854c611eb6d.js"
     ]
   },
   "publicPath": "/static/webpack_bundles/",
   "error": "ModuleBuildError",
-  "message": "Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/eronsalling/Developer/eron-salling-portfolio/frontend/src/components/arcade/TileMatch/components/Board.js: Unexpected token (37:3)\n\n  35 | \t\t\t\tdelay: delays[(x * size) + y],\n  36 | \t\t\t\tsound: \n> 37 | \t\t\t}))\n     | \t\t\t^\n  38 | \t\t);\n  39 | \t};\n  40 |\n    at constructor (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:351:19)\n    at JSXParserMixin.raise (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:3237:19)\n    at JSXParserMixin.unexpected (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:3257:16)\n    at JSXParserMixin.parseExprAtom (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10963:16)\n    at JSXParserMixin.parseExprAtom (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:6787:20)\n    at JSXParserMixin.parseExprSubscripts (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10579:23)\n    at JSXParserMixin.parseUpdate (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10562:21)\n    at JSXParserMixin.parseMaybeUnary (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10540:23)\n    at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10394:61)\n    at JSXParserMixin.parseExprOps (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10399:23)\n    at JSXParserMixin.parseMaybeConditional (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10376:23)\n    at JSXParserMixin.parseMaybeAssign (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10337:21)\n    at /Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10307:39\n    at JSXParserMixin.allowInAnd (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:11933:12)\n    at JSXParserMixin.parseMaybeAssignAllowIn (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10307:17)\n    at JSXParserMixin.parseObjectProperty (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:11467:83)\n    at JSXParserMixin.parseObjPropValue (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:11492:100)\n    at JSXParserMixin.parsePropertyDefinition (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:11432:17)\n    at JSXParserMixin.parseObjectLike (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:11347:21)\n    at JSXParserMixin.parseExprAtom (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10864:23)\n    at JSXParserMixin.parseExprAtom (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:6787:20)\n    at JSXParserMixin.parseExprSubscripts (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10579:23)\n    at JSXParserMixin.parseUpdate (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10562:21)\n    at JSXParserMixin.parseMaybeUnary (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10540:23)\n    at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10394:61)\n    at JSXParserMixin.parseExprOps (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10399:23)\n    at JSXParserMixin.parseMaybeConditional (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10376:23)\n    at JSXParserMixin.parseMaybeAssign (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10337:21)\n    at /Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10307:39\n    at JSXParserMixin.allowInAnd (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:11933:12)\n    at JSXParserMixin.parseMaybeAssignAllowIn (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10307:17)\n    at JSXParserMixin.parseParenAndDistinguishExpression (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:11190:28)\n    at JSXParserMixin.parseExprAtom (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10846:23)\n    at JSXParserMixin.parseExprAtom (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:6787:20)\n    at JSXParserMixin.parseExprSubscripts (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10579:23)\n    at JSXParserMixin.parseUpdate (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10562:21)\n    at JSXParserMixin.parseMaybeUnary (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10540:23)\n    at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10394:61)\n    at JSXParserMixin.parseExprOps (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10399:23)\n    at JSXParserMixin.parseMaybeConditional (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10376:23)\n    at JSXParserMixin.parseMaybeAssign (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10337:21)\n    at JSXParserMixin.parseFunctionBody (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:11606:24)\n    at JSXParserMixin.parseArrowExpression (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:11588:10)\n    at JSXParserMixin.parseParenAndDistinguishExpression (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:11202:12)\n    at JSXParserMixin.parseExprAtom (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10846:23)\n    at JSXParserMixin.parseExprAtom (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:6787:20)\n    at JSXParserMixin.parseExprSubscripts (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10579:23)\n    at JSXParserMixin.parseUpdate (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10562:21)\n    at JSXParserMixin.parseMaybeUnary (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10540:23)\n    at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10394:61)"
+  "message": "Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/eronsalling/Developer/eron-salling-portfolio/frontend/src/components/arcade/TileMatch/components/TileMotion.js: Unexpected token (27:24)\n\n  25 | \t`}\n  26 |\n> 27 | \t${({ $isDisabled }) => }\n     | \t                       ^\n  28 | `;\n  29 | \n  30 | function easeOutBounce(x) {\n    at constructor (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:351:19)\n    at JSXParserMixin.raise (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:3237:19)\n    at JSXParserMixin.unexpected (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:3257:16)\n    at JSXParserMixin.parseExprAtom (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10963:16)\n    at JSXParserMixin.parseExprAtom (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:6787:20)\n    at JSXParserMixin.parseExprSubscripts (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10579:23)\n    at JSXParserMixin.parseUpdate (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10562:21)\n    at JSXParserMixin.parseMaybeUnary (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10540:23)\n    at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10394:61)\n    at JSXParserMixin.parseExprOps (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10399:23)\n    at JSXParserMixin.parseMaybeConditional (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10376:23)\n    at JSXParserMixin.parseMaybeAssign (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10337:21)\n    at JSXParserMixin.parseFunctionBody (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:11606:24)\n    at JSXParserMixin.parseArrowExpression (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:11588:10)\n    at JSXParserMixin.parseParenAndDistinguishExpression (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:11202:12)\n    at JSXParserMixin.parseExprAtom (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10846:23)\n    at JSXParserMixin.parseExprAtom (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:6787:20)\n    at JSXParserMixin.parseExprSubscripts (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10579:23)\n    at JSXParserMixin.parseUpdate (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10562:21)\n    at JSXParserMixin.parseMaybeUnary (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10540:23)\n    at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10394:61)\n    at JSXParserMixin.parseExprOps (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10399:23)\n    at JSXParserMixin.parseMaybeConditional (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10376:23)\n    at JSXParserMixin.parseMaybeAssign (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10337:21)\n    at JSXParserMixin.parseExpressionBase (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10291:23)\n    at /Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10287:39\n    at JSXParserMixin.allowInAnd (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:11933:12)\n    at JSXParserMixin.parseExpression (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10287:17)\n    at JSXParserMixin.parseTemplateSubstitution (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:11320:17)\n    at JSXParserMixin.parseTemplate (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:11311:31)\n    at JSXParserMixin.parseTaggedTemplateExpression (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10707:23)\n    at JSXParserMixin.parseSubscript (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10604:19)\n    at JSXParserMixin.parseSubscripts (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10592:19)\n    at JSXParserMixin.parseExprSubscripts (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10583:17)\n    at JSXParserMixin.parseUpdate (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10562:21)\n    at JSXParserMixin.parseMaybeUnary (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10540:23)\n    at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10394:61)\n    at JSXParserMixin.parseExprOps (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10399:23)\n    at JSXParserMixin.parseMaybeConditional (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10376:23)\n    at JSXParserMixin.parseMaybeAssign (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10337:21)\n    at /Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10307:39\n    at JSXParserMixin.allowInAnd (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:11928:16)\n    at JSXParserMixin.parseMaybeAssignAllowIn (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10307:17)\n    at JSXParserMixin.parseVar (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:12861:91)\n    at JSXParserMixin.parseVarStatement (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:12707:10)\n    at JSXParserMixin.parseStatementContent (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:12319:23)\n    at JSXParserMixin.parseStatementLike (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:12236:17)\n    at JSXParserMixin.parseModuleItem (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:12213:17)\n    at JSXParserMixin.parseBlockOrModuleBlockBody (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:12793:36)\n    at JSXParserMixin.parseBlockBody (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:12786:10)"
 }
