@@ -121,10 +121,9 @@ const TileMotion = ({
 
 	const playTone = useTone(tile.sound);
 
-	// const failSoundPlayedRef = useRef(false);
 	const failSound = new Howl({
 		src: failSfx,
-		volume: 0.7
+		volume: 0.5
 	});
 
 	useEffect(() => {

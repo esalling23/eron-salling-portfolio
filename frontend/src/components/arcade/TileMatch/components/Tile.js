@@ -29,7 +29,8 @@ const Tile = ({
 
 	// individual tile correct sounds
 	const incorrectSound = new Howl({
-		src: incorrectSfx
+		src: incorrectSfx,
+		volume: 1.4
 	});
 	const correctSound = new Howl({
 		src: correctSfx
