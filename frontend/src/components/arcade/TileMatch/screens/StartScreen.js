@@ -11,6 +11,7 @@ const howToPlaySteps = [
 ];
 const StartScreen = ({
 	initGame,
+	levels = []
 }) => {
 	const [isHowToPlayOpen, setIsHowToPlayOpen] = useState(false);
 
@@ -25,6 +26,17 @@ const StartScreen = ({
 		<li key={step}>{step}</li>
 	));
 
+	const levelButtons = levels.map(lvl => (
+		<Button
+			key="start-btn"
+			size="lg"
+			className="mx-2"
+			onClick={() => initGame(lvl)}
+		>
+			Play Level {lvl}
+		</Button>
+	));
+
 	return (
 		<div className="h-100 w-100 flex-col-center">
 			<Modal
@@ -35,13 +47,9 @@ const StartScreen = ({
 				isModalOpen={isHowToPlayOpen}
 				closeModal={closeHowToPlay}
 			/>
-			<Button
-				key="start-btn"
-				size="lg"
-				onClick={initGame}
-			>
-				Start
-			</Button>
+			<div className="d-flex justify-content-center align-items-center">
+				{levelButtons}
+			</div>
 			<Button
 				key="how-to-play-btn"
 				size="sm"
@@ -55,7 +63,8 @@ const StartScreen = ({
 };
 
 StartScreen.propTypes = {
-	initGame: PropTypes.func
+	initGame: PropTypes.func,
+	levels: PropTypes.arrayOf(PropTypes.number),
 };
 
 export default StartScreen;

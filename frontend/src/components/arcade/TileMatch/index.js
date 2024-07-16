@@ -7,14 +7,13 @@ import { Howl } from 'howler';
 import successSfx from '../../../../assets/audio/success.mp3';
 import styles from './tileMatch.module.scss';
 
-import { GAME_STAGE, MIN_BOARD_SIZE } from './lib';
+import { GAME_STAGE, MAX_BOARD_SIZE, MIN_BOARD_SIZE } from './lib';
 import Board from './components/Board';
-import StreakProgress from './components/StreakProgress';
+// import StreakProgress from './components/StreakProgress';
 import StartScreen from './screens/StartScreen';
 
 const TileMatch = () => {
 	const [streak, setStreak] = useState(null);
-	const [nextStreakStep, setNextStreakStep] = useState(MIN_BOARD_SIZE * 2);
 	const [size, setSize] = useState(MIN_BOARD_SIZE);
 	const [gameStage, setGameStage] = useState(GAME_STAGE.ENTRY);
 	const [isSuccess, setIsSuccess] = useState(null);
@@ -29,9 +28,10 @@ const TileMatch = () => {
 
 	const currLevel = useMemo(() => size - MIN_BOARD_SIZE + 1);
 
-	const initGame = useCallback(() => {
+	const initGame = useCallback((initLevel) => {
 		// initialize game
 		setStreak(0);
+		setSize((initLevel - 1) + MIN_BOARD_SIZE);
 		setGameStage(GAME_STAGE.START);
 	}, []);
 	// should perform an animation, highlighting tiles in an random order
@@ -40,16 +40,6 @@ const TileMatch = () => {
 	// should show the user total streak
 	// should prompt the user to continue
 	const continueGame = () => {
-		// if we've unlocked the next level
-		if (streak === nextStreakStep) {
-			// increment level
-			setSize(currLevel => {
-				// increment streak count required for next level unlock
-				setNextStreakStep(curr => curr + (currLevel * 2));
-
-				return currLevel + 1;
-			});
-		}
 		if (isSuccess === true) {
 			setGameStage(GAME_STAGE.START);
 		} else if (isSuccess === false) {
@@ -78,7 +68,10 @@ const TileMatch = () => {
 	const content = useMemo(() => {
 		if (gameStage === GAME_STAGE.ENTRY) {
 			return (
-				<StartScreen initGame={initGame} />
+				<StartScreen 
+					initGame={initGame}
+					levels={[...new Array(MAX_BOARD_SIZE - MIN_BOARD_SIZE)].map((_c, i) => i + 1)}
+				/>
 			);
 		}
 		
@@ -88,17 +81,6 @@ const TileMatch = () => {
 				<div className="flex-col-center">
 					{/* Show a Circle progress bar depicting where the current streak lands in level difficulty stage */}
 					<h4>Your {!isSuccess && 'final '}streak: {streak}</h4>
-					{isSuccess && (
-						<>
-							<StreakProgress
-								start={((streak - 1) / nextStreakStep) * 100}
-								end={((isSuccess ? streak : streak - 1) / nextStreakStep) * 100}
-							>
-								<p className="p-0 m-0" key="streak-fraction">{streak} / {nextStreakStep}</p>
-								<p className="p-0 m-0" key="next-level">Next level: {currLevel + 1}</p>
-							</StreakProgress>
-						</>
-					)}
 				</div>
 				<Button onClick={continueGame}>Continue</Button>
 			</div>;
