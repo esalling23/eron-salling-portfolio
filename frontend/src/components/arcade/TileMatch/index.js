@@ -15,7 +15,7 @@ import StartScreen from '../screens/StartScreen';
 const TileMatch = () => {
 	const [streak, setStreak] = useState(null);
 	const [size, setSize] = useState(MIN_BOARD_SIZE);
-	const [gameStage, setGameStage] = useState(GAME_STAGE.ENTRY);
+	const [gameStage, setGameStage] = useState(GAME_STAGE.START);
 	const [isSuccess, setIsSuccess] = useState(null);
 
 	// Instructions
@@ -32,7 +32,7 @@ const TileMatch = () => {
 		// initialize game
 		setStreak(0);
 		setSize((initLevel - 1) + MIN_BOARD_SIZE);
-		setGameStage(GAME_STAGE.START);
+		setGameStage(GAME_STAGE.SETUP);
 	}, []);
 	// should perform an animation, highlighting tiles in an random order
 	
@@ -41,9 +41,9 @@ const TileMatch = () => {
 	// should prompt the user to continue
 	const continueGame = () => {
 		if (isSuccess === true) {
-			setGameStage(GAME_STAGE.START);
+			setGameStage(GAME_STAGE.SETUP);
 		} else if (isSuccess === false) {
-			setGameStage(GAME_STAGE.ENTRY);
+			setGameStage(GAME_STAGE.START);
 		}
 		setIsSuccess(null);
 	};
@@ -66,7 +66,7 @@ const TileMatch = () => {
 	};
 
 	const content = useMemo(() => {
-		if (gameStage === GAME_STAGE.ENTRY) {
+		if (gameStage === GAME_STAGE.START) {
 			return (
 				<StartScreen 
 					initGame={initGame}
@@ -84,7 +84,6 @@ const TileMatch = () => {
 			return <div className="d-flex flex-column h-100 justify-content-between align-items-center">
 				<h2 className={styles.feedbackBanner}>{isSuccess ? 'Success!' : 'Not Quite...'}</h2>
 				<div className="flex-col-center">
-					{/* Show a Circle progress bar depicting where the current streak lands in level difficulty stage */}
 					<h4>Your {!isSuccess && 'final '}streak: {streak}</h4>
 				</div>
 				<Button onClick={continueGame}>Continue</Button>
@@ -96,7 +95,7 @@ const TileMatch = () => {
 		// should provide feedback if incorrect tile is clicked or tile sequence is completed successfully
 		return <div className={classNames('flex-col-center', styles.boardContainer)}>
 			<h2>Level {currLevel}</h2>
-			<h6>{gameStage === GAME_STAGE.PLAY || gameStage === GAME_STAGE.START ? instructionCopy : ''}</h6>
+			<h6>{gameStage === GAME_STAGE.PLAY || gameStage === GAME_STAGE.SETUP ? instructionCopy : ''}</h6>
 			<Board
 				size={size}
 				gameStage={gameStage}
@@ -108,6 +107,7 @@ const TileMatch = () => {
 	}, [
 		instructionCopy,
 		size,
+		currLevel,
 		gameStage,
 		initGame,
 		isSuccess,
