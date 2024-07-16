@@ -7,9 +7,8 @@ import incorrectSfx from '../../../../../assets/audio/incorrect.mp3';
 import correctSfx from '../../../../../assets/audio/correct.mp3';
 
 import { GAME_STAGE } from '../lib';
-import FadeMotion from '../../shared/FadeMotion';
+// import FadeMotion from '../../shared/FadeMotion';
 import TileButton from './TileButton';
-import { Badge } from 'react-bootstrap';
 import TileMotion from './TileMotion';
 import useTone from '../../hooks/useTone';
 
@@ -35,10 +34,6 @@ const Tile = ({
 	const correctSound = new Howl({
 		src: correctSfx
 	});
-	// level fail extended sound
-	// const failSound = new Howl({
-	// 	src: failSfx
-	// });
 
 	const handleSelect = useCallback(() => {
 		onSelect();
@@ -47,7 +42,6 @@ const Tile = ({
 		setIsCorrect(result);
 
 		if (result) {
-			// correctSound.play();
 			playTone();
 		} else {
 			incorrectSound.play();
@@ -62,7 +56,6 @@ const Tile = ({
 		if (variant === 'enter') {
 			onReady();
 		} else if (variant === 'success' || variant === 'fail') {
-			// console.log('gone!');
 			onFinishSelect(isCorrect);
 		} else if (variant === 'exit') {
 			onFinishFail();
@@ -79,21 +72,16 @@ const Tile = ({
 	return (
 		<TileMotion
 			tile={tile}
+			disabled={isDisabled || gameStage !== GAME_STAGE.PLAY}
 			animVariant={animVariant}
 			handleComplete={handleComplete}
 			key={`tile-${tile.delay}`}
 		>
-			{gameStage === GAME_STAGE.PLAY && (
-				<FadeMotion
-					duration={0.3}
-					className="h-100 w-100 flex-col-center"
-				>
-					{isCorrect === null && !isFail && (
-						<TileButton onClick={handleSelect} disabled={isDisabled}>
-							Select <Badge>{tile.delay}</Badge>
-						</TileButton>
-					)}
-				</FadeMotion>
+			{isCorrect === null && !isFail && gameStage === GAME_STAGE.PLAY && (
+				<TileButton 
+					onClick={handleSelect} 
+					disabled={isDisabled} 
+				/>
 			)}
 		</TileMotion>
 	);

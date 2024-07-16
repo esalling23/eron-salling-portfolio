@@ -13,8 +13,15 @@ import styles from '../tileMatch.module.scss';
 import useTone from '../../hooks/useTone';
 
 const StyledMotion = styled(motion.div)`
-	${({ $baseColor }) => `
+	${({ $baseColor, $isDisabled }) => `
 		border: 4px solid ${Color(`#${$baseColor}`).darken(0.4)};
+
+		${!$isDisabled && `
+			&:hover, &:focus {
+				border-width: 8px;
+				transition: border-width 0.2s linear;
+			}
+		`}
 	`}
 `;
 
@@ -45,11 +52,28 @@ const randomDuration = () => Math.random() * 0.07 + 0.23;
 const TILE_ANIM_DURATION = 1.2;
 const TILE_DELAY_MOD = 0.8;
 const tileAnim = {
+	// Initial
+	start: ({ backgroundColor }) => ({
+		opacity: 0,
+		backgroundColor: `#${backgroundColor}`,
+		duration: TILE_ANIM_DURATION
+	}),
+	// Become visible on board
+	enter: ({ delay }) => ({
+		opacity: 1,
+		transition: {
+			duration: TILE_ANIM_DURATION,
+			delay: TILE_DELAY_MOD * (delay * TILE_ANIM_DURATION),
+			ease: easingFunc
+		}
+	}),
+	// Individual tile success
 	success: {
 		scale: 0,
 		opacity: 1,
 		duration: 1,
 	},
+	// Individual tile failure
 	fail: {
 		opacity: 0.3,
 		duration: 1,
@@ -61,6 +85,7 @@ const tileAnim = {
 			duration: randomDuration(),
 		}
 	},
+	// Board all fail
 	prepareHang: {
 		// top left
 		transformOrigin: '0px 0px',
@@ -82,24 +107,12 @@ const tileAnim = {
 			type: 'spring'
 		}
 	},
-	enter: ({ delay }) => ({
-		opacity: 1,
-		transition: {
-			duration: TILE_ANIM_DURATION,
-			delay: TILE_DELAY_MOD * (delay * TILE_ANIM_DURATION),
-			ease: easingFunc
-		}
-	}),
-	start: ({ backgroundColor }) => ({
-		opacity: 0,
-		backgroundColor: `#${backgroundColor}`,
-		duration: TILE_ANIM_DURATION
-	})
 };
 
 const TileMotion = ({
 	tile,
 	animVariant,
+	disabled,
 	handleComplete,
 	children,
 }) => {
@@ -160,6 +173,7 @@ const TileMotion = ({
 				delay: tile.delay,
 			}}
 			$baseColor={tile.color}
+			$isDisabled={disabled}
 			animate={controls}
 			variants={tileAnim}
 			initial={'start'}
@@ -180,6 +194,7 @@ TileMotion.propTypes = {
 	animVariant: PropTypes.string,
 	handleComplete: PropTypes.func,
 	children: PropTypes.any,
+	disabled: PropTypes.bool
 };
 
 export default React.memo(TileMotion);

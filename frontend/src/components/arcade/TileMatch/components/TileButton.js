@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from '../tileMatch.module.scss';
@@ -9,14 +9,17 @@ import classNames from 'classnames';
 
 const TileButton = ({ onClick, disabled = false, children }) => {
 	// console.log(`disabled? ${disabled}`)
+	const [isHover, setIsHover] = useState(false);
 
 	return (
 		<Button
 			className={classNames(styles.button, { disabled })}
 			onClick={onClick}
+			onMouseEnter={() => setIsHover(true)}
+			onMouseExit={() => setIsHover(false)}
 			disabled={disabled}
 		>
-			{children}
+			{isHover && children}
 		</Button>
 	);
 };
