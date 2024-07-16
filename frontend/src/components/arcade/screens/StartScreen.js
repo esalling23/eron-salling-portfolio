@@ -24,7 +24,7 @@ const StartScreen = ({
 
 	const levelButtons = levels.map(lvl => (
 		<Button
-			key="start-btn"
+			key={`level-${lvl}-btn`}
 			size="lg"
 			className="mx-2"
 			onClick={() => initGame(lvl)}
