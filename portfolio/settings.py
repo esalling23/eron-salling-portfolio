@@ -75,6 +75,7 @@ SECRET_KEY = os.getenv('SECRET')
 INSTALLED_APPS = [
     'frontend',
     'projects',
+		'arcade',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
