@@ -16,7 +16,11 @@ module.exports = {
 		rules: [
 			{
         test: /\.(png|svg|jpg|jpeg|gif|ogg|mp3|wav)$/i,
-        type: 'asset/resource',
+				loader: require.resolve('url-loader'),
+				options: {
+					limit: 10000,
+					name: 'static/media/[name].[hash:8].[ext]',
+				}
       },
 			{
 				test: /\.css$/,
@@ -34,14 +38,6 @@ module.exports = {
 					loader: 'babel-loader',
 				},
 			},
-			{
-				test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-				loader: require.resolve('url-loader'),
-				options: {
-					limit: 10000,
-					name: 'static/media/[name].[hash:8].[ext]',
-				}
-			}
 		],
 	},
 }
