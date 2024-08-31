@@ -21,8 +21,9 @@ const App = () => {
 		home_title: null,
 		typewriter_texts: null,
 	});
+	const [games, setGames] = useState(null);
 
-	const [loadingComplete, setLoadingComplete] = useState(false);
+	const [loadingComplete, setLoadingComplete] = useState(true);
 	const [appLoaded, setAppLoaded] = useState(false);
 
 	useEffect(() => {
@@ -37,6 +38,8 @@ const App = () => {
 			})
 			.then(() => axios.get('/categories'))
 			.then(res => setCategories(res.data.categories))
+			.then(() => axios.get('/arcade/games'))
+			.then(res => setGames(res.data.games))
 			.then(() => axios.get('/content'))
 			.then(res => {
 				setContentData(res.data.content);
@@ -57,7 +60,7 @@ const App = () => {
 				element={<Portfolio projects={projects} categories={categories} />}
 			/>
 			<Route path='/arcade/*' element={(
-				<Arcade />
+				<Arcade games={games} />
 			)} />
 			<Route path='/' element={(
 				<Home
