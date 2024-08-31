@@ -34,5 +34,5 @@
   },
   "publicPath": "/static/webpack_bundles/",
   "error": "ModuleNotFoundError",
-  "message": "Module not found: Error: Can't resolve '../arcade/TuneTiles' in '/Users/eronsalling/Developer/eron-salling-portfolio/frontend/src/components/pages'"
+  "message": "Module not found: Error: Can't resolve '../arcade/games/Blogger' in '/Users/eronsalling/Developer/eron-salling-portfolio/frontend/src/components/pages'"
 }

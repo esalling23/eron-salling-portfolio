@@ -2,13 +2,13 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import incorrectSfx from '../../../../../assets/audio/incorrect.mp3';
+import incorrectSfx from '../../../assets/audio/incorrect.mp3';
 
 import { GAME_STAGE } from '../lib';
 import TileButton from './TileButton';
 import TileMotion from './TileMotion';
-import useTone from '../../hooks/useTone';
-import useHowl from '../../hooks/useHowl';
+import useTone from '../../../hooks/useTone';
+import useHowl from '../../../hooks/useHowl';
 
 const Tile = ({
 	tile,

@@ -4,13 +4,13 @@ import classNames from 'classnames';
 import { Button } from 'react-bootstrap';
 import { Howl } from 'howler';
 
-import successSfx from '../../../../assets/audio/success.mp3';
-import styles from './tileMatch.module.scss';
+import successSfx from '../../assets/audio/success.mp3';
+import styles from './styles.module.scss';
 
 import { GAME_STAGE, MAX_BOARD_SIZE, MIN_BOARD_SIZE } from './lib';
 import Board from './components/Board';
 // import StreakProgress from './components/StreakProgress';
-import StartScreen from '../screens/StartScreen';
+import StartScreen from '../../screens/StartScreen';
 
 const TileMatch = () => {
 	const [streak, setStreak] = useState(null);
@@ -121,7 +121,7 @@ const TileMatch = () => {
 
 	return (
 		<AnimatePresence>
-			<h1 key="tile-match-title" className="w-100 text-center">Tune Tiles - A Memory Game</h1>
+			{/* <h1 key="tile-match-title" className="w-100 text-center">Tune Tiles - A Memory Game</h1> */}
 			<div key="tile-match-content" className={classNames('d-flex justify-content-start align-items-center', styles.gameContainer)}>
 				{content}
 				{gameStage !== GAME_STAGE.START && (

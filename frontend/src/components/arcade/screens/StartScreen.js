@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap';
 
@@ -22,16 +22,31 @@ const StartScreen = ({
 		<li key={step}>{step}</li>
 	));
 
-	const levelButtons = levels.map(lvl => (
-		<Button
-			key={`level-${lvl}-btn`}
-			size="lg"
-			className="mx-2"
-			onClick={() => initGame(lvl)}
-		>
-			Play Level {lvl}
-		</Button>
-	));
+	const levelButtons = useMemo(() => {
+		if (!levels || levels.length === 0) {
+			return (
+				<Button
+					key={'play-game-btn'}
+					size="lg"
+					className="mx-2"
+					onClick={() => initGame()}
+				>
+					Play Game
+				</Button>
+			);
+		}
+
+		return levels.map(lvl => (
+			<Button
+				key={`level-${lvl}-btn`}
+				size="lg"
+				className="mx-2"
+				onClick={() => initGame(lvl)}
+			>
+				Play Level {lvl}
+			</Button>
+		));
+	}, [levels]);
 
 	return (
 		<div className="h-100 w-100 flex-col-center">

@@ -2,7 +2,7 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
-import styles from '../tileMatch.module.scss';
+import styles from '../styles.module.scss';
 
 const getFillPercent = (percent, circumference) => {
 	return Math.abs(

@@ -6,11 +6,11 @@ import classnames from 'classnames';
 import Color from 'color';
 import styled from 'styled-components';
 
-import failSfx from '../../../../../assets/audio/fail.mp3';
+import failSfx from '../../../assets/audio/fail.mp3';
 
-import styles from '../tileMatch.module.scss';
-import useTone from '../../hooks/useTone';
-import useHowl from '../../hooks/useHowl';
+import styles from '../styles.module.scss';
+import useTone from '../../../hooks/useTone';
+import useHowl from '../../../hooks/useHowl';
 
 const StyledMotion = styled(motion.div)`
 	${({ $baseColor, $isDisabled }) => `

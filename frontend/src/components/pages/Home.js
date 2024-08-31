@@ -11,12 +11,14 @@ const Home = ({
 	return (
 		<PageContainer className='flex-col-center'>
 			<section className="d-flex flex-column justify-content-start" style={{ width: 'fit-content' }}>
-				<h1>{title}</h1>
-				<div className="d-flex typing-cursor codeblock">
-					<div className="pt-1 pr-3">{'>'}</div>
-					{typewriterTexts?.length > 0
-						&& isTyping
-						&& <TextAnimation textArray={typewriterTexts}/>}
+				<div className="d-flex flex-column typing-cursor codeblock">
+					<div className="text-white">{title} {'~'}</div>
+					<div className="pt-1 d-flex">
+						<span className="pr-3">{'>'}</span>
+						{typewriterTexts?.length > 0
+							&& isTyping
+							&& <TextAnimation textArray={typewriterTexts}/>}
+					</div>
 				</div>
 			</section>
 		</PageContainer>

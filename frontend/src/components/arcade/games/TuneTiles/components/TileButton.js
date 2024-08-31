@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import styles from '../tileMatch.module.scss';
+import styles from '../styles.module.scss';
 import { Button } from 'react-bootstrap';
 import classNames from 'classnames';
 

@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import styles from '../tileMatch.module.scss';
-import { shuffle } from '../../../../lib/utils';
-import FadeMotion from '../../shared/FadeMotion';
+import styles from '../styles.module.scss';
+import { shuffle } from '../../../../../lib/utils';
+import FadeMotion from '../../../shared/FadeMotion';
 import Tile from './Tile';
 import SizedGrid from './SizedGrid';
 import generateNote from '../generateNote';
