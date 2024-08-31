@@ -9,6 +9,11 @@ class ScoreModelSerializer(serializers.ModelSerializer):
 
 class GameModelSerializer(serializers.ModelSerializer):
 		scores = ScoreModelSerializer(many=True)
+		key = serializers.SerializerMethodField('get_key')
+		
+		def get_key(self, model):
+			return model.name.lower().replace(' ', '-')
+
 		class Meta:
 				model = GameModel
-				fields = '__all__'
+				fields = ('name', 'description', 'howToPlaySteps', 'key', 'scores')
