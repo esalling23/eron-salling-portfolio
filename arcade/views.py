@@ -13,7 +13,7 @@ class Games(generics.ListAPIView):
 				"""Index request to list all games"""
 				games = GameModel.objects.all()
 				serializer = GameModelSerializer(games, many=True)
-				return Response(serializer.data)
+				return Response({ 'games': serializer.data })
 
 # Scores
 class Scores(generics.ListCreateAPIView):
