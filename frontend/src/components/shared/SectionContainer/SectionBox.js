@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { motion } from 'framer-motion';
 
 import styles from './styles.module.scss';
 
@@ -17,7 +18,14 @@ const SectionBox = ({
 		)}
 		{...rest}
 	>
-		{children}
+		<motion.div
+			initial={{ opacity: 0, }}
+			whileInView={{ opacity: 1, transition: { duration: 1, ease: 'easeInOut' } }}
+			viewport={{ once: true, amount: .5 }}
+			className={styles.content}
+		>
+			{children}
+		</motion.div>
 	</section>;
 };
 
