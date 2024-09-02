@@ -1,23 +1,49 @@
 @import './variables.scss';
+@import './base.module.scss';
 
-
+// set before bootstrap import
 $theme-colors: (
   "dark": $main-font-color
 );
 
 @import "~bootstrap/scss/bootstrap";
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Ubuntu+Mono:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Madimi+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+html {
+	font-size: 16px;
+	@media (min-width: 576px) {
+		font-size: 20px;
+	}
+	// @media (min-width: 768px) {
+	// 	font-size: 20px;
+	// }
+	// Extra large devices (large desktops, 1200px and up)
+	@media (min-width: 1440px) {
+		font-size: 24px;
+	}
+	@media (min-width: 2000px) {
+		font-size: 30px;
+	}
+}
 
 body {
-    background: $main-bg-color;
+    background: $white-ish;
     color: $main-font-color;
-    font-family: 'Open Sans', sans-serif;
+    font-family: $font-body;
 		margin: 0px;
 }
 
-h1, h2, a, .Typewriter {
-    font-family: 'Source Code Pro', monospace;
+h1, h2, a {
+    font-family: $font-heading;
+}
+
+a, button {
+	color: $link-color;
+	&:hover, &:focus {
+		cursor: pointer;
+		color: $link-hover;
+		text-decoration: none;
+		// border-color: $link-hover;
+	}
 }
 
 html, body, main, .container, #app{
@@ -27,31 +53,8 @@ html, body, main, .container, #app{
 }
 
 section {
-    height: calc(100% - 20px);
-    min-height: calc(100% - 20px);
-}
-
-// .main-nav {
-//     width: 100%;
-//     margin: auto;
-// }
-
-.navbar-light .navbar-nav .nav-link {
-    font-size: 1.5em;
-    border-bottom: 3px solid $main-bg-color;
-    // text-decoration: underline $main-bg-color;
-    transition: border-color 300ms;
-
-    &.selected {
-        // text-decoration: underline $main-font-color;
-        border-bottom: 3px solid $main-font-color;
-        color: $main-font-color;
-        transition: border-color 300ms;
-    }
-}
-
-.project-container {
-    padding-top: 3em;
+	display: flex;
+	min-height: $section-height;
 }
 
 // Handles New lines in database text paragraphs
@@ -64,6 +67,10 @@ p {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+}
+
+.d-contents {
+	display: contents;
 }
 
 .codeblock {
@@ -85,10 +92,6 @@ p {
     margin-bottom: 10%;
 }
 
-// Typing cursor on the home page
-.typing-cursor {
-    // font-size: 2em;
-}
 
 // From React Typist Examples
 .flash {
@@ -106,21 +109,4 @@ p {
     }
 }
 
-// Bootstrap Badge overrides
-.badge {
-    // Alters sizing so it's more square
-    padding: 0.4em 0.8em;
-
-    * {
-        color: white;
-    }
-
-    a {
-        font-size: 1.25em;
-        &:hover, &:hover * {
-            color: $main-bg-color;
-            text-decoration: none;
-        }
-    }
-}
 

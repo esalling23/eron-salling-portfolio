@@ -1,0 +1,54 @@
+@import url("./variables.scss");
+
+.background-color-main {
+	background: $main-color;
+}
+.background-color-black {
+	background: $black-ish;
+}
+.background-color-bright {
+	background: $orange;
+}
+.background-color-light {
+	background: $peachy-lite;
+}
+.background-color-dark {
+	background: $orange-dark;
+}
+.background-color-accent {
+	background: $accent-color;
+}
+.background-color-accent-2 {
+	background: $accent-color-2;
+}
+
+
+
+.text-color-main {
+	color: $main-color;
+}
+.text-color-black {
+	color: $black-ish;
+}
+.text-color-bright {
+	color: $orange;
+}
+.text-color-light {
+	color: $peachy-lite;
+}
+.text-color-dark {
+	color: $orange-dark;
+}
+.text-color-accent {
+	color: $accent-color;
+}
+.text-color-accent-light {
+	color: lighten($accent-color, 30%);
+}
+
+.text-title {
+	font-family: $font-heading;
+	font-weight: 700;
+	font-size: 5rem;
+	line-height: 5rem;
+}
