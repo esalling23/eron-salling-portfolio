@@ -1,14 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { styled } from 'styled-components';
 import Typewriter from 'typewriter-effect';
 
-const StyledTypewriter = styled(Typewriter)`
-  font-family: 'Ubuntu Mono', monospace;
-`;
 
 const TextAnimation = ({ textArray, isRepeating = true }) => {
-	return <StyledTypewriter
+	return <Typewriter
 		options={{
 			strings: textArray,
 			autoStart: true,
