@@ -84,7 +84,7 @@ const App = () => {
 	
 	return (
 		<>
-			<Layout>{content}</Layout>
+			<Layout>{loadingComplete && content}</Layout>
 		</>
 	);
 };

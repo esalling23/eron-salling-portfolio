@@ -12,7 +12,7 @@ const SectionBox = ({
 }) => {
 	return <section 
 		className={classNames(
-			className, 
+			className,
 			styles.sectionBox,
 			'col-sm-12 col-md-6 d-flex flex-column'
 		)}
@@ -21,8 +21,8 @@ const SectionBox = ({
 		<motion.div
 			initial={{ opacity: 0, }}
 			whileInView={{ opacity: 1, transition: { duration: 1, ease: 'easeInOut' } }}
-			viewport={{ once: true, amount: .5 }}
-			className={styles.content}
+			viewport={{ once: true, amount: .25 }}
+			className={classNames(styles.content, 'd-flex flex-column')}
 		>
 			{children}
 		</motion.div>
