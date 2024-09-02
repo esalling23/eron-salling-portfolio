@@ -15,6 +15,7 @@ class CategoryResource(resources.ModelResource):
 
 # Custom Admin handling
 class ProjectAdmin(ImportExportModelAdmin):
+		list_display = ("title", "subtitle", "date_started")
 		resource_classes = [ProjectResource]
 
 class CategoryAdmin(ImportExportModelAdmin):
