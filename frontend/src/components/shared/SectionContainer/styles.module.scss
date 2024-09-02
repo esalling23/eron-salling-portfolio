@@ -1,0 +1,19 @@
+@import '../../../styles/variables.scss';
+
+.sectionContainer {
+	scroll-margin-top: $navbar-height;
+	min-height: 60vh;
+	flex: 1 1 auto;
+}
+
+.sectionBox {
+  min-height: 60vh;
+
+	// @media (min-width: 768px) {
+	// 	max-height: 100%;
+	// }
+
+	// img {
+	// 	max-height: $section-height;
+	// }
+}
