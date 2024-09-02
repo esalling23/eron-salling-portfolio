@@ -8,8 +8,24 @@
 	}
 	> button {
 		&:active, &:focus, &:hover {
-			background-color: $main-font-color;
+			background-color: $orange-dark;
 		}
-		background-color: $main-font-color !important;
+		background-color: $orange !important;
+	}
+}
+
+.categoryButtonContainer {
+	min-height: 40vh;
+
+	h2 {
+		font-size: 5rem;
+		font-weight: 700;
+	}
+
+	button {
+		height: fit-content;
+		span {
+			font-size: 1.5rem;
+		}
 	}
 }

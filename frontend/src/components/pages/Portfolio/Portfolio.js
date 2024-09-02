@@ -4,23 +4,25 @@ import { Row } from 'react-bootstrap';
 import Isotope from 'isotope-layout';
 import styled from 'styled-components';
 
-import Project from '../shared/Project';
-import CategoriesFilter from '../shared/CategoriesFilter';
-import { StyledToggleDisplay } from '../../styles/SharedComponents';
-// import LoadingSpinner from '../shared/LoadingSpinner';
-import PageContainer from '../shared/PageContainer';
+import Project from '../../shared/Project';
+import CategoriesFilter from '../../shared/CategoriesFilter';
+import { StyledToggleDisplay } from '../../../styles/SharedComponents';
+import SectionContainer from '../../shared/SectionContainer';
 
 const StyledProjectsDisplay = styled(StyledToggleDisplay)`
 	padding-bottom: 10em;
 	display: block;
 `;
 
+const asterisk = '*';
+
 const Portfolio = ({ projects, categories }) => {
 	// init one ref to store the future isotope object
 	const isotope = useRef(null);
+	const categoriesDisplayRef = useRef(null);
 
 	// store the filter keyword in a state
-	const [filterKey, setFilterKey] = useState('*');
+	const [filterKey, setFilterKey] = useState(asterisk);
 
 	// Loading support
 	const [loadedProjectCount, setLoadedProjectCount] = useState(0);
@@ -41,7 +43,7 @@ const Portfolio = ({ projects, categories }) => {
 			return;
 		}
 		isotope.current = new Isotope('.filter-container', {
-			itemSelector: '.project-container',
+			itemSelector: '.filter-item',
 			layout: 'vertical'
 		});
 
@@ -54,16 +56,37 @@ const Portfolio = ({ projects, categories }) => {
 			return;
 		}
 
-		filterKey === '*'
-			? isotope.current.arrange({filter: '*'})
+		filterKey === asterisk
+			? isotope.current.arrange({filter: asterisk})
 			: isotope.current.arrange({filter: `.${filterKey}`});
 	}, [filterKey]);
 
-	const handleFilterKeyChange = key => setFilterKey(key);
+	const handleFilterKeyChange = key => {
+		categoriesDisplayRef.current?.scrollIntoView({ behavior: 'smooth' });
 
-	const projectList = projects?.map((project) => (
+		setFilterKey(curr => {
+			if (key === asterisk) return asterisk;
+
+			let keys = curr.split('.');
+			if (curr === asterisk) keys = [];
+
+			if (keys.includes(key))
+			{
+				keys = keys.filter(k => k != key);
+			} else {
+				keys.push(key);
+			}
+
+			if (keys.length == 0) return asterisk;
+
+			return keys.join('.');
+		});
+	};
+
+	const projectList = projects?.map((project, i) => (
 		<Project
 			key={project.id}
+			index={i}
 			title={project.title}
 			subtitle={project.subtitle}
 			dateStarted={project.date_started}
@@ -80,23 +103,27 @@ const Portfolio = ({ projects, categories }) => {
 
 	const categoriesDisplay = <CategoriesFilter
 		as={Row}
-		isLoading={!isLoaded}
+		activeKeys={filterKey.split('.')}
 		categories={categories}
 		handleFilter={handleFilterKeyChange}
+		ref={categoriesDisplayRef}
 	/>;
 	
 	return (
-		<PageContainer isPageLoading={!isLoaded}>
+		<SectionContainer 
+			isPageLoading={!isLoaded} 
+			id="portfolio"
+		>
 			{categoriesDisplay} 
 			{/* Render projects hidden to wait for images to load */}
 			<StyledProjectsDisplay
-				as={Row}
+				// as={Row}
 				isHidden={!isLoaded}
-				className="w-100 d-flex justify-content-center filter-container"
+				className="w-100 h-100 d-flex justify-content-center filter-container"
 			>
 				{projectList || ''}
 			</StyledProjectsDisplay>
-		</PageContainer>
+		</SectionContainer>
 	);
 };
 
