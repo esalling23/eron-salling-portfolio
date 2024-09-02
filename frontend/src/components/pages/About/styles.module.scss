@@ -1,0 +1,16 @@
+@import '../../../styles/variables.scss';
+
+.aboutImg {
+	object-fit: cover;
+	object-position: center;
+	height: 100%;
+	width: 100%;
+	max-height: calc(.9 * $section-height);
+	height: 90%;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.aboutDescription {
+	font-size: 1.25rem;
+}
