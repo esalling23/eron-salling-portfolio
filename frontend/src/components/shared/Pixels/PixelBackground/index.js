@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 
 import styles from './pixelBlocks.module.scss';
-import useWindowSize from '../../../lib/hooks/useWindowSize';
+import useWindowSize from '../../../../lib/hooks/useWindowSize';
 import Pixels from './Pixels';
 
 const pixelCount = 20;

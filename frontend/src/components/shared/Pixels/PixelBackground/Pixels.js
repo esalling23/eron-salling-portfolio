@@ -2,7 +2,7 @@ import React, { useCallback, useMemo } from 'react';
 import { motion } from 'framer-motion';
 
 import styles from './pixelBlocks.module.scss';
-import { shuffle } from '../../../lib/utils';
+import { shuffle } from '../../../../lib/utils';
 
 const anim = {
 	enter: ({ startVisible, delay }) => ({

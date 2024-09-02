@@ -1,12 +1,13 @@
-@import '../../../styles/variables.scss';
+@import '../../../../styles/variables.scss';
 .loaderContainer {
 	height: 100%;
 	width: 100%;
 }
 
 .pixelBlocks {
+	pointer-events: none;
 	display: flex;
-	height: 100vh;
+	height: 100%;
 	width: 200vw;
 	overflow: hidden;
 	position: absolute;
