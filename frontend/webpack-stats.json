@@ -1,45 +1,15 @@
 {
   "status": "done",
   "assets": {
-    "main-214b86063e6f5b4baeed.js": {
-      "name": "main-214b86063e6f5b4baeed.js",
-      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-214b86063e6f5b4baeed.js",
-      "publicPath": "/static/webpack_bundles/main-214b86063e6f5b4baeed.js"
+    "main-973d8eb0c931e0668e44.js": {
+      "name": "main-973d8eb0c931e0668e44.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-973d8eb0c931e0668e44.js",
+      "publicPath": "/static/webpack_bundles/main-973d8eb0c931e0668e44.js"
     },
-    "main-472ebf50e6071a0b5ae4.js": {
-      "name": "main-472ebf50e6071a0b5ae4.js",
-      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-472ebf50e6071a0b5ae4.js",
-      "publicPath": "/static/webpack_bundles/main-472ebf50e6071a0b5ae4.js"
-    },
-    "main-727240dad710adf74832.js": {
-      "name": "main-727240dad710adf74832.js",
-      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-727240dad710adf74832.js",
-      "publicPath": "/static/webpack_bundles/main-727240dad710adf74832.js"
-    },
-    "main-8b107e02b23bb1a13e9b.js": {
-      "name": "main-8b107e02b23bb1a13e9b.js",
-      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-8b107e02b23bb1a13e9b.js",
-      "publicPath": "/static/webpack_bundles/main-8b107e02b23bb1a13e9b.js"
-    },
-    "main-a3b0d5f8ec51b87bd1a0.js": {
-      "name": "main-a3b0d5f8ec51b87bd1a0.js",
-      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-a3b0d5f8ec51b87bd1a0.js",
-      "publicPath": "/static/webpack_bundles/main-a3b0d5f8ec51b87bd1a0.js"
-    },
-    "main-ab62d049ae148dfdffa0.js": {
-      "name": "main-ab62d049ae148dfdffa0.js",
-      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-ab62d049ae148dfdffa0.js",
-      "publicPath": "/static/webpack_bundles/main-ab62d049ae148dfdffa0.js"
-    },
-    "main-d37cfd8b78e9a19fb1f0.js": {
-      "name": "main-d37cfd8b78e9a19fb1f0.js",
-      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-d37cfd8b78e9a19fb1f0.js",
-      "publicPath": "/static/webpack_bundles/main-d37cfd8b78e9a19fb1f0.js"
-    },
-    "main-dcf08b6f21fa88f1b5d8.js": {
-      "name": "main-dcf08b6f21fa88f1b5d8.js",
-      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-dcf08b6f21fa88f1b5d8.js",
-      "publicPath": "/static/webpack_bundles/main-dcf08b6f21fa88f1b5d8.js"
+    "main-973d8eb0c931e0668e44.js.LICENSE.txt": {
+      "name": "main-973d8eb0c931e0668e44.js.LICENSE.txt",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-973d8eb0c931e0668e44.js.LICENSE.txt",
+      "publicPath": "/static/webpack_bundles/main-973d8eb0c931e0668e44.js.LICENSE.txt"
     },
     "static/media/fail.6897864b.mp3": {
       "name": "static/media/fail.6897864b.mp3",
@@ -59,10 +29,8 @@
   },
   "chunks": {
     "main": [
-      "main-d37cfd8b78e9a19fb1f0.js"
+      "main-973d8eb0c931e0668e44.js"
     ]
   },
-  "publicPath": "/static/webpack_bundles/",
-  "error": "ModuleBuildError",
-  "message": "Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/eronsalling/Developer/eron-salling-portfolio/frontend/src/components/App.js: Unexpected token, expected \":\" (87:37)\n\n  85 | \treturn (\n  86 | \t\t<>\n> 87 | \t\t\t<Layout>{loadingComplete ? content}</Layout>\n     | \t\t\t                                  ^\n  88 | \t\t</>\n  89 | \t);\n  90 | };\n    at constructor (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:351:19)\n    at JSXParserMixin.raise (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:3237:19)\n    at JSXParserMixin.unexpected (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:3257:16)\n    at JSXParserMixin.expect (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:3562:12)\n    at JSXParserMixin.parseConditional (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10387:12)\n    at JSXParserMixin.parseMaybeConditional (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10380:17)\n    at JSXParserMixin.parseMaybeAssign (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10337:21)\n    at JSXParserMixin.parseExpressionBase (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10291:23)\n    at /Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10287:39\n    at JSXParserMixin.allowInAnd (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:11933:12)\n    at JSXParserMixin.parseExpression (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10287:17)\n    at JSXParserMixin.jsxParseExpressionContainer (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:6655:31)\n    at JSXParserMixin.jsxParseElementAt (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:6734:36)\n    at JSXParserMixin.jsxParseElementAt (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:6721:32)\n    at JSXParserMixin.jsxParseElement (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:6772:17)\n    at JSXParserMixin.parseExprAtom (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:6782:19)\n    at JSXParserMixin.parseExprSubscripts (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10579:23)\n    at JSXParserMixin.parseUpdate (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10562:21)\n    at JSXParserMixin.parseMaybeUnary (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10540:23)\n    at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10394:61)\n    at JSXParserMixin.parseExprOps (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10399:23)\n    at JSXParserMixin.parseMaybeConditional (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10376:23)\n    at JSXParserMixin.parseMaybeAssign (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10337:21)\n    at /Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10307:39\n    at JSXParserMixin.allowInAnd (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:11933:12)\n    at JSXParserMixin.parseMaybeAssignAllowIn (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10307:17)\n    at JSXParserMixin.parseParenAndDistinguishExpression (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:11190:28)\n    at JSXParserMixin.parseExprAtom (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10846:23)\n    at JSXParserMixin.parseExprAtom (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:6787:20)\n    at JSXParserMixin.parseExprSubscripts (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10579:23)\n    at JSXParserMixin.parseUpdate (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10562:21)\n    at JSXParserMixin.parseMaybeUnary (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10540:23)\n    at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10394:61)\n    at JSXParserMixin.parseExprOps (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10399:23)\n    at JSXParserMixin.parseMaybeConditional (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10376:23)\n    at JSXParserMixin.parseMaybeAssign (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10337:21)\n    at JSXParserMixin.parseExpressionBase (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10291:23)\n    at /Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10287:39\n    at JSXParserMixin.allowInAnd (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:11928:16)\n    at JSXParserMixin.parseExpression (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:10287:17)\n    at JSXParserMixin.parseReturnStatement (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:12616:28)\n    at JSXParserMixin.parseStatementContent (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:12267:21)\n    at JSXParserMixin.parseStatementLike (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:12236:17)\n    at JSXParserMixin.parseStatementListItem (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:12216:17)\n    at JSXParserMixin.parseBlockOrModuleBlockBody (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:12793:61)\n    at JSXParserMixin.parseBlockBody (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:12786:10)\n    at JSXParserMixin.parseBlock (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:12774:10)\n    at JSXParserMixin.parseFunctionBody (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:11613:24)\n    at JSXParserMixin.parseArrowExpression (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:11588:10)\n    at JSXParserMixin.parseParenAndDistinguishExpression (/Users/eronsalling/Developer/eron-salling-portfolio/frontend/node_modules/@babel/parser/lib/index.js:11202:12)"
+  "publicPath": "/static/webpack_bundles/"
 }

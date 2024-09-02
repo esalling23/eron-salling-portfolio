@@ -28,5 +28,3 @@ yarn-error.log*
 
 # Python/Django Specific
 __pycache__/
-
-staticfiles
