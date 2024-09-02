@@ -10,7 +10,7 @@ import { useLocation } from 'react-router-dom';
 const HeaderLink = ({ to, text, isSelected }) => (
 	<NavHashLink 
 		to={to}
-		scroll={(el) => el.scrollIntoView({ behavior: 'smooth', behaviour: 'smooth', block: 'start' })}
+		scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })}
 		className={isSelected ? styles.selected : ''}
 	>
 		{text}
