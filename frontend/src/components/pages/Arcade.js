@@ -5,12 +5,12 @@ import { Link, Route, Routes } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 
 import TuneTiles from '../arcade/games/TuneTiles';
-import Blogger from '../arcade/games/Blogger';
+// import Blogger from '../arcade/games/Blogger';
 
 // Components & game keys (must match DB)
 const gameComponents = {
 	'tune-tiles': TuneTiles,
-	'blogger': Blogger,
+	// 'blogger': Blogger,
 };
 
 const Arcade = ({ games }) => {
