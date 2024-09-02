@@ -18,7 +18,7 @@ const BadgeButton = ({
 			className={classNames(
 				className, 
 				styles.badge,
-				isSelected ? styles.isSelected : ''
+				isSelected ? styles.isActive : ''
 			)}
 			{...rest}
 		>
