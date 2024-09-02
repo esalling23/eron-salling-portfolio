@@ -14,10 +14,9 @@ const Layout = ({ children }) => {
 	return (
 		<>
 			<AnimatePresence>
-				<Container fluid className="px-0 pb-3">
+				<Container fluid className="p-0">
 					<Header />
 					<StyledMain 
-						// as={Row} 
 						className="d-flex justify-content-center"
 					>
 						{ children }

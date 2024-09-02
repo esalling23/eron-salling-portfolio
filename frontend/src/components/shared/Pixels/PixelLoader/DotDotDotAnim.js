@@ -22,9 +22,9 @@ const containerAnim = {
 const speed = 0.2;
 
 const transition = {
-	duration: speed,
+	duration: speed * 2,
 	repeatType: 'reverse',
-	repeat: 1,
+	repeat: 3,
 	ease: 'easeInOut',
 	repeatDelay: speed,
 	delay: stagger(speed)
@@ -32,8 +32,10 @@ const transition = {
 
 const DotDotDotAnim = ({
 	shouldAnimate, 
-	handleAnimComplete = () => {}
+	handleAnimComplete = () => {},
+	handleAnimExited = () => {},
 }) => {
+	const [shouldRepeat, setShouldRepeat] = useState(shouldAnimate);
 	const [containerScope, animateContainer] = useAnimate();
 	const [blocksReady, setBlocksReady] = useState(false);
 
@@ -55,12 +57,12 @@ const DotDotDotAnim = ({
 			enterAnimation();
 		} else {
 			const exitAnimation = async () => {
-				await animate('.block', { opacity: 0 }, { duration: speed });
-				handleAnimComplete();
+				await animate('.block', { opacity: 0 }, { duration: speed * 2, ease: 'easeOut' });
 				await animateContainer(containerScope.current, 
 					{ opacity: 0 }, 
 					{ delay: 0.2, duration: 0.5, ease: 'easeOut' },
 				);
+				handleAnimExited();
 			};
 			
 			exitAnimation();
@@ -72,11 +74,17 @@ const DotDotDotAnim = ({
 			const loadBlocks = async () => {
 				console.log('playing block animation');
 				await animate('.block', { y: ['0%', '-50%'] }, transition);
-				handleAnimComplete();
+				
+				if (shouldRepeat) loadBlocks();
+				else {
+					handleAnimComplete();
+				}
 			};
 			loadBlocks();
+		} else {
+			setShouldRepeat(false);
 		}
-	}, [shouldAnimate, blocksReady]);
+	}, [shouldAnimate, blocksReady, shouldRepeat]);
 
 	return (
 		<motion.div 
@@ -100,6 +108,7 @@ const DotDotDotAnim = ({
 DotDotDotAnim.propTypes = {
 	shouldAnimate: PropTypes.bool,
 	handleAnimComplete: PropTypes.func,
+	handleAnimExited: PropTypes.func,
 };
 
 export default DotDotDotAnim;

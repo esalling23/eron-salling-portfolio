@@ -7,7 +7,6 @@ import SinglePageLayout from './shared/Layout/SinglePageLayout';
 import Layout from './shared/Layout/Layout';
 import About from './pages/About';
 import Portfolio from './pages/Portfolio';
-import PixelLoader from './shared/PixelLoader';
 import Arcade from './pages/Arcade';
 import HomeSection from './pages/Home/HomeSection';
 
@@ -25,7 +24,6 @@ const App = () => {
 	const [games, setGames] = useState(null);
 
 	const [loadingComplete, setLoadingComplete] = useState(true);
-	const [appLoaded, setAppLoaded] = useState(false);
 
 	useEffect(() => {
 		axios.get('/projects')
@@ -37,11 +35,17 @@ const App = () => {
 					img.src = proj.main_img;
 				}
 			})
-			.then(() => axios.get('/categories'))
+			.catch(console.error);
+
+		axios.get('/categories')
 			.then(res => setCategories(res.data.categories))
-			.then(() => axios.get('/arcade/games'))
+			.catch(console.error);
+
+		axios.get('/arcade/games')
 			.then(res => setGames(res.data.games))
-			.then(() => axios.get('/content'))
+			.catch(console.error);
+
+		axios.get('/content')
 			.then(res => {
 				setContentData(res.data.content);
 				// Pre-load About Page Image
@@ -50,6 +54,12 @@ const App = () => {
 			})
 			.catch(console.error);
 	}, []);
+
+	useEffect(() => {
+		if (contentData && categories && games && projects) {
+			setLoadingComplete(true);
+		}
+	}, [contentData, categories, games, projects]);
 
 	const getRoutes = () => (
 		<Routes location={location} key={location.key}>
@@ -73,17 +83,6 @@ const App = () => {
 	return (
 		<>
 			<Layout>{getRoutes()}</Layout>
-			{!loadingComplete && <PixelLoader 
-				isLoading={!appLoaded}
-				onAnimationExited={() => {
-					setLoadingComplete(true);
-				}}
-				onAnimationComplete={() => {
-					if (contentData && projects && categories) {
-						setAppLoaded(true);
-					}
-				}} 
-			/>}
 		</>
 	);
 };

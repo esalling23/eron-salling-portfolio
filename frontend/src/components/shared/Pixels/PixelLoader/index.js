@@ -8,7 +8,9 @@ import DotDotDotAnim from './DotDotDotAnim';
 
 
 const PixelLoader = ({
-	isLoading
+	isLoading,
+	handleAnimComplete = () => {},
+	handleAnimExited = () => {}
 }) => {
 	const [shouldAnimate, setShouldAnimate] = useState(true);
 
@@ -24,14 +26,18 @@ const PixelLoader = ({
 
 	return (
 		<AnimatePresence className={styles.loaderContainer}>
-			<DotDotDotAnim shouldAnimate={shouldAnimate} />
+			<DotDotDotAnim
+				shouldAnimate={shouldAnimate}
+				handleAnimComplete={handleAnimComplete}
+				handleAnimExited={handleAnimExited}
+			/>
 		</AnimatePresence>
 	);
 };
 
 PixelLoader.propTypes = {
-	onAnimationComplete: PropTypes.function,
-	onAnimationExited: PropTypes.function,
+	handleAnimComplete: PropTypes.function,
+	handleAnimExited: PropTypes.function,
 	isLoading: PropTypes.bool
 };
 
