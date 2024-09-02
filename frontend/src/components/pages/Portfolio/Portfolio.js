@@ -35,8 +35,7 @@ const Portfolio = ({ projects, categories }) => {
 	const [loadingAnimComplete, setLoadingAnimComplete] = useState(false);
 	const [loadedProjectCount, setLoadedProjectCount] = useState(0);
 
-	const isLoaded = 
-	useMemo(
+	const isLoaded = useMemo(
 		() => {
 			return projects 
 				&& categories
