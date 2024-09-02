@@ -3,12 +3,13 @@ import { Route,  Routes, useLocation} from 'react-router-dom';
 import '../styles/index.scss';
 import axios from 'axios';
 
-import Layout from './shared/Layout';
-import Home from './pages/Home';
+import SinglePageLayout from './shared/Layout/SinglePageLayout';
+import Layout from './shared/Layout/Layout';
 import About from './pages/About';
 import Portfolio from './pages/Portfolio';
 import PixelLoader from './shared/PixelLoader';
 import Arcade from './pages/Arcade';
+import HomeSection from './pages/Home/HomeSection';
 
 const App = () => {
 	const location = useLocation();
@@ -52,22 +53,19 @@ const App = () => {
 
 	const getRoutes = () => (
 		<Routes location={location} key={location.key}>
-			<Route path='/about' element={(
-				<About img={contentData.about_img} description={contentData.about_description} />
-			)} />
-			<Route
-				path='/portfolio'
-				element={<Portfolio projects={projects} categories={categories} />}
-			/>
 			<Route path='/arcade/*' element={(
 				<Arcade games={games} />
 			)} />
 			<Route path='/' element={(
-				<Home
-					isTyping={loadingComplete}
-					typewriterTexts={contentData.typewriter_texts} 
-					title={contentData.home_title}
-				/>
+				<SinglePageLayout>
+					<HomeSection
+						isTyping={loadingComplete}
+						typewriterTexts={contentData.typewriter_texts} 
+						title={contentData.home_title}
+					/>
+					<About img={contentData.about_img} description={contentData.about_description} />
+					<Portfolio projects={projects} categories={categories} />
+				</SinglePageLayout>
 			)} />
 		</Routes>
 	);
