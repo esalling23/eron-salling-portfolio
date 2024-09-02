@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { Route,  Routes, useLocation} from 'react-router-dom';
 import '../styles/index.scss';
 import axios from 'axios';
@@ -61,7 +61,7 @@ const App = () => {
 		}
 	}, [contentData, categories, games, projects]);
 
-	const getRoutes = () => (
+	const getRoutes = useCallback(() => (
 		<Routes location={location} key={location.key}>
 			<Route path='/arcade/*' element={(
 				<Arcade games={games} />
@@ -78,11 +78,13 @@ const App = () => {
 				</SinglePageLayout>
 			)} />
 		</Routes>
-	);
+	), [contentData, projects, categories, games]);
+
+	const content = useMemo(getRoutes, [getRoutes]);
 	
 	return (
 		<>
-			<Layout>{getRoutes()}</Layout>
+			<Layout>{content}</Layout>
 		</>
 	);
 };
