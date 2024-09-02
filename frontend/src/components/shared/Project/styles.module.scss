@@ -23,6 +23,11 @@
 
 .seeMoreLink {
 	font-size: 1em;
+	border: 0px;
+
+	&:hover, &:focus {
+		border: 0px;
+	}
 	a {
 		color: white;
 	}

@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Image, Badge } from 'react-bootstrap';
 import styled from 'styled-components';
-import { BoxArrowUpRight } from 'react-bootstrap-icons';
+import { Link45deg } from 'react-bootstrap-icons';
 
 // import SeeMoreText from '../SeeMoreText';
 import { formatDate, getCategoryId } from '../../../lib/utils';
@@ -75,16 +75,18 @@ const Project = ({
 			</SectionBox>
 			<SectionBox className="py-0 py-md-3">
 				<h2 
-					className={classNames('text-title', styles.projectTitle)}
-				>{title}</h2>
-				<h5>{subtitle}</h5>
-				{moreLink && <BadgeLink 
-					url={moreLink} 
-					variant="dark"
-					className={`${styles.seeMoreLink}`}
+					className={classNames('text-title d-flex flex-row', styles.projectTitle)}
 				>
-					Visit <BoxArrowUpRight className='ml-3' />
-				</BadgeLink>}
+					{title} 
+					{moreLink && <BadgeLink 
+						url={moreLink} 
+						variant="dark"
+						className={`${styles.seeMoreLink}`}
+						text={''}
+						icon={Link45deg}
+					/>}
+				</h2>
+				<h5>{subtitle}</h5>
 				<div className="">{categoryTags}</div>
 				<div className="w-100 mt-3">
 					<p>{description}</p>

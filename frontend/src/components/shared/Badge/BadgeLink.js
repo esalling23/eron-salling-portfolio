@@ -19,7 +19,8 @@ const BadgeLink = ({
 			className={classNames(className, styles.badge)}
 			{...rest}
 		>
-			{IconComponent && <IconComponent className="mr-2" />} <span>{text}</span>
+			{IconComponent && <IconComponent/>}
+			{text && <span className="mx-2">{text}</span>}
 		</a>
 	);
 };
