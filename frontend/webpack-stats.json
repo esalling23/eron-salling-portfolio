@@ -1,15 +1,15 @@
 {
   "status": "done",
   "assets": {
-    "main-929ec9d55f48ae8ebf1f.js": {
-      "name": "main-929ec9d55f48ae8ebf1f.js",
-      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-929ec9d55f48ae8ebf1f.js",
-      "publicPath": "/static/webpack_bundles/main-929ec9d55f48ae8ebf1f.js"
+    "main-a5df16804b2b96472ce0.js": {
+      "name": "main-a5df16804b2b96472ce0.js",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-a5df16804b2b96472ce0.js",
+      "publicPath": "/static/webpack_bundles/main-a5df16804b2b96472ce0.js"
     },
-    "main-929ec9d55f48ae8ebf1f.js.LICENSE.txt": {
-      "name": "main-929ec9d55f48ae8ebf1f.js.LICENSE.txt",
-      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-929ec9d55f48ae8ebf1f.js.LICENSE.txt",
-      "publicPath": "/static/webpack_bundles/main-929ec9d55f48ae8ebf1f.js.LICENSE.txt"
+    "main-a5df16804b2b96472ce0.js.LICENSE.txt": {
+      "name": "main-a5df16804b2b96472ce0.js.LICENSE.txt",
+      "path": "/Users/eronsalling/Developer/eron-salling-portfolio/frontend/assets/webpack_bundles/main-a5df16804b2b96472ce0.js.LICENSE.txt",
+      "publicPath": "/static/webpack_bundles/main-a5df16804b2b96472ce0.js.LICENSE.txt"
     },
     "static/media/fail.6897864b.mp3": {
       "name": "static/media/fail.6897864b.mp3",
@@ -29,7 +29,7 @@
   },
   "chunks": {
     "main": [
-      "main-929ec9d55f48ae8ebf1f.js"
+      "main-a5df16804b2b96472ce0.js"
     ]
   },
   "publicPath": "/static/webpack_bundles/"
