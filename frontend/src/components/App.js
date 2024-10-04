@@ -9,15 +9,19 @@ import About from './pages/About';
 import Portfolio from './pages/Portfolio';
 import Arcade from './pages/Arcade';
 import HomeSection from './pages/Home/HomeSection';
+import SkillsInterface from './shared/SkillsInterface';
+import SectionContainer from './shared/SectionContainer';
 
 const App = () => {
 	const location = useLocation();
 
 	const [projects, setProjects] = useState(null);
 	const [categories, setCategories] = useState(null);
+	const [tools, setTools] = useState(null);
 	const [contentData, setContentData] = useState({
 		about_img: null,
 		about_description: null,
+		resume: null,
 		home_title: null,
 		typewriter_texts: null,
 	});
@@ -41,6 +45,10 @@ const App = () => {
 			.then(res => setCategories(res.data.categories))
 			.catch(console.error);
 
+		axios.get('/tools')
+			.then(res => setTools(res.data.tools))
+			.catch(console.error);
+
 		axios.get('/arcade/games')
 			.then(res => setGames(res.data.games))
 			.catch(console.error);
@@ -56,10 +64,10 @@ const App = () => {
 	}, []);
 
 	useEffect(() => {
-		if (contentData && categories && games && projects) {
+		if (contentData && categories && games && projects && tools) {
 			setLoadingComplete(true);
 		}
-	}, [contentData, categories, games, projects]);
+	}, [contentData, categories, games, projects, tools]);
 
 	const getRoutes = useCallback(() => (
 		<Routes location={location} key={location.key}>
@@ -73,7 +81,14 @@ const App = () => {
 						typewriterTexts={contentData.typewriter_texts} 
 						title={contentData.home_title}
 					/>
-					<About img={contentData.about_img} description={contentData.about_description} />
+					<About
+						img={contentData.about_img}
+						description={contentData.about_description}
+						resume={contentData.resume}
+					/>
+					<SectionContainer id="skills">
+						<SkillsInterface items={tools} />
+					</SectionContainer>
 					<Portfolio projects={projects} categories={categories} />
 				</SinglePageLayout>
 			)} />

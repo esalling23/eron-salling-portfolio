@@ -60,7 +60,7 @@ const DotDotDotAnim = ({
 				await animate('.block', { opacity: 0 }, { duration: speed * 2, ease: 'easeOut' });
 				await animateContainer(containerScope.current, 
 					{ opacity: 0 }, 
-					{ delay: 0.2, duration: 0.5, ease: 'easeOut' },
+					{ delay: 0, duration: 0.5, ease: 'easeOut' },
 				);
 				handleAnimExited();
 			};
@@ -86,6 +86,13 @@ const DotDotDotAnim = ({
 		}
 	}, [shouldAnimate, blocksReady, shouldRepeat]);
 
+	const blocks = [1, 2, 3].map((n) => (
+		<div
+			key={`block-${n}`}
+			className={`block ${styles.block}`}
+		/>
+	));
+
 	return (
 		<motion.div 
 			key={'loadingBlocks'}
@@ -95,12 +102,7 @@ const DotDotDotAnim = ({
 			animate="end"
 			className={styles.pixelBlocks}
 		>
-			{[...new Array(3)].map(b => (
-				<div
-					key={b}
-					className={`block ${styles.block}`}
-				/>
-			))}
+			{blocks}
 		</motion.div>
 	);
 };
