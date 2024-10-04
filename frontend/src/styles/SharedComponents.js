@@ -1,8 +1,8 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const StyledToggleDisplay = styled.div`
-  ${({ isHidden }) => isHidden ? 'display: none' : ''};
-`
+  ${({ $isHidden }) => $isHidden ? 'display: none' : ''};
+`;
 
 export const StyledCategoryTag = styled.div`
   margin: 0.1rem;

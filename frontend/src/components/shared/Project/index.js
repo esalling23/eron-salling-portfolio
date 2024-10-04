@@ -33,11 +33,8 @@ const Project = ({
 	mainImg,
 	categories,
 	handleContentLoaded,
-	// handleResize,
-	// colors
 }) => {
 	const imageRef = useRef(null);
-	// const [leftColorClass, rightColorClass] = colors;
 
 	const dateRange = <StyledDateRange className="d-inline">
 		({formatDate(dateStarted)}{' - '}{dateEnded ? formatDate(dateEnded) : 'Current'})
@@ -62,7 +59,7 @@ const Project = ({
 			)}
 		>
 			<SectionBox className={classNames(
-				'justify-content-center py-3 py-',
+				'justify-content-center py-3',
 				styles.imageSection
 			)}>
 				<StyledImage
@@ -87,7 +84,7 @@ const Project = ({
 					/>}
 				</h2>
 				<h5>{subtitle}</h5>
-				<div className="">{categoryTags}</div>
+				<div>{categoryTags}</div>
 				<div className="w-100 mt-3">
 					<p>{description}</p>
 					<div className="mb-3">{dateRange}</div>
@@ -106,10 +103,8 @@ Project.propTypes = {
 	description: PropTypes.string,
 	moreLink: PropTypes.string,
 	mainImg: PropTypes.string,
-	categories: PropTypes.string,
-	handleContentLoaded: PropTypes.function,
-	handleResize: PropTypes.function,
-	colors: PropTypes.arrayOf(PropTypes.string),
+	categories: PropTypes.array,
+	handleContentLoaded: PropTypes.func,
 };
 
 export default Project;

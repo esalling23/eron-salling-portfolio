@@ -40,8 +40,8 @@ const PixelLoaderWithBackground = ({
 };
 
 PixelLoaderWithBackground.propTypes = {
-	onAnimationComplete: PropTypes.function,
-	onAnimationExited: PropTypes.function,
+	onAnimationComplete: PropTypes.func,
+	onAnimationExited: PropTypes.func,
 	isLoading: PropTypes.bool
 };
 

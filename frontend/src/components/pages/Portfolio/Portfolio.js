@@ -14,7 +14,7 @@ const StyledProjectsDisplay = styled(StyledToggleDisplay)`
 	padding-bottom: 10em;
 	display: block;
 	
-	${({ isHidden }) => isHidden && `
+	${({ $isHidden }) => $isHidden && `
 		height: 60vh !important;
 		overflow: hidden;
 	`}
@@ -23,11 +23,8 @@ const StyledProjectsDisplay = styled(StyledToggleDisplay)`
 const asterisk = '*';
 
 const Portfolio = ({ projects, categories }) => {
-	// init one ref to store the future isotope object
 	const isotope = useRef(null);
-	const categoriesDisplayRef = useRef(null);
 
-	// store the filter keyword in a state
 	const [filterKey, setFilterKey] = useState(asterisk);
 
 	// Loading support
@@ -66,8 +63,6 @@ const Portfolio = ({ projects, categories }) => {
 	}, [filterKey]);
 
 	const handleFilterKeyChange = key => {
-		categoriesDisplayRef.current?.scrollIntoView({ behavior: 'smooth' });
-
 		setFilterKey(curr => {
 			if (key === asterisk) return asterisk;
 
@@ -89,7 +84,7 @@ const Portfolio = ({ projects, categories }) => {
 
 	const projectList = projects?.map((project, i) => (
 		<Project
-			key={project.id}
+			key={`project-${project.id}`}
 			index={i}
 			title={project.title}
 			subtitle={project.subtitle}
@@ -110,7 +105,7 @@ const Portfolio = ({ projects, categories }) => {
 		activeKeys={filterKey.split('.')}
 		categories={categories}
 		handleFilter={handleFilterKeyChange}
-		ref={categoriesDisplayRef}
+		key="categories-display"
 	/>;
 	
 	return (
@@ -121,13 +116,15 @@ const Portfolio = ({ projects, categories }) => {
 			{categoriesDisplay} 
 			{/* Render projects hidden to wait for images to load */}
 			<StyledProjectsDisplay
-				isHidden={!displayContent}
+				$isHidden={!displayContent}
 				className="w-100 h-100 d-flex justify-content-center filter-container h-section"
+				key="styled-project-display"
 			>
 				<PixelLoader
 					isLoading={!isLoaded || !loadingAnimComplete}
 					handleAnimComplete={() => setLoadingAnimComplete(true)}
 					handleAnimExited={() => setDisplayContent(true)}
+					key="pixel-loader"
 				/>
 				{projectList || ''}
 			</StyledProjectsDisplay>

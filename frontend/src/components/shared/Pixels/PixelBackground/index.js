@@ -48,7 +48,7 @@ const PixelBackground = ({
 PixelBackground.propTypes = {
 	startVisible: PropTypes.bool,
 	isRepeating: PropTypes.bool,
-	handleAnimComplete: PropTypes.function
+	handleAnimComplete: PropTypes.func
 };
 
 export default PixelBackground;

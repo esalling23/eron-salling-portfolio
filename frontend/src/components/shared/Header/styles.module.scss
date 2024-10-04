@@ -1,7 +1,7 @@
 @import '../../../styles/variables.scss';
 
 .navHeader {
-	z-index: 1;
+	z-index: 1000;
 	font-size: 2rem;
 	font-weight: 700;
 	height: $navbar-height;

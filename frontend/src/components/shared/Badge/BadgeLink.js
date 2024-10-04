@@ -20,7 +20,7 @@ const BadgeLink = ({
 			{...rest}
 		>
 			{IconComponent && <IconComponent/>}
-			{text && <span className="mx-2">{text}</span>}
+			{text && <span className="mx-2 d-none d-md-inline">{text}</span>}
 		</a>
 	);
 };
@@ -29,7 +29,7 @@ BadgeLink.propTypes = {
 	className: PropTypes.string,
 	children: PropTypes.any,
 	text: PropTypes.string,
-	icon: PropTypes.func,
+	icon: PropTypes.object,
 	url: PropTypes.string
 };
 

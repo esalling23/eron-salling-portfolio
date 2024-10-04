@@ -12,7 +12,6 @@ const HomeSection = ({
 	isTyping = true
 }) => {
 	return (
-		// <PageContainer className='flex-col-center'>
 		<SectionContainer id="home">
 			<SectionBox className={classNames(
 				'background-color-light p-3 p-lg-5 justify-content-center',
@@ -45,7 +44,6 @@ const HomeSection = ({
 				{/* 3D model */}
 			</SectionBox>
 		</SectionContainer>
-		// </PageContainer>
 	);
 };
 

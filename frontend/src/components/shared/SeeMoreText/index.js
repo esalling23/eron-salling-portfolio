@@ -45,7 +45,7 @@ const SeeMoreText = ({
 SeeMoreText.propTypes = {
 	extras: PropTypes.any,
 	text: PropTypes.string,
-	onToggle: PropTypes.function
+	onToggle: PropTypes.func
 };
 
 export default SeeMoreText;

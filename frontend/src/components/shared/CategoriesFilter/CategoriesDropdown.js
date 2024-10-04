@@ -47,7 +47,7 @@ const CategoriesDropdown = ({
 CategoriesDropdown.propTypes = {
 	categories: PropTypes.array,
 	isLoading: PropTypes.bool,
-	handleFilter: PropTypes.function
+	handleFilter: PropTypes.func
 };
 
 export default CategoriesDropdown;

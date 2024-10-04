@@ -5,8 +5,6 @@ import { AnimatePresence } from 'framer-motion';
 import styles from './pixelBlocks.module.scss';
 import DotDotDotAnim from './DotDotDotAnim';
 
-
-
 const PixelLoader = ({
 	isLoading,
 	handleAnimComplete = () => {},
@@ -36,8 +34,8 @@ const PixelLoader = ({
 };
 
 PixelLoader.propTypes = {
-	handleAnimComplete: PropTypes.function,
-	handleAnimExited: PropTypes.function,
+	handleAnimComplete: PropTypes.func,
+	handleAnimExited: PropTypes.func,
 	isLoading: PropTypes.bool
 };
 
