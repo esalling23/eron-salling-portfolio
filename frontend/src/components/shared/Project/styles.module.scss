@@ -1,13 +1,13 @@
 @import '../../../styles/variables.scss';
 
 .projectContainer {
-	&:nth-child(1n) {
+	&:nth-child(3n + 1) {
 		background-color: $peachy-lite;
 	}
-	&:nth-child(2n) {
+	&:nth-child(3n + 2) {
 		background-color: $main-color;
 	}
-	&:nth-child(3n) {
+	&:nth-child(3n + 3) {
 		background-color: lighten($orange, 10%);
 	}
 	.projectTitle {

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { v4 as uuid } from 'uuid';
 
 import { getCategoryId } from '../../../lib/utils';
 import styles from './styles.module.scss';
@@ -10,16 +11,16 @@ import BadgeButton from '../Badge/BadgeButton';
 const CategoriesButtons = ({
 	categories,
 	handleFilter,
-	activeKeys
+	activeKeys,
 }) => {
-	const displayCategoryButton = ({ name, id }) => (
+	const displayCategoryButton = ({ name, id, key }) => (
 		<BadgeButton 
 			className="mx-1"
 			onClick={() => {
 				document.activeElement.blur();
 				handleFilter(id);
 			}}
-			key={id}
+			key={key}
 			text={name}
 			isSelected={activeKeys.includes(id)}
 			// icon={}
@@ -28,18 +29,21 @@ const CategoriesButtons = ({
 	const displayTagButtons = tags => tags?.map(({ name, id }) => 
 		displayCategoryButton({ 
 			name, 
-			id: getCategoryId(id)
+			id: getCategoryId(id),
+			key: uuid()
 		}));
 	
 	const categoryButtons = displayTagButtons(categories);
 	
 	return (
-		<SectionContainer className={classNames(
-			'background-color-accent-2 py-3 flex-column justify-content-center align-content-center',
-			styles.categoryButtonContainer
-		)}>
+		<SectionContainer 
+			className={classNames(
+				'background-color-accent-2 py-3 flex-column justify-content-center align-content-center',
+				styles.categoryButtonContainer
+			)}
+		>
 			<div className="d-flex flex-column">
-				<h2 className="text-center text-color-accent-light text-title">Projects</h2>
+				<h2 className="text-center text-color-accent-light text-title">Work</h2>
 				<div className="p-2 d-flex flex-wrap justify-content-center">
 					{categoryButtons}
 				</div>
@@ -51,7 +55,7 @@ const CategoriesButtons = ({
 CategoriesButtons.propTypes = {
 	categories: PropTypes.array,
 	activeKeys: PropTypes.arrayOf(PropTypes.string),
-	handleFilter: PropTypes.function
+	handleFilter: PropTypes.func
 };
 
 export default CategoriesButtons;
