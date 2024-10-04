@@ -2,7 +2,7 @@ from django.contrib import admin
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 
-from .models import Project, Category
+from .models import Project, Category, Tool
 
 # Import/export resource classes
 class ProjectResource(resources.ModelResource):
@@ -21,5 +21,15 @@ class ProjectAdmin(ImportExportModelAdmin):
 class CategoryAdmin(ImportExportModelAdmin):
 		resource_classes = [CategoryResource]
 
+
+class ToolResource(resources.ModelResource):
+		class Meta: 
+				model = Tool
+
+# Custom Admin handling
+class ToolAdmin(ImportExportModelAdmin):
+		resource_classes = [ToolResource]
+
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(Tool, ToolAdmin)

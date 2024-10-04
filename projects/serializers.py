@@ -1,6 +1,11 @@
 from rest_framework import serializers
 
-from .models import Project, Category
+from .models import Project, Category, Tool
+
+class ToolSerializer(serializers.ModelSerializer):
+    class Meta: 
+        model = Tool
+        fields = '__all__'
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta: 
@@ -12,6 +17,7 @@ class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
         fields = [
+						'id',
             'main_img', 
             'thumbnail_img', 
             'title', 

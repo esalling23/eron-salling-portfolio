@@ -1,4 +1,24 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
+
+class Tool(models.Model):
+		name = models.CharField(max_length=400)
+		class ToolGroup(models.TextChoices):
+				FRONTEND = 'FE', _('Frontend')
+				BACKEND = 'BE', _('Backend')
+				FULLSTACK = 'FS', _('Fullstack')
+				GAMEDEV = 'GD', _('Game Development')
+				DEVOPSCLOUD = 'DC', _('DevOps and Cloud Computing')
+				DATABASES = 'DB', _('Databases')
+
+		group = models.CharField(
+				max_length=2,
+				choices=ToolGroup.choices,
+				default=ToolGroup.FULLSTACK,
+		)
+
+		def __str__(self):
+				return self.name
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
@@ -9,7 +29,6 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-# Create your models here.
 class Project(models.Model):
     # Images
     main_img = models.ImageField()

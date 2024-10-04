@@ -1,8 +1,8 @@
 from django.core import serializers
 from django.http import JsonResponse
 
-from .models import Project, Category
-from .serializers import ProjectSerializer, CategorySerializer
+from .models import Project, Category, Tool
+from .serializers import ProjectSerializer, CategorySerializer, ToolSerializer
 
 # Create your views here.
 def projects_index(request):
@@ -16,3 +16,9 @@ def categories_index(request):
     categories = Category.objects.all()
     serializer = CategorySerializer(categories, many=True)
     return JsonResponse({ 'categories': serializer.data })
+
+def tools_index(request):
+    """Index request to list all tools"""
+    tools = Tool.objects.all()
+    serializer = ToolSerializer(tools, many=True)
+    return JsonResponse({ 'tools': serializer.data })
