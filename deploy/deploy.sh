@@ -11,8 +11,9 @@ echo "Building app..."
 cd frontend 
 npm run build
 
-cd ~/ && rm -rf /var/www/eronsalling.me
-cp -rf ~./eron-salling-portfolio /var/www/eronsalling.me
+cd ~/
+sudo rm -rf /var/www/eronsalling.me 
+sudo cp -rf ~/eron-salling-portfolio /var/www/eronsalling.me
 sudo systemctl restart gunicorn
 sudo systemctl restart nginx
 echo "Finished"
