@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Image } from 'react-bootstrap';
-import { Github, Linkedin } from 'react-bootstrap-icons';
+import { Github, Linkedin, PersonLinesFill } from 'react-bootstrap-icons';
 
 import BadgeLink from '../../shared/Badge/BadgeLink';
 import SectionContainer from '../../shared/SectionContainer';
@@ -13,6 +13,7 @@ import classNames from 'classnames';
 const About = ({
 	description,
 	img,
+	resume,
 }) => (
 	<SectionContainer id="about">
 		<SectionBox 
@@ -26,7 +27,7 @@ const About = ({
 				className={styles.aboutImg}
 			/>
 		</SectionBox>
-		<SectionBox className="p-3 p-md-5 background-color-main justify-content-end align-items-end">
+		<SectionBox className="p-3 p-md-5 background-color-main justify-content-center align-items-end">
 			<p className={styles.aboutDescription}>{description}</p>
  
 			<div className="d-flex flex-row justify-content-start flex-wrap">
@@ -37,10 +38,16 @@ const About = ({
 					text="Github"
 				/>
 				<BadgeLink 
+					className="mr-3"
 					url="https://www.linkedin.com/in/eron-salling/"
 					icon={Linkedin}
 					text="LinkedIn"
 				/>
+				{resume && <BadgeLink
+					url={resume}
+					icon={PersonLinesFill}
+					text="Resume"
+				/>}
 			</div>
 		</SectionBox>
 	</SectionContainer>
@@ -48,7 +55,8 @@ const About = ({
 
 About.propTypes = {
 	description: PropTypes.string,
-	img: PropTypes.string
+	img: PropTypes.string,
+	resume: PropTypes.string
 };
 
 export default About;
