@@ -9,3 +9,4 @@ class ContentModel(models.Model):
 			models.CharField(max_length=100),
 			blank=True
 		)
+		resume = models.FileField(blank=True, null=True)
