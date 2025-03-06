@@ -26,6 +26,7 @@ class ProjectSerializer(serializers.ModelSerializer):
             'date_ended', 
             'description', 
             'more_link', 
+            'git_link',
             'categories',
             'is_hidden'
         ]
