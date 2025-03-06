@@ -73,7 +73,6 @@ SECRET_KEY = os.getenv('SECRET')
 # Application definition
 
 INSTALLED_APPS = [
-    'frontend',
     'projects',
 		'arcade',
     'django.contrib.admin',
@@ -118,17 +117,17 @@ TEMPLATES = [
     },
 ]
 
-WEBPACK_LOADER = {
-    'DEFAULT': {
-        'CACHE': not DEBUG,
-        'BUNDLE_DIR_NAME': 'webpack_bundles/', # must end with slash
-        'STATS_FILE': os.path.join(BASE_DIR, 'frontend/webpack-stats.json'),
-        'POLL_INTERVAL': 0.1,
-        'TIMEOUT': None,
-        'IGNORE': [r'.+\.hot-update.js', r'.+\.map'],
-        'LOADER_CLASS': 'webpack_loader.loader.WebpackLoader',
-    }
-}
+# WEBPACK_LOADER = {
+#     'DEFAULT': {
+#         'CACHE': not DEBUG,
+#         'BUNDLE_DIR_NAME': 'webpack_bundles/', # must end with slash
+#         'STATS_FILE': os.path.join(BASE_DIR, 'frontend/webpack-stats.json'),
+#         'POLL_INTERVAL': 0.1,
+#         'TIMEOUT': None,
+#         'IGNORE': [r'.+\.hot-update.js', r'.+\.map'],
+#         'LOADER_CLASS': 'webpack_loader.loader.WebpackLoader',
+#     }
+# }
 
 WSGI_APPLICATION = 'portfolio.wsgi.application'
 
@@ -180,7 +179,7 @@ AWS_DEFAULT_ACL = 'public-read'
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'frontend/assets'),
-)
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'frontend/assets'),
+# )
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
